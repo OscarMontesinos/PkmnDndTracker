@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cea2b651d9189d4d85f43fba7ab48e7, type: 3}
+  m_Name: MegaBeedrill
+  m_EditorClassIdentifier: 
+  pkmnSprite: {fileID: 21300000, guid: c9eb1686fd8327a4788d75553595d7bb, type: 3}
+  baseStats:
+    mHp: 0
+    hp: 65
+    atk: 150
+    def: 40
+    sAtk: 15
+    sDef: 80
+    spd: 145
+  type1: 7
+  type2: 4
+  megaEvo: {fileID: 11400000, guid: 336fbb398ac2b4746884b854205b4012, type: 2}
+  megastoneSprite: {fileID: 21300000, guid: a9dabfe83a5bf7e48a88ec2f6280a209, type: 3}
+  isMega: 1
