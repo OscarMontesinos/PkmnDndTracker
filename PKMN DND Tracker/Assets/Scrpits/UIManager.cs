@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public Pkmn pkmn;
     public Image bg;
     public Image pkmnPortrait;
+    public Image megastoneImage;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI lvlText;
     public TextMeshProUGUI hpText;
@@ -61,10 +62,18 @@ public class UIManager : MonoBehaviour
         nameText.text = pkmn.pkmnName;
         lvlText.text = pkmn.lvl.ToString();
         pkmnPortrait.sprite = pkmn.pkmnSprite;
+        if (pkmn.basePkmn.megastoneSprite)
+        {
+            megastoneImage.sprite = pkmn.basePkmn.megastoneSprite;
+        }
+        else
+        {
+            megastoneImage.gameObject.SetActive(false);
+        }
 
         if (type1Obj)
         {
-            Destroy (type1Obj);
+            Destroy(type1Obj);
         }
         if (type2Obj)
         {
@@ -143,16 +152,16 @@ public class UIManager : MonoBehaviour
     {
         dndText.text = pkmn.dndStats.con + "\n" + pkmn.dndStats.str + "\n" + pkmn.dndStats.cha + "\n" + pkmn.dndStats.intel + "\n" + pkmn.dndStats.wis + "\n" +
             pkmn.dndStats.dex;
-        dndOtherText.text = "+" + pkmn.extraStats.proficiencyBonus + "\n" + pkmn.extraStats.baseDC + "\n" + pkmn.extraStats.hitDiceNumber + "d" + pkmn.extraStats.hitDice;
+        dndOtherText.text = pkmn.extraStats.proficiencyBonus + "\n" + pkmn.extraStats.baseDC + "\n" + pkmn.extraStats.hitDiceNumber + "d" + pkmn.extraStats.hitDice;
     }
     public void UpdateDNDProf()
     {
-        dndProf1Text.text = "+" + pkmn.dndMod.dex + "\n" + "+" + pkmn.dndMod.wis + "\n" + "+" + pkmn.dndMod.intel + "\n" + "+" + 
-            pkmn.dndMod.str + "\n" + "+" + pkmn.dndMod.cha + "\n" + "+" + pkmn.dndMod.intel + "\n" + "+" + pkmn.dndMod.wis + "\n" + "+" +
-            pkmn.dndMod.cha + "\n" + "+" + pkmn.dndMod.intel;
-        dndProf2Text.text = "+" + pkmn.dndMod.wis + "\n" + "+" + pkmn.dndMod.intel + "\n" + "+" + pkmn.dndMod.wis + "\n" + "+" + 
-            pkmn.dndMod.cha + "\n" + "+" + pkmn.dndMod.cha + "\n" + "+" + pkmn.dndMod.intel + "\n" + "+" + pkmn.dndMod.dex + "\n" + "+" +
-            pkmn.dndMod.dex + "\n" + "+" + pkmn.dndMod.wis;
+        dndProf1Text.text = pkmn.dndMod.dex + "\n" + pkmn.dndMod.wis + "\n" + pkmn.dndMod.intel + "+" + 
+            pkmn.dndMod.str + "\n" + pkmn.dndMod.cha + "\n" + pkmn.dndMod.intel + "\n" + pkmn.dndMod.wis + "\n" +
+            pkmn.dndMod.cha + "\n" + pkmn.dndMod.intel;
+        dndProf2Text.text = pkmn.dndMod.wis + "\n" + pkmn.dndMod.intel + "\n" + pkmn.dndMod.wis + "\n" + 
+            pkmn.dndMod.cha + "\n" + pkmn.dndMod.cha + "\n" + pkmn.dndMod.intel + "\n" + pkmn.dndMod.dex + "\n" +
+            pkmn.dndMod.dex + "\n" + pkmn.dndMod.wis;
     }
 
     public void UpdateActionTokens()
