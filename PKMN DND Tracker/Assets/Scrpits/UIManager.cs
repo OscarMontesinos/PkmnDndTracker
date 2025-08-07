@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -89,6 +90,7 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
+        pkmn = Pkmn.Instance;
         SwitchScreen(0);
         SetPkmn();
 
@@ -179,6 +181,34 @@ public class UIManager : MonoBehaviour
             bg.color = MegaBGColorHandler.Instance.megaBGColor;
         }
     }
+
+    public void ChangePkmnHP(int val)
+    {
+        Pkmn.Instance.ChangeHP(val);
+    }
+
+    public void ChangePkmnPP(int val)
+    {
+        Pkmn.Instance.ChangePP(val);
+    }
+    public void ResetActionTokens()
+    {
+        Pkmn.Instance.ResetActionTokens();
+    }
+
+    public void UseAction()
+    {
+        Pkmn.Instance.UseAction();
+    }
+    public void UseBonusAction()
+    {
+        Pkmn.Instance.UseBonusAction();
+    }
+    public void UseReaction()
+    {
+        Pkmn.Instance.UseReaction();
+    }
+
     public void UpdateHp()
     {
         float hp = pkmn.stats.hp;

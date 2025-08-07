@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &446962644823096400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8496860904258523315}
+  - component: {fileID: 8746043469071609202}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8496860904258523315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446962644823096400}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.25285566, y: -0.035883456, z: 0.037027035}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8746043469071609202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446962644823096400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff4d36d7eaa94d4f8c68edbb4a9e627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typesVisuals:
+  - type: 0
+    color: {r: 0, g: 0, b: 0, a: 0}
+    image: {fileID: 0}
+    sprite: {fileID: 0}
+  - type: 1
+    color: {r: 0.45111114, g: 0.47911114, b: 0.504, a: 1}
+    image: {fileID: 4266797949390407673, guid: 6eda5a7b2d402de43b9d1215971a557f, type: 3}
+    sprite: {fileID: 21300000, guid: 04c18b667c4301b418183975402114e9, type: 3}
+  - type: 2
+    color: {r: 0.553, g: 0.17361626, b: 0.27971515, a: 1}
+    image: {fileID: 4266797949390407673, guid: efc00b577669474428bd1a0b87dec1f6, type: 3}
+    sprite: {fileID: 21300000, guid: 4b67fc69a0df5224aab2c9c978363688, type: 3}
+  - type: 12
+    color: {r: 0.32664704, g: 0.617, b: 0.29695186, a: 1}
+    image: {fileID: 4266797949390407673, guid: fe298bd9b0077524fb28bbb406941aea, type: 3}
+    sprite: {fileID: 21300000, guid: 10b1ed6ab9617644dba93f1db668ead3, type: 3}
+  - type: 4
+    color: {r: 0.561, g: 0.34980002, b: 0.66, a: 1}
+    image: {fileID: 4266797949390407673, guid: 5dcd36b710adb16488b0f78a1fb75681, type: 3}
+    sprite: {fileID: 21300000, guid: 6751b3c028aabe84ca0f1ed71d026495, type: 3}
+  - type: 7
+    color: {r: 0.51074994, g: 0.681, b: 0.15680918, a: 1}
+    image: {fileID: 4266797949390407673, guid: 3b7a1ed0fab46374a83bb01911df9d76, type: 3}
+    sprite: {fileID: 21300000, guid: b54f00dd5ba6cca488fb61894c502ffd, type: 3}
+  - type: 8
+    color: {r: 0.23178035, g: 0.2967919, b: 0.48900002, a: 1}
+    image: {fileID: 9097837350455286191, guid: 713ffb1b5c22eca4d9d595c2cfff05bb, type: 3}
+    sprite: {fileID: 21300000, guid: 01d26ddf9ebaeec47a97944b34d0deef, type: 3}
+  - type: 11
+    color: {r: 0.25289434, g: 0.4752671, b: 0.70199996, a: 1}
+    image: {fileID: 4266797949390407673, guid: 16b0ec98c4fabfb47a60c9c80528273e, type: 3}
+    sprite: {fileID: 2644403516392576170, guid: 0f4b772f0239e2f4fa447088cb873b4d, type: 3}
+  - type: 10
+    color: {r: 0.78699994, g: 0.48145878, b: 0.25924703, a: 1}
+    image: {fileID: 4266797949390407673, guid: 6716ea576e1219e47aaca0e43a2dc537, type: 3}
+    sprite: {fileID: 6184377522154665341, guid: ba9bdcf65f68014478f948a85daca6fa, type: 3}
+  - type: 17
+    color: {r: 0.27873787, g: 0.25705826, b: 0.319, a: 1}
+    image: {fileID: 4266797949390407673, guid: 92525158d127a494295b5727a116d23b, type: 3}
+    sprite: {fileID: -3248839746316346386, guid: edab3d3c253ad834d9648841125e9220, type: 3}
+  - type: 3
+    color: {r: 0.4563, g: 0.5392636, b: 0.70199996, a: 1}
+    image: {fileID: 4266797949390407673, guid: c1e10d9fd1b158049bda3146604bbd32, type: 3}
+    sprite: {fileID: 7822232092483689030, guid: 45829b05f68b7cb47b84fecafea27389, type: 3}
+  hpColors:
+  - {r: 0.29803923, g: 0.8313726, b: 0.2627451, a: 1}
+  - {r: 0.8301887, g: 0.81860274, b: 0.27020293, a: 1}
+  - {r: 0.83137256, g: 0.26274508, b: 0.4333104, a: 1}
+  fisicalMovSpr: {fileID: -1206619683086036421, guid: 46980700b4326d64890449fa00e7452c, type: 3}
+  specialMovSpr: {fileID: -4459811378706380081, guid: 6b9251431587c7640ace17a5d3956d7f, type: 3}
+  statusMovSpr: {fileID: -6623837990109686397, guid: 59df71c867aec2146a0dc14bc0c2dd92, type: 3}

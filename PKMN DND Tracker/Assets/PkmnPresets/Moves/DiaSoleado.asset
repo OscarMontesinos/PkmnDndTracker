@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
-  m_Name: GotaVital
+  m_Name: DiaSoleado
   m_EditorClassIdentifier: 
-  moveName: Gota vital
-  type: 11
+  moveName: "D\xEDa soleado"
+  type: 10
   moveClass: 2
   precision: '-'
-  useHitDice: 1
-  dmgDices: 1
+  useHitDice: 0
+  dmgDices: 0
   dmgDiceType: 0
   range: 0
-  area: 5
-  pps: 14
+  area: 0
+  pps: 10
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
   savingThrowType: '-'
   savingThrowMultiplier: 0
-  duration: '-'
-  description: Esparce a su alrededor gotas de agua curativa
+  duration: 15min
+  description: Sobreescribe el clima actual durante un tiampo a sol fuerte

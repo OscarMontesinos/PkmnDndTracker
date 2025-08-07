@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public Sprite statusMovSpr;
 
 
+
     private void Awake()
     {
         if (Instance)

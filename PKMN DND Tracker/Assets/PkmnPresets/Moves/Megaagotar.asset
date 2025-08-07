@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
-  m_Name: GotaVital
+  m_Name: Megaagotar
   m_EditorClassIdentifier: 
-  moveName: Gota vital
-  type: 11
-  moveClass: 2
-  precision: '-'
-  useHitDice: 1
-  dmgDices: 1
-  dmgDiceType: 0
-  range: 0
-  area: 5
-  pps: 14
+  moveName: Megaagotar
+  type: 12
+  moveClass: 1
+  precision: 1d20
+  useHitDice: 0
+  dmgDices: 2
+  dmgDiceType: 4
+  range: 6
+  area: 0
+  pps: 5
   isAction: 1
   isBonusAction: 0
   isReaction: 0
@@ -29,4 +29,5 @@ MonoBehaviour:
   savingThrowType: '-'
   savingThrowMultiplier: 0
   duration: '-'
-  description: Esparce a su alrededor gotas de agua curativa
+  description: "Absorbe la energ\xEDa del objetivo y se cura la mitad del da\xF1o
+    inflingido"

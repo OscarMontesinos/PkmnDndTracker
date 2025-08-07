@@ -451,7 +451,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.7
+  m_fontSize: 28.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1280,8 +1280,8 @@ GameObject:
   - component: {fileID: 1058635430022562076}
   - component: {fileID: 1885137450215623635}
   - component: {fileID: 7957396652444011880}
-  - component: {fileID: 1438540532619724134}
   - component: {fileID: 6943413627824952540}
+  - component: {fileID: 1438540532619724134}
   m_Layer: 0
   m_Name: MovShower
   m_TagString: Untagged
@@ -1356,33 +1356,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1438540532619724134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3315951925390602921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30fb1f382121c2143b4bb6dfd9c936e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movName: {fileID: 1048264651057154270}
-  precision: {fileID: 4481557712421575453}
-  dmg: {fileID: 806848401654188779}
-  range: {fileID: 8907697761161765172}
-  area: {fileID: 1451087098461960859}
-  salvationName: {fileID: 6067894492918375946}
-  salvationValue: {fileID: 5688806591132677573}
-  duration: {fileID: 7537509995728254578}
-  actionType: {fileID: 8657632798956119058}
-  ppCost: {fileID: 2141752508456663297}
-  description: {fileID: 3854090477065508095}
-  mainPanel: {fileID: 7957396652444011880}
-  titlePanel: {fileID: 7694695744400491203}
-  moveType: {fileID: 2870621377064577056}
-  moveClass: {fileID: 1778838483152612292}
 --- !u!114 &6943413627824952540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1439,6 +1412,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1438540532619724134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3315951925390602921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30fb1f382121c2143b4bb6dfd9c936e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movName: {fileID: 1048264651057154270}
+  precision: {fileID: 4481557712421575453}
+  dmg: {fileID: 806848401654188779}
+  range: {fileID: 8907697761161765172}
+  area: {fileID: 1451087098461960859}
+  salvationName: {fileID: 6067894492918375946}
+  salvationValue: {fileID: 5688806591132677573}
+  duration: {fileID: 7537509995728254578}
+  actionType: {fileID: 8657632798956119058}
+  ppCost: {fileID: 2141752508456663297}
+  description: {fileID: 3854090477065508095}
+  mainPanel: {fileID: 7957396652444011880}
+  titlePanel: {fileID: 7694695744400491203}
+  moveType: {fileID: 2870621377064577056}
+  moveClass: {fileID: 1778838483152612292}
 --- !u!1 &3559664858841094878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1893,7 +1893,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18.8
+  m_fontSize: 19.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

@@ -45,7 +45,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b341d43550c787b4e9a69dfc87777b9f, type: 2}
   - {fileID: 11400000, guid: 4a113ffdb12e68440a58f7ed1643fd5c, type: 2}
   - {fileID: 11400000, guid: 8f037c67ea83d6a4f9fc18c4d68c3f56, type: 2}
-  lvl2LearnableMoves: []
+  lvl2LearnableMoves:
+  - {fileID: 11400000, guid: 4b8538e5abbbf114ea70eb301c7c99a8, type: 2}
+  - {fileID: 11400000, guid: 6f9a4a17f98bf0042a2d4c4ba398892a, type: 2}
+  - {fileID: 11400000, guid: 8fb22c917216f08448e7f28e6a501bd4, type: 2}
+  - {fileID: 11400000, guid: c9517c2e3917e7d49898b5f0063b9897, type: 2}
+  - {fileID: 11400000, guid: 284b1dbfc1ef2c64494e839654525faa, type: 2}
+  - {fileID: 11400000, guid: c03d350a7a1765b41aa791327da3c6f8, type: 2}
   lvl3LearnableMoves: []
   megaEvo: {fileID: 0}
   megastoneSprite: {fileID: 0}

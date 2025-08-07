@@ -22,7 +22,7 @@ public class MovShower : MonoBehaviour
     public Image moveType;
     public Image moveClass;
 
-    public void SetMove(MoveSO move, Pkmn pkmn)
+    public virtual void SetMove(MoveSO move, Pkmn pkmn)
     {
         this.move = move;
 
@@ -115,9 +115,14 @@ public class MovShower : MonoBehaviour
 
     }
 
+
+
     public void Activate()
     {
-        UIManager.Instance.pkmn.ChangePP(-move.pps);
-        UIManager.Instance.SwitchScreen(0);
+        if (move.pps <= Pkmn.Instance.extraStats.pp)
+        {
+            Pkmn.Instance.ChangePP(-move.pps);
+            UIManager.Instance.SwitchScreen(0);
+        }
     }
 }

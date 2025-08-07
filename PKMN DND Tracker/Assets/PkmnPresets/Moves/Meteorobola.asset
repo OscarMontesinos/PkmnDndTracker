@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
-  m_Name: GotaVital
+  m_Name: Meteorobola
   m_EditorClassIdentifier: 
-  moveName: Gota vital
-  type: 11
-  moveClass: 2
-  precision: '-'
-  useHitDice: 1
-  dmgDices: 1
-  dmgDiceType: 0
-  range: 0
-  area: 5
-  pps: 14
+  moveName: Meteorobola
+  type: 1
+  moveClass: 1
+  precision: 1d20
+  useHitDice: 0
+  dmgDices: 2
+  dmgDiceType: 6
+  range: 8
+  area: 0
+  pps: 8
   isAction: 1
   isBonusAction: 0
   isReaction: 0
@@ -29,4 +29,6 @@ MonoBehaviour:
   savingThrowType: '-'
   savingThrowMultiplier: 0
   duration: '-'
-  description: Esparce a su alrededor gotas de agua curativa
+  description: "Canaliza el poder del clima actual para lanzar una bola de energ\xEDa
+    hacia un enemigo. Cambia el tipo seg\xFAn el clima y duplica sus dados de da\xF1o
+    si se activa este efecto"

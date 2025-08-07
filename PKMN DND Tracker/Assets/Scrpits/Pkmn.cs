@@ -3,11 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static GameManager;
+using static UnityEngine.GraphicsBuffer;
 using Type = GameManager.Type;
 
 public class Pkmn : MonoBehaviour
 {
+    public static Pkmn Instance;
+
     public PkmnSO basePkmn;
     public string pkmnName;
 
@@ -18,10 +22,6 @@ public class Pkmn : MonoBehaviour
     public Type type1;
     [HideInInspector]
     public Type type2;
-    [HideInInspector]
-    public int evoStage;
-    [HideInInspector]
-    public int evoStages;
     
     [Serializable]
     public struct BaseStats
@@ -93,6 +93,28 @@ public class Pkmn : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance)
+        {
+            Destroy(Instance.gameObject);
+        }
+        Instance = this;
+        DontDestroyOnLoad(Instance);
+    }
+
+    public void InitializePkmn(CreationHandler creation, string name)
+    {
+        basePkmn = creation.pkmn;
+        pkmnName = name;
+        lvl = creation.lvl;
+        dndStats = creation.dndStats;
+        lvl1Moves = creation.lvl1Moves;
+        lvl2Moves = creation.lvl2Moves;
+        lvl3Moves = creation.lvl3Moves;
+
+        SortMoves(lvl1Moves);
+        SortMoves(lvl2Moves);
+        SortMoves(lvl3Moves);
+
         SetPkmn();
 
         CalculateModifiers();
@@ -101,7 +123,51 @@ public class Pkmn : MonoBehaviour
         CalculateStatsModifiers();
     }
 
-    void SetPkmn()
+    public void InitializePkmn(CharacterData character, PkmnSO pkmn, string name)
+    {
+        basePkmn = pkmn;
+        pkmnName = name;
+        lvl = character.level;
+        dndStats = character.stats;
+        lvl1Moves = character.lvl1Moves;
+        lvl2Moves = character.lvl2Moves;
+        lvl3Moves = character.lvl3Moves;
+
+        SortMoves(lvl1Moves);
+        SortMoves(lvl2Moves);
+        SortMoves(lvl3Moves);
+
+        SetPkmn();
+
+        CalculateModifiers();
+        CalculateStats();
+        CalculateExtraStats();
+        CalculateStatsModifiers();
+    }
+
+    public void SortMoves(List<int> moves)
+    {
+        int i1 = 0;
+        int i2 = 0;
+
+        while(i1 <= moves.Count - 1)
+        {
+            while (i2 < moves.Count - 1)
+            {
+                if (moves[i2] > moves[i2 + 1])
+                {
+                    int save = moves[i2];
+                    moves[i2] = moves[i2+1];
+                    moves[i2+1] = save;
+                }
+                i2++;
+            }
+            i2 = 0;
+            i1++;
+        }
+    }
+
+    public virtual void SetPkmn()
     {
         pkmnSprite = basePkmn.pkmnSprite;
         baseStats = basePkmn.baseStats;
@@ -118,7 +184,7 @@ public class Pkmn : MonoBehaviour
         }
     }
 
-    void CalculateModifiers()
+    public void CalculateModifiers()
     {
         if (type1 == Type.Grass || (type2 == Type.Grass && lvl >= 10))
         {
@@ -132,7 +198,7 @@ public class Pkmn : MonoBehaviour
         dndMod.wis = (dndStats.wis - 10) / 2;
         dndMod.dex = (dndStats.dex - 10) / 2;
     }
-    void CalculateStats()
+    public void CalculateStats()
     {
         if(stats.mHp == 0)
         {
@@ -147,7 +213,7 @@ public class Pkmn : MonoBehaviour
         stats.mHp = (int)((baseStats.hp / 4) + ((baseStats.hp / 17.5f) * (lvl - 1)) + dndMod.con * 2);
         stats.hp = (int)(stats.mHp * hpPercentage) / 100;
         stats.atk = (baseStats.atk / 5) + ((baseStats.atk / 200) * (lvl - 1)) + dndMod.str;
-        stats.def = (baseStats.def / 5) + ((baseStats.def / 200) * (lvl - 1)) + dndMod.con;
+        stats.def = (int)(baseStats.def / 5.5f) + ((baseStats.def / 400) * (lvl - 1)) + dndMod.con;
         if(dndMod.intel > dndMod.cha)
         {
             stats.sAtk = (baseStats.sAtk / 5) + ((baseStats.sAtk / 200) * (lvl - 1)) + dndMod.intel;
@@ -156,16 +222,16 @@ public class Pkmn : MonoBehaviour
         {
             stats.sAtk = (baseStats.sAtk / 5) + ((baseStats.sAtk / 200) * (lvl - 1)) + dndMod.cha;
         }
-        stats.sDef = (baseStats.sDef / 5) + ((baseStats.sDef / 200) * (lvl - 1)) + dndMod.wis;
-        stats.spd = (baseStats.spd / 5) + ((baseStats.spd / 200) * (lvl - 1)) + dndMod.dex;
+        stats.sDef = (int)(baseStats.sDef / 5.5f) + ((baseStats.sDef / 400) * (lvl - 1)) + dndMod.wis;
+        stats.spd = (baseStats.spd / 5) + ((baseStats.spd / 200) * (lvl - 1)) + dndMod.dex; 
     }
-    void CalculateStatsModifiers()
+    public void CalculateStatsModifiers()
     {
         statsMod.atk = (stats.atk-10)/2;
         statsMod.sAtk = (stats.sAtk-10)/2;
         statsMod.spd = (stats.spd-10)/2;
     }
-    void CalculateExtraStats()
+    public void CalculateExtraStats()
     {
         extraStats.proficiencyBonus = 2 +(lvl / 4);
         extraStats.baseDC = 8 + extraStats.proficiencyBonus;
@@ -237,6 +303,7 @@ public class Pkmn : MonoBehaviour
             stats.hp = 0;
         }
         UIManager.Instance.UpdateHp();
+        CharacterManager.Instance.SafeInfo(this);
     }
 
     public void ChangePP(int val)
@@ -251,6 +318,7 @@ public class Pkmn : MonoBehaviour
             extraStats.pp = 0;
         }
         UIManager.Instance.UpdatePp();
+        CharacterManager.Instance.SafeInfo(this);
     }
 
     public void ResetActionTokens()
