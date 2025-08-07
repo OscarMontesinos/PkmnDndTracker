@@ -169,7 +169,7 @@ public class Pkmn : MonoBehaviour
     {
         extraStats.proficiencyBonus = 2 +(lvl / 4);
         extraStats.baseDC = 8 + extraStats.proficiencyBonus;
-        extraStats.pp = 50 + ((lvl - 1) * 5);
+        extraStats.pp = 45 + ((lvl - 1) * 4);
         extraStats.mPp = extraStats.pp;
         switch (lvl)
         {
