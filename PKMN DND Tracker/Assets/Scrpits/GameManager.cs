@@ -20,10 +20,15 @@ public class GameManager : MonoBehaviour
         public Type type;
         public Color color;
         public GameObject image;
+        public Sprite sprite;
     }
 
     public List<TypeVisuals> typesVisuals;
     public List<Color> hpColors = new List<Color>();
+
+    public Sprite fisicalMovSpr;
+    public Sprite specialMovSpr;
+    public Sprite statusMovSpr;
 
 
     private void Awake()

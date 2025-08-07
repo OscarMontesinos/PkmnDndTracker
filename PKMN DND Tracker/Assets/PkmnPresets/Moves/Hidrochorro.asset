@@ -10,21 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
-  m_Name: Move
+  m_Name: Hidrochorro
   m_EditorClassIdentifier: 
-  moveName: Picotazo Venenoso
-  type: 4
-  moveClass: 0
-  precision: 1d20
-  dmg: 2d4
+  moveName: Hidrochorro
+  type: 11
+  moveClass: 2
+  precision: '-'
+  useHitDice: 0
+  dmgDices: 0
+  dmgDiceType: 0
   range: 0
-  area: 0
-  pps: 0
-  isAction: 0
-  isBonusAction: 0
+  area: 10
+  pps: 14
+  isAction: 1
+  isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: 
-  savingThrowMultiplier: 
-  duration: 
-  description: 
+  savingThrowType: '-'
+  savingThrowMultiplier: 0
+  duration: 3 Rondas
+  description: Lanza un chorro de agua hacia al cielo que cae y otorga deventaja
+    a todas las tiradas de un ataque tipo fuego

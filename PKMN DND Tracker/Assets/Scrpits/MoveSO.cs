@@ -9,7 +9,9 @@ public class MoveSO : ScriptableObject
     public GameManager.Type type;
     public GameManager.MoveClass moveClass;
     public string precision;
-    public string dmg;
+    public bool useHitDice;
+    public int dmgDices;
+    public int dmgDiceType;
     public int range;
     public int area;
     public int pps;
@@ -18,7 +20,7 @@ public class MoveSO : ScriptableObject
     public bool isReaction;
     public bool hasPriority;
     public string savingThrowType;
-    public string savingThrowMultiplier;
+    public float savingThrowMultiplier;
     public string duration;
     public string description;
 }

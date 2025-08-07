@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    int currentScreen;
+    public List<GameObject> screens;
+
     public static UIManager Instance;
     public Pkmn pkmn;
     public Image bg;
@@ -19,7 +22,9 @@ public class UIManager : MonoBehaviour
     public Slider ppBar;
 
     public GameObject typeShower;
+    [HideInInspector]
     public GameObject type1Obj;
+    [HideInInspector]
     public GameObject type2Obj;
 
     [HideInInspector]
@@ -36,9 +41,40 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI dndProf1Text;
     public TextMeshProUGUI dndProf2Text;
 
+    public GameObject abilitiesDestination;
+    public GameObject abilitiesGO;
+
+    public GameObject movesDestination;
+    public GameObject moveGO;
+
     public GameObject actionGO;
     public GameObject bonusActionGO;
     public GameObject reactionGO;
+
+    public void SwipeScreen(int val)
+    {
+        currentScreen += val;
+        if(currentScreen > screens.Count - 1)
+        {
+            currentScreen = 0;
+        }
+        else if(currentScreen < 0)
+        {
+            currentScreen = screens.Count - 1;
+        }
+
+        foreach (GameObject screen in screens)
+        {
+            screen.SetActive(false);
+        }
+        screens[currentScreen].SetActive(true);
+    }
+    
+    public void SwitchScreen(int val)
+    {
+        currentScreen = val;
+        SwipeScreen(0);
+    }
 
     private void Awake()
     {
@@ -53,6 +89,7 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
+        SwitchScreen(0);
         SetPkmn();
 
     }
@@ -98,6 +135,34 @@ public class UIManager : MonoBehaviour
                 }
             }
         }
+
+        foreach (Pkmn.LearnableAbilities ability in pkmn.basePkmn.abilities)
+        {
+            if(pkmn.lvl >= ability.lvlRequired)
+            {
+                Instantiate(abilitiesGO, abilitiesDestination.transform).GetComponent<AbilityShower>().ActivateAbility(ability.ability);
+            }
+            else
+            {
+                Instantiate(abilitiesGO, abilitiesDestination.transform).GetComponent<AbilityShower>().LockAbility();
+            }
+        }
+
+        foreach (int move in pkmn.lvl1Moves)
+        {
+            Instantiate(moveGO, movesDestination.transform).GetComponent<MovShower>().SetMove(pkmn.basePkmn.lvl1LearnableMoves[move],pkmn);
+        }
+
+        foreach (int move in pkmn.lvl2Moves)
+        {
+            Instantiate(moveGO, movesDestination.transform).GetComponent<MovShower>().SetMove(pkmn.basePkmn.lvl2LearnableMoves[move],pkmn);
+        }
+
+        foreach (int move in pkmn.lvl3Moves)
+        {
+            Instantiate(moveGO, movesDestination.transform).GetComponent<MovShower>().SetMove(pkmn.basePkmn.lvl3LearnableMoves[move],pkmn);
+        }
+
         UpdateHp();
         UpdatePp();
         UpdateStats();
@@ -156,12 +221,26 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateDNDProf()
     {
-        dndProf1Text.text = pkmn.dndMod.dex + "\n" + pkmn.dndMod.wis + "\n" + pkmn.dndMod.intel + "+" + 
-            pkmn.dndMod.str + "\n" + pkmn.dndMod.cha + "\n" + pkmn.dndMod.intel + "\n" + pkmn.dndMod.wis + "\n" +
-            pkmn.dndMod.cha + "\n" + pkmn.dndMod.intel;
-        dndProf2Text.text = pkmn.dndMod.wis + "\n" + pkmn.dndMod.intel + "\n" + pkmn.dndMod.wis + "\n" + 
-            pkmn.dndMod.cha + "\n" + pkmn.dndMod.cha + "\n" + pkmn.dndMod.intel + "\n" + pkmn.dndMod.dex + "\n" +
-            pkmn.dndMod.dex + "\n" + pkmn.dndMod.wis;
+        dndProf1Text.text = pkmn.dndMod.dex + 
+            "\n" + pkmn.dndMod.wis +
+            "\n" + pkmn.dndMod.intel +
+            "\n" + pkmn.dndMod.str +
+            "\n" + pkmn.dndMod.cha +
+            "\n"+ pkmn.dndMod.cha +
+            "\n" + pkmn.dndMod.intel +
+            "\n" + pkmn.dndMod.wis +
+            "\n" + pkmn.dndMod.intel;
+
+        dndProf2Text.text = pkmn.dndMod.wis +
+            "\n"+ pkmn.dndMod.intel +
+            "\n" + pkmn.dndMod.wis +
+            "\n" + pkmn.dndMod.cha +
+            "\n" + pkmn.dndMod.cha +
+            "\n" + pkmn.dndMod.intel +
+            "\n" + pkmn.dndMod.dex +
+            "\n" + pkmn.dndMod.dex +
+            "\n" + pkmn.dndMod.wis;
+            
     }
 
     public void UpdateActionTokens()
@@ -197,6 +276,12 @@ public class UIManager : MonoBehaviour
                 break;
             case 2:
                 infoHeaderText.text = "CAPACIDADES";
+                break;
+            case 3:
+                infoHeaderText.text = "HABILIDADES";
+                break;
+            case 4:
+                infoHeaderText.text = "MOVIMIENTOS";
                 break;
         }
     }

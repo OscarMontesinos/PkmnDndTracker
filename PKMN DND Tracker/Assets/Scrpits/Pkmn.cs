@@ -60,6 +60,7 @@ public class Pkmn : MonoBehaviour
         public int lvl3MoveSlots;
         public bool isMega;
     }
+
     [HideInInspector]
     public BaseStats baseStats;
     public DndBaseStats dndStats;
@@ -71,6 +72,17 @@ public class Pkmn : MonoBehaviour
     public BaseStats stats;
     [HideInInspector]
     public BaseStats statsMod;
+
+    [Serializable]
+    public struct LearnableAbilities
+    {
+        public AbilitySO ability;
+        public int lvlRequired;
+    }
+
+    public List<int> lvl1Moves;
+    public List<int> lvl2Moves;
+    public List<int> lvl3Moves;
 
     [HideInInspector]
     public bool action = true;
@@ -87,7 +99,6 @@ public class Pkmn : MonoBehaviour
         CalculateStats();
         CalculateExtraStats();
         CalculateStatsModifiers();
-
     }
 
     void SetPkmn()
@@ -109,6 +120,11 @@ public class Pkmn : MonoBehaviour
 
     void CalculateModifiers()
     {
+        if (type1 == Type.Grass || (type2 == Type.Grass && lvl >= 10))
+        {
+            dndStats.wis += 2;
+        }
+
         dndMod.con = (dndStats.con - 10) / 2;
         dndMod.str = (dndStats.str - 10) / 2;
         dndMod.cha = (dndStats.cha - 10) / 2;
@@ -196,7 +212,7 @@ public class Pkmn : MonoBehaviour
                 extraStats.hitDice = 20;
                 break;
         }
-        if(type1 == Type.Fighting || type2 == Type.Fighting)
+        if(type1 == Type.Fighting || (type2 == Type.Fighting && lvl >= 10))
         {
             extraStats.hitDiceNumber = 1 + (lvl/4);
         }
