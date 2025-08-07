@@ -15,7 +15,10 @@ public class CharacterData
 
     public Pkmn.DndBaseStats stats;
 
-    public List<int> lvl1Moves;
-    public List<int> lvl2Moves;
-    public List<int> lvl3Moves;
+    public int lvl1MoveCount;
+    public List<int> lvl1Moves = new List<int>();
+    public int lvl2MoveCount;
+    public List<int> lvl2Moves = new List<int>();
+    public int lvl3MoveCount;
+    public List<int> lvl3Moves = new List<int>();
 }

@@ -31,7 +31,15 @@ public class PkmnShower : MonoBehaviour
 
     public void PlayWith()
     {
-        CharacterManager.Instance.PlayWithCharacter(nameText.text);
+        if (!CharacterManager.Instance.deleteMode)
+        {
+            CharacterManager.Instance.PlayWithCharacter(nameText.text);
+        }
+        else
+        {
+            CharacterManager.Instance.DeleteCharacter(nameText.text);
+            Destroy(gameObject);
+        }
     }
 
 

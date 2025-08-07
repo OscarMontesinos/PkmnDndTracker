@@ -143,6 +143,9 @@ public class Pkmn : MonoBehaviour
         CalculateStats();
         CalculateExtraStats();
         CalculateStatsModifiers();
+
+        stats.hp = character.currentHP;
+        extraStats.pp = character.currentPP;
     }
 
     public void SortMoves(List<int> moves)

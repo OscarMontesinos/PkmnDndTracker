@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 969866509}
   - component: {fileID: 969866508}
   m_Layer: 5
-  m_Name: ButtonSubtract
+  m_Name: NewCh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -655,10 +655,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CreationHandler, Assembly-CSharp
-        m_MethodName: SwipeScreen
-        m_Mode: 3
+      - m_Target: {fileID: 1444645283}
+        m_TargetAssemblyTypeName: CharacterManager, Assembly-CSharp
+        m_MethodName: NewCharacter
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1042,9 +1042,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: []
+  bg: {fileID: 1988158575}
   pkmnChooserContainer: {fileID: 1214562882}
   pkmnShower: {fileID: 5498418286803765185, guid: 5548ebedd82866148aa71da37af8ebfc, type: 3}
   pkmnGameObject: {fileID: 3375115134941965213, guid: 3e6edef4032131848af29107bade01fe, type: 3}
+  deleteMode: 0
 --- !u!4 &1444645284
 Transform:
   m_ObjectHideFlags: 0
@@ -1073,7 +1075,7 @@ GameObject:
   - component: {fileID: 1467715615}
   - component: {fileID: 1467715614}
   m_Layer: 5
-  m_Name: ButtonSubtract (1)
+  m_Name: DeleteCh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1143,10 +1145,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CreationHandler, Assembly-CSharp
-        m_MethodName: SwipeScreen
-        m_Mode: 3
+      - m_Target: {fileID: 1444645283}
+        m_TargetAssemblyTypeName: CharacterManager, Assembly-CSharp
+        m_MethodName: EnterOrExitDeleteMode
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

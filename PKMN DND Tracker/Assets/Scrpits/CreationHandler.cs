@@ -210,7 +210,7 @@ public class CreationHandler : MonoBehaviour
 
     public void CreatePkmn()
     {
-        if(nameField.text != "" && PlayerPrefs.HasKey(nameField.text + "ChName"))
+        if(nameField.text != "" && !PlayerPrefs.HasKey(nameField.text + "ChName"))
         {
             Pkmn pkmn = Instantiate(pkmnGameObject).GetComponent<Pkmn>();
             pkmn.InitializePkmn(this, nameField.text);
