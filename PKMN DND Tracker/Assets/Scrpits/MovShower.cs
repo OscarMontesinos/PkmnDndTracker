@@ -42,9 +42,17 @@ public class MovShower : MonoBehaviour
             float dices = move.dmgDices;
             if (move.type == pkmn.type1 || move.type == pkmn.type2)
             {
-                dices *= 1.5f;
+                float diceMult = 1.5f;
+                foreach(Pkmn.LearnableAbilities ability in pkmn.basePkmn.abilities)
+                {
+                    if(ability.ability.abName == "Adaptabilidad" && ability.lvlRequired <= pkmn.lvl)
+                    {
+                        diceMult = 2; break;
+                    }
+                }
+                dices *= diceMult;
             }
-            dmg.text = dices.ToString("F0") + "d" + move.dmgDiceType;
+            dmg.text = Mathf.Floor(dices).ToString("F0") + "d" + move.dmgDiceType;
         }
 
         range.text = move.range.ToString();

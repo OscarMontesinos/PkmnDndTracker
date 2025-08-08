@@ -23,5 +23,47 @@ MonoBehaviour:
     spd: 60
   type1: 2
   type2: 0
-  evoStage: 1
-  evoStages: 2
+  abilities:
+  - ability: {fileID: 11400000, guid: 75219be963c639746ad8ea710d2d9a0a, type: 2}
+    lvlRequired: 1
+    requireMega: 0
+  - ability: {fileID: 11400000, guid: 4e329a3aeaa00c846b5a91b4abb1af32, type: 2}
+    lvlRequired: 10
+    requireMega: 0
+  - ability: {fileID: 11400000, guid: 5a619ce8e25dea34cb9d7b4e64a81331, type: 2}
+    lvlRequired: 5
+    requireMega: 0
+  - ability: {fileID: 11400000, guid: fa57b9c0917bdee44b3527cdb3a83091, type: 2}
+    lvlRequired: 20
+    requireMega: 0
+  - ability: {fileID: 11400000, guid: 8a20dc6164cb5104a8af21596494ae1f, type: 2}
+    lvlRequired: 35
+    requireMega: 0
+  lvl1LearnableMoves:
+  - {fileID: 11400000, guid: 3b9a88be95ec4f7438e5a9ba00bac838, type: 2}
+  - {fileID: 11400000, guid: af4adc8f30fd88a46a61f03d17076d8b, type: 2}
+  - {fileID: 11400000, guid: aab8a6a47381ec24d9f633cfc785a030, type: 2}
+  - {fileID: 11400000, guid: 117e4edf217702e41aaf89cc4a3b2137, type: 2}
+  - {fileID: 11400000, guid: aec5f115d99d3ad4fbc1b380ad1aba26, type: 2}
+  - {fileID: 11400000, guid: ff9bb9d5416993440b72156078d6ed3d, type: 2}
+  - {fileID: 11400000, guid: a89d14f51f15bfb42a7e08eca4966b32, type: 2}
+  - {fileID: 11400000, guid: dc5336ca633cd614eae2d1ec4c117bd1, type: 2}
+  - {fileID: 11400000, guid: d192d8ef40409a14d9f65f102c954dd7, type: 2}
+  - {fileID: 11400000, guid: 20f05e8aad129e345b6fe7a3517b7494, type: 2}
+  - {fileID: 11400000, guid: 3049b2b164fe786468e02268af53b2f2, type: 2}
+  - {fileID: 11400000, guid: a8f70ed69da9f6849a2e0419123c4f61, type: 2}
+  lvl2LearnableMoves:
+  - {fileID: 11400000, guid: ae70c5f339739de46ab27b9c093b214c, type: 2}
+  - {fileID: 11400000, guid: 357b50a8e8b01f5498eee4934e3f1e06, type: 2}
+  - {fileID: 11400000, guid: 215780a2f62680348a221936930ed745, type: 2}
+  - {fileID: 11400000, guid: 52bde4fb0f0ec704f858ced051027053, type: 2}
+  - {fileID: 11400000, guid: 439c248a906efa546b46cec293e5bae2, type: 2}
+  - {fileID: 11400000, guid: 4238a0451d4b15144ab4b5e1aa4319db, type: 2}
+  - {fileID: 11400000, guid: 3d12c9f5b197ef84b8a223e56547322a, type: 2}
+  - {fileID: 11400000, guid: 61ef1e80957de8540accc6da316aadc7, type: 2}
+  - {fileID: 11400000, guid: 72cdf86d5ff839941a9c7497d2deb4b1, type: 2}
+  - {fileID: 11400000, guid: d9025e89b6eafd04ca09a346b642f905, type: 2}
+  lvl3LearnableMoves: []
+  megaEvo: {fileID: 0}
+  megastoneSprite: {fileID: 0}
+  isMega: 0

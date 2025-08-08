@@ -138,6 +138,20 @@ public class UIManager : MonoBehaviour
             }
         }
 
+        int i = 0;
+        while(i < abilitiesDestination.transform.childCount)
+        {
+           Destroy(abilitiesDestination.transform.GetChild(i).gameObject);
+            i++;
+        }
+
+        i = 1;
+        while(i < movesDestination.transform.childCount)
+        {
+           Destroy(movesDestination.transform.GetChild(i).gameObject);
+            i++;
+        }
+
         foreach (Pkmn.LearnableAbilities ability in pkmn.basePkmn.abilities)
         {
             if(pkmn.lvl >= ability.lvlRequired)
@@ -314,5 +328,21 @@ public class UIManager : MonoBehaviour
                 infoHeaderText.text = "MOVIMIENTOS";
                 break;
         }
+    }
+    public void MegaEvolve()
+    {
+        pkmn.MegaEvolve();
+    }
+
+    public void Heal(float value)
+    {
+        pkmn.ChangeHP((int)(pkmn.stats.mHp * value));
+        pkmn.ChangePP((int)(pkmn.extraStats.mPp * value));
+        SwitchScreen(0);
+    }
+
+    public void ReturnHub()
+    {
+        SceneManager.LoadScene("Hub");
     }
 }

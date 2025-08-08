@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
+  m_Name: Refuerzo
+  m_EditorClassIdentifier: 
+  moveName: Refuerzo
+  type: 1
+  moveClass: 2
+  precision: '-'
+  useHitDice: 0
+  dmgDices: 0
+  dmgDiceType: 0
+  range: 5
+  area: 0
+  pps: 10
+  isAction: 1
+  isBonusAction: 1
+  isReaction: 1
+  hasPriority: 0
+  savingThrowType: '-'
+  savingThrowMultiplier: 0
+  duration: '-'
+  description: "Ayuda a un aliado a atacar, puede sumar un dado extra a cualquier
+    componente del ataque as\xED como dar ventaja en la tirada"

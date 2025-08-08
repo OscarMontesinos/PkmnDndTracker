@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e710ac1b090c4e5499cbc40b13970285, type: 3}
   m_Name: PuntoToxico
   m_EditorClassIdentifier: 
-  abName: "Punto t\xF3xico"
-  description: "Al tocar al usuario se debe pasar una salvaci\xF3n de destreza o
-    constituci\xF3n, si no se pasa recibe un dado de golpe del usuario como da\xF1o
-    de veneno"
+  abName: "Toque t\xF3xico"
+  description: "Al atacar con un ataque de contacto inflige tu dado de golpe como
+    da\xF1o de veneno"

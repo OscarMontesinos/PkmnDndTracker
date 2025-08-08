@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Xml.Linq;
 using UnityEditor;
-using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -30,7 +29,9 @@ public class CharacterManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
+    }
+    private void Start()
+    {
         int loadIndex = 0;
         while (PlayerPrefs.HasKey("CharactersSaved" + loadIndex))
         {
@@ -315,5 +316,6 @@ public class CharacterManager : MonoBehaviour
     public void ResetPlayerPrefs()
     {
         PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("SceneCreatePokmn");
     }
 }

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
+  m_Name: Tinieblas
+  m_EditorClassIdentifier: 
+  moveName: Tinieblas
+  type: 8
+  moveClass: 1
+  precision: '-'
+  useHitDice: 1
+  dmgDices: 3
+  dmgDiceType: 0
+  range: 6
+  area: 0
+  pps: 6
+  isAction: 1
+  isBonusAction: 0
+  isReaction: 0
+  hasPriority: 0
+  savingThrowType: WIS
+  savingThrowMultiplier: 1
+  duration: C
+  description: "Hace ver ilusiones tenebrosas a un objetivo y le inflige da\xF1o."

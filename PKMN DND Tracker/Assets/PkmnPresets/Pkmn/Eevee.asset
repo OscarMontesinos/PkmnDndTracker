@@ -23,5 +23,39 @@ MonoBehaviour:
     spd: 55
   type1: 1
   type2: 0
-  evoStage: 1
-  evoStages: 2
+  abilities:
+  - ability: {fileID: 11400000, guid: 0f7d2c8e6197baa42805a9721a6025c6, type: 2}
+    lvlRequired: 1
+  - ability: {fileID: 11400000, guid: 553a278f2f202ed49a70bcdb6386f368, type: 2}
+    lvlRequired: 10
+  - ability: {fileID: 11400000, guid: 47cbef5307676614783097fe54f6f517, type: 2}
+    lvlRequired: 5
+  - ability: {fileID: 11400000, guid: f7322d64bdb742845810bab0c0d63227, type: 2}
+    lvlRequired: 20
+  - ability: {fileID: 11400000, guid: 49638b1ed2f113b428718bb6d9361667, type: 2}
+    lvlRequired: 35
+  lvl1LearnableMoves:
+  - {fileID: 11400000, guid: d15d25fd5b3690d4ea2534eba3e7b123, type: 2}
+  - {fileID: 11400000, guid: e71153544c1ccbf469ba95be255bb0fe, type: 2}
+  - {fileID: 11400000, guid: 70997550d3f365b45a598530f83b1a13, type: 2}
+  - {fileID: 11400000, guid: c9517c2e3917e7d49898b5f0063b9897, type: 2}
+  - {fileID: 11400000, guid: 912cf1eb900b8bf48804c577ce4b7f3a, type: 2}
+  - {fileID: 11400000, guid: 1dbbc8df0b54fa84ebbbf34681c590c8, type: 2}
+  - {fileID: 11400000, guid: e8a85cb8d7970524aad5f0e43b26d46a, type: 2}
+  - {fileID: 11400000, guid: 879df41d37114da4e88535539bf2e8a9, type: 2}
+  - {fileID: 11400000, guid: d192d8ef40409a14d9f65f102c954dd7, type: 2}
+  - {fileID: 11400000, guid: a688c64f600cffe4c8e89f693f6ba797, type: 2}
+  lvl2LearnableMoves:
+  - {fileID: 11400000, guid: 675db5a9a90fd054dbf241ec1c13df29, type: 2}
+  - {fileID: 11400000, guid: 5828402d20d67234e8543f176799fdeb, type: 2}
+  - {fileID: 11400000, guid: 52bde4fb0f0ec704f858ced051027053, type: 2}
+  - {fileID: 11400000, guid: 56d2f6dbc0a9d28469dbbf1f87598f34, type: 2}
+  - {fileID: 11400000, guid: 381c2933e05fb9c4c88dd4408d4fa1f9, type: 2}
+  - {fileID: 11400000, guid: e4a494ed68ebc594683cc618933cb19f, type: 2}
+  - {fileID: 11400000, guid: d5cf4915ae706e741a992ffbde7c0257, type: 2}
+  - {fileID: 11400000, guid: 72cdf86d5ff839941a9c7497d2deb4b1, type: 2}
+  - {fileID: 11400000, guid: 284b1dbfc1ef2c64494e839654525faa, type: 2}
+  lvl3LearnableMoves: []
+  megaEvo: {fileID: 0}
+  megastoneSprite: {fileID: 0}
+  isMega: 0

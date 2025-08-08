@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
+  m_Name: Robo
+  m_EditorClassIdentifier: 
+  moveName: Robo
+  type: 17
+  moveClass: 2
+  precision: '-'
+  useHitDice: 0
+  dmgDices: 0
+  dmgDiceType: 0
+  range: 8
+  area: 0
+  pps: 16
+  isAction: 0
+  isBonusAction: 0
+  isReaction: 1
+  hasPriority: 0
+  savingThrowType: WIS
+  savingThrowMultiplier: 1
+  duration: '-'
+  description: "Reacciona a un ataque de estado para robar la bonificaci\xF3n y quedarsela
+    para s\xED"

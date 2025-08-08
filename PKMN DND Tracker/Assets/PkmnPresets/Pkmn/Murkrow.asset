@@ -23,9 +23,37 @@ MonoBehaviour:
     spd: 91
   type1: 17
   type2: 3
-  abilities: []
-  lvl1LearnableMoves: []
-  lvl2LearnableMoves: []
+  abilities:
+  - ability: {fileID: 11400000, guid: 33b40a7238acc3f46a407fe46da7e0ef, type: 2}
+    lvlRequired: 1
+  - ability: {fileID: 11400000, guid: 3bfc291b79aa3294f86a227ba93a0eb8, type: 2}
+    lvlRequired: 10
+  - ability: {fileID: 11400000, guid: 1fa2c55b3cfee1b44a6619a337ce133b, type: 2}
+    lvlRequired: 5
+  - ability: {fileID: 11400000, guid: 375c4ffa994791446a52dfe3fab082e2, type: 2}
+    lvlRequired: 20
+  - ability: {fileID: 11400000, guid: a65dee9633514d548ba0d85fab44123f, type: 2}
+    lvlRequired: 35
+  lvl1LearnableMoves:
+  - {fileID: 11400000, guid: 996e411d0cbad7a44a014fd3d73b914d, type: 2}
+  - {fileID: 11400000, guid: a629effbb829816478fa667da4f6b2bf, type: 2}
+  - {fileID: 11400000, guid: 4f5023a9c2541b44891fe022f8f0a846, type: 2}
+  - {fileID: 11400000, guid: c6fd90e1856b4dc4891e90cc4d6c22b6, type: 2}
+  - {fileID: 11400000, guid: e26a2cfe87d68c145a5fbd695b200581, type: 2}
+  - {fileID: 11400000, guid: 15f838697be4b344eb46b3482b4093eb, type: 2}
+  - {fileID: 11400000, guid: 89391d4d0fd841044b5204c458cc3782, type: 2}
+  - {fileID: 11400000, guid: 95357955056f50b4a94850a29ed4d486, type: 2}
+  - {fileID: 11400000, guid: b19eb39b71f7e6940b3ecd370dbdadf5, type: 2}
+  lvl2LearnableMoves:
+  - {fileID: 11400000, guid: cc2d4662fa40d4641955bce0a1b751dd, type: 2}
+  - {fileID: 11400000, guid: 3d12c9f5b197ef84b8a223e56547322a, type: 2}
+  - {fileID: 11400000, guid: 7c74cdce5cc1b404087d414553f83aef, type: 2}
+  - {fileID: 11400000, guid: b046d8a8f0f8b71428e6fb1c9a36aa5e, type: 2}
+  - {fileID: 11400000, guid: c4ebadbd42d29394196e3cc58b7dc563, type: 2}
+  - {fileID: 11400000, guid: 634bdb503f4a5824c9c535d4e7a18e77, type: 2}
+  - {fileID: 11400000, guid: 24cec589d365a2d4e95bfbc0b10cb0ce, type: 2}
+  - {fileID: 11400000, guid: 3d60219083914bf4e9692a9e8eb6a95e, type: 2}
+  - {fileID: 11400000, guid: 52403516f9785b946a3c7dbdd6f86097, type: 2}
   lvl3LearnableMoves: []
   megaEvo: {fileID: 0}
   megastoneSprite: {fileID: 0}

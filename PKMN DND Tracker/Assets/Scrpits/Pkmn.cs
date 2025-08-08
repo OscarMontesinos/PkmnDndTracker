@@ -60,6 +60,28 @@ public class Pkmn : MonoBehaviour
         public int lvl3MoveSlots;
         public bool isMega;
     }
+    [Serializable]
+    public struct Proficiencies
+    {
+        bool acrobatics;
+        bool animalHandling;
+        bool arcana;
+        bool athletics;
+        bool deception;
+        bool history;
+        bool insight;
+        bool intimidation;
+        bool investigation;
+        bool medicine;
+        bool nature;
+        bool perception;
+        bool performance;
+        bool persuasion;
+        bool religion;
+        bool sleightOfHand;
+        bool stealth;
+        bool survival;
+    }
 
     [HideInInspector]
     public BaseStats baseStats;
@@ -291,7 +313,7 @@ public class Pkmn : MonoBehaviour
         }
         extraStats.lvl1MoveSlots = lvl/2;
         extraStats.lvl2MoveSlots = lvl/6;
-        extraStats.lvl3MoveSlots = lvl/40;
+        extraStats.lvl3MoveSlots = lvl/15;
     }
 
     public void ChangeHP(int val)

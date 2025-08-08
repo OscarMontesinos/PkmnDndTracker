@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cea2b651d9189d4d85f43fba7ab48e7, type: 3}
+  m_Name: Combee
+  m_EditorClassIdentifier: 
+  pkmnSprite: {fileID: 916136100352261367, guid: 7de7f4e79c8d6e0418f76a061505d831, type: 3}
+  baseStats:
+    mHp: 0
+    hp: 30
+    atk: 30
+    def: 42
+    sAtk: 30
+    sDef: 42
+    spd: 70
+  type1: 7
+  type2: 3
+  abilities:
+  - ability: {fileID: 11400000, guid: d33b68c4d33841a44af5cae242d967ae, type: 2}
+    lvlRequired: 1
+  - ability: {fileID: 11400000, guid: 3bfc291b79aa3294f86a227ba93a0eb8, type: 2}
+    lvlRequired: 10
+  lvl1LearnableMoves:
+  - {fileID: 11400000, guid: f1ae70e70f936324ca15e52ea7a64df5, type: 2}
+  - {fileID: 11400000, guid: 4b87d3482575760418b30d0210c4df64, type: 2}
+  - {fileID: 11400000, guid: 4f5023a9c2541b44891fe022f8f0a846, type: 2}
+  lvl2LearnableMoves:
+  - {fileID: 11400000, guid: 675db5a9a90fd054dbf241ec1c13df29, type: 2}
+  lvl3LearnableMoves: []
+  megaEvo: {fileID: 0}
+  megastoneSprite: {fileID: 0}
+  isMega: 0

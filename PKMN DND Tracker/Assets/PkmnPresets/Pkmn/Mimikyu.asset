@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cea2b651d9189d4d85f43fba7ab48e7, type: 3}
+  m_Name: Mimikyu
+  m_EditorClassIdentifier: 
+  pkmnSprite: {fileID: -3280004518088354495, guid: 916f005cd73b74846b59b85ae1b1d9e2, type: 3}
+  baseStats:
+    mHp: 0
+    hp: 55
+    atk: 90
+    def: 80
+    sAtk: 50
+    sDef: 105
+    spd: 96
+  type1: 8
+  type2: 18
+  abilities:
+  - ability: {fileID: 11400000, guid: 0762d7f6d8e1f7b4b89b3d046d3808aa, type: 2}
+    lvlRequired: 1
+  - ability: {fileID: 11400000, guid: b0e5f012ce643a540a462f1db8035f04, type: 2}
+    lvlRequired: 10
+  - ability: {fileID: 11400000, guid: 4613d94dcff7ae744a032dd6ddef6528, type: 2}
+    lvlRequired: 5
+  lvl1LearnableMoves:
+  - {fileID: 11400000, guid: 996e411d0cbad7a44a014fd3d73b914d, type: 2}
+  - {fileID: 11400000, guid: aadc5d8bf2914f14cb7fb5c4bfbe5499, type: 2}
+  - {fileID: 11400000, guid: 10e14589c256aa142b31fea1fac1b870, type: 2}
+  - {fileID: 11400000, guid: 2921fbf8682a31d4d992894db5855d88, type: 2}
+  - {fileID: 11400000, guid: c4ebadbd42d29394196e3cc58b7dc563, type: 2}
+  - {fileID: 11400000, guid: e8a85cb8d7970524aad5f0e43b26d46a, type: 2}
+  lvl2LearnableMoves:
+  - {fileID: 11400000, guid: 95357955056f50b4a94850a29ed4d486, type: 2}
+  - {fileID: 11400000, guid: 3643baeb8b409d04d846b044e3c65690, type: 2}
+  lvl3LearnableMoves: []
+  megaEvo: {fileID: 0}
+  megastoneSprite: {fileID: 0}
+  isMega: 0

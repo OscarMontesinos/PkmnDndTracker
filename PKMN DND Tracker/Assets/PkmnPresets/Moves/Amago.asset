@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
+  m_Name: Amago
+  m_EditorClassIdentifier: 
+  moveName: Amago
+  type: 1
+  moveClass: 0
+  precision: 1d20
+  useHitDice: 0
+  dmgDices: 1
+  dmgDiceType: 4
+  range: 1
+  area: 0
+  pps: 10
+  isAction: 1
+  isBonusAction: 1
+  isReaction: 0
+  hasPriority: 0
+  savingThrowType: '-'
+  savingThrowMultiplier: 0
+  duration: '-'
+  description: "Ataca al objetivo enga\xF1andole con una finta. Rompe cualquier efecto
+    que proteja al objetivo y le imp\xECde usar reacciones durante la ronda"
