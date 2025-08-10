@@ -124,6 +124,21 @@ public class CharacterManager : MonoBehaviour
                 data.lvl3Moves.Add(PlayerPrefs.GetInt(data.chName + "lvl3Move" + i));
                 i++;
             }
+
+            if (PlayerPrefs.HasKey(data.chName + "item" + "Count"))
+            {
+                data.itemCount = PlayerPrefs.GetInt(data.chName + "item" + "Count");
+                if (PlayerPrefs.HasKey(data.chName + "item" + (data.itemCount - 1) + "name"))
+                    {
+                    i = 0;
+                    while (i < data.itemCount)
+                    {
+                        data.itemsName.Add(PlayerPrefs.GetString(data.chName + "item" + i + "name"));
+                        data.itemsQuantity.Add(PlayerPrefs.GetInt(data.chName + "item" + i + "quantity"));
+                        i++;
+                    }
+                }
+            }
         }
 
         CreateCharacterShowers();
@@ -185,6 +200,21 @@ public class CharacterManager : MonoBehaviour
                     data.lvl3Moves.Add(PlayerPrefs.GetInt(chName + "lvl3Move" + i));
                     i++;
                 }
+
+                if (PlayerPrefs.HasKey(data.chName + "item" + "Count"))
+                {
+                    data.itemCount = PlayerPrefs.GetInt(chName + "item" + "Count");
+                    if (PlayerPrefs.HasKey(data.chName + "item" + (data.itemCount - 1) + "name"))
+                    {
+                        i = 0;
+                        while (i < data.itemCount)
+                        {
+                            data.itemsName.Add(PlayerPrefs.GetString(data.chName + "item" + i + "name"));
+                            data.itemsQuantity.Add(PlayerPrefs.GetInt(data.chName + "item" + i + "quantity"));
+                            i++;
+                        }
+                    }
+                }
             }
         }
     }
@@ -231,6 +261,16 @@ public class CharacterManager : MonoBehaviour
         foreach (int move in pkmn.lvl3Moves)
         {
             PlayerPrefs.SetInt(pkmn.pkmnName + "lvl3Move" + pkmn.lvl3Moves.IndexOf(move), move);
+        }
+
+
+        PlayerPrefs.SetInt(pkmn.pkmnName + "item" + "Count", pkmn.inventory.Count);
+        int i = 0;
+        while (i < pkmn.inventory.Count)
+        {
+            PlayerPrefs.SetString(pkmn.pkmnName + "item" + i + "name", pkmn.inventory[i].itemName);
+            PlayerPrefs.SetInt(pkmn.pkmnName + "item" + i + "quantity", pkmn.inventory[i].quantity);
+            i++;
         }
 
         UploadInfo();
@@ -292,8 +332,31 @@ public class CharacterManager : MonoBehaviour
         PlayerPrefs.DeleteKey(chName + "lvl1MoveCount");
         PlayerPrefs.DeleteKey(chName + "lvl2MoveCount");
         PlayerPrefs.DeleteKey(chName + "lvl3MoveCount");
+
+
+        DeleteInventory(chName);
+        
+
+
     }
 
+    public void DeleteItem(string chName, int index)
+    {
+        PlayerPrefs.SetInt(chName + "item" + "Count", PlayerPrefs.GetInt(chName + "item" + "Count")-1);
+        PlayerPrefs.DeleteKey(chName + "item" + index + "name");
+            PlayerPrefs.DeleteKey(chName + "item" + index + "quantity");
+    }
+
+    public void DeleteInventory(string chName)
+    {
+        int i = 0;
+        while (i < PlayerPrefs.GetInt(chName + "item" + "Count"))
+        {
+            PlayerPrefs.DeleteKey(chName + "item" + i + "name");
+            PlayerPrefs.DeleteKey(chName + "item" + i + "quantity");
+            i++;
+        }
+    }
     public void PlayWithCharacter(string chName)
     {
         Pkmn pkmn = Instantiate(pkmnGameObject).GetComponent<Pkmn>();

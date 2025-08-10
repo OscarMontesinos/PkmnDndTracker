@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Timeline;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -37,6 +39,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI statsModText;
 
     public TextMeshProUGUI dndText;
+    public TextMeshProUGUI dndModsText;
     public TextMeshProUGUI dndOtherText;
 
     public TextMeshProUGUI dndProf1Text;
@@ -47,6 +50,16 @@ public class UIManager : MonoBehaviour
 
     public GameObject movesDestination;
     public GameObject moveGO;
+
+    public GameObject itemsDestination;
+    public GameObject itemGO;
+    public GameObject itemCreatorGO;
+    [HideInInspector]
+    public int itemsMode = 1;
+    public GameObject itemMenu;
+    public GameObject itemCreatorMenu;
+    public TMP_InputField itemNameField;
+    public TMP_InputField itemQuantityField;
 
     public GameObject actionGO;
     public GameObject bonusActionGO;
@@ -63,6 +76,8 @@ public class UIManager : MonoBehaviour
         {
             currentScreen = screens.Count - 1;
         }
+
+        ShowInventory(true);
 
         foreach (GameObject screen in screens)
         {
@@ -90,14 +105,21 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
-        pkmn = Pkmn.Instance;
-        SwitchScreen(0);
-        SetPkmn();
-
+        if (Pkmn.Instance)
+        {
+            pkmn = Pkmn.Instance;
+            SwitchScreen(0);
+            SetPkmn();
+        }
+        else
+        {
+            SceneManager.LoadScene("Hub");
+        }
     }
 
     public void SetPkmn()
     {
+
         nameText.text = pkmn.pkmnName;
         lvlText.text = pkmn.lvl.ToString();
         pkmnPortrait.sprite = pkmn.pkmnSprite;
@@ -116,8 +138,8 @@ public class UIManager : MonoBehaviour
         }
         if (type2Obj)
         {
-            Destroy (type2Obj);
-        } 
+            Destroy(type2Obj);
+        }
 
         foreach (GameManager.TypeVisuals visual in GameManager.Instance.typesVisuals)
         {
@@ -139,22 +161,22 @@ public class UIManager : MonoBehaviour
         }
 
         int i = 0;
-        while(i < abilitiesDestination.transform.childCount)
+        while (i < abilitiesDestination.transform.childCount)
         {
-           Destroy(abilitiesDestination.transform.GetChild(i).gameObject);
+            Destroy(abilitiesDestination.transform.GetChild(i).gameObject);
             i++;
         }
 
-        i = 1;
-        while(i < movesDestination.transform.childCount)
+        i = 0;
+        while (i < movesDestination.transform.childCount)
         {
-           Destroy(movesDestination.transform.GetChild(i).gameObject);
+            Destroy(movesDestination.transform.GetChild(i).gameObject);
             i++;
         }
 
         foreach (Pkmn.LearnableAbilities ability in pkmn.basePkmn.abilities)
         {
-            if(pkmn.lvl >= ability.lvlRequired)
+            if (pkmn.lvl >= ability.lvlRequired)
             {
                 Instantiate(abilitiesGO, abilitiesDestination.transform).GetComponent<AbilityShower>().ActivateAbility(ability.ability);
             }
@@ -166,17 +188,22 @@ public class UIManager : MonoBehaviour
 
         foreach (int move in pkmn.lvl1Moves)
         {
-            Instantiate(moveGO, movesDestination.transform).GetComponent<MovShower>().SetMove(pkmn.basePkmn.lvl1LearnableMoves[move],pkmn);
+            Instantiate(moveGO, movesDestination.transform).GetComponent<MovShower>().SetMove(pkmn.basePkmn.lvl1LearnableMoves[move], pkmn);
         }
 
         foreach (int move in pkmn.lvl2Moves)
         {
-            Instantiate(moveGO, movesDestination.transform).GetComponent<MovShower>().SetMove(pkmn.basePkmn.lvl2LearnableMoves[move],pkmn);
+            Instantiate(moveGO, movesDestination.transform).GetComponent<MovShower>().SetMove(pkmn.basePkmn.lvl2LearnableMoves[move], pkmn);
         }
 
         foreach (int move in pkmn.lvl3Moves)
         {
-            Instantiate(moveGO, movesDestination.transform).GetComponent<MovShower>().SetMove(pkmn.basePkmn.lvl3LearnableMoves[move],pkmn);
+            Instantiate(moveGO, movesDestination.transform).GetComponent<MovShower>().SetMove(pkmn.basePkmn.lvl3LearnableMoves[move], pkmn);
+        }
+
+        foreach (Pkmn.Item item in pkmn.inventory)
+        {
+            CreateItemShower(item);
         }
 
         UpdateHp();
@@ -261,6 +288,8 @@ public class UIManager : MonoBehaviour
     {
         dndText.text = pkmn.dndStats.con + "\n" + pkmn.dndStats.str + "\n" + pkmn.dndStats.cha + "\n" + pkmn.dndStats.intel + "\n" + pkmn.dndStats.wis + "\n" +
             pkmn.dndStats.dex;
+        dndModsText.text = "+" + pkmn.dndMod.con + "\n" + "+" + pkmn.dndMod.str + "\n" + "+" + pkmn.dndMod.cha + "\n" + "+" + pkmn.dndMod.intel + "\n" + "+" +
+            pkmn.dndMod.wis + "\n" + "+" + pkmn.dndMod.dex;
         dndOtherText.text = pkmn.extraStats.proficiencyBonus + "\n" + pkmn.extraStats.baseDC + "\n" + pkmn.extraStats.hitDiceNumber + "d" + pkmn.extraStats.hitDice;
     }
     public void UpdateDNDProf()
@@ -339,6 +368,60 @@ public class UIManager : MonoBehaviour
         pkmn.ChangeHP((int)(pkmn.stats.mHp * value));
         pkmn.ChangePP((int)(pkmn.extraStats.mPp * value));
         SwitchScreen(0);
+    }
+
+    public void ChangeItemMode(int val)
+    {
+        itemsMode = val;
+    }
+
+    public void ShowInventory(bool val)
+    {
+        itemMenu.SetActive(val);
+        itemCreatorMenu.SetActive(!val);
+    }
+
+    public void AddItem()
+    {
+
+        if (itemQuantityField.text != "" && itemNameField.text != "")
+        {
+
+            bool repeted = false;
+            foreach (Pkmn.Item pkmnItem in pkmn.inventory)
+            {
+                if(pkmnItem.itemName == itemNameField.text)
+                {
+                    repeted = true;
+                    break;
+                }
+            }
+
+            if (!repeted)
+            {
+                Pkmn.Item item = new Pkmn.Item();
+                item.itemName = itemNameField.text;
+                item.quantity = int.Parse(itemQuantityField.text);
+                pkmn.inventory.Add(item);
+                CreateItemShower(item.itemName, item.quantity);
+                CharacterManager.Instance.SafeInfo(pkmn);
+            }
+        }
+    }
+
+    public void CreateItemShower(Pkmn.Item item)
+    {
+        CreateItemShower(item.itemName, item.quantity);
+    }
+
+    public void CreateItemShower(string name, int quantity)
+    {
+        ShowInventory(true);
+        Destroy(itemsDestination.transform.GetChild(itemsDestination.transform.childCount - 1).gameObject);
+        Instantiate(itemGO, itemsDestination.transform).GetComponent<ItemShower>().SetUpValues(name, quantity, itemsDestination.transform.childCount);
+        Instantiate(itemCreatorGO, itemsDestination.transform);
+        itemNameField.text = "";
+        itemQuantityField.text = "";
     }
 
     public void ReturnHub()

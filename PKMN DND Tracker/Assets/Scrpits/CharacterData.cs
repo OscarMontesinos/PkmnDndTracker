@@ -21,4 +21,9 @@ public class CharacterData
     public List<int> lvl2Moves = new List<int>();
     public int lvl3MoveCount;
     public List<int> lvl3Moves = new List<int>();
+
+
+    public int itemCount;
+    public List<string> itemsName = new List<string>();
+    public List<int> itemsQuantity = new List<int>();
 }

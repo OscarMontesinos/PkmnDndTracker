@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: GolpeAereo
   m_EditorClassIdentifier: 
-  moveName: Picotazo
+  moveName: "Golpe a\xE9reo"
   type: 3
   moveClass: 0
   precision: '-'

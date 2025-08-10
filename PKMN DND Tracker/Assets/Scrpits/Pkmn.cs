@@ -106,6 +106,14 @@ public class Pkmn : MonoBehaviour
     public List<int> lvl2Moves;
     public List<int> lvl3Moves;
 
+    [Serializable]
+    public struct Item
+    {
+        public string itemName;
+        public int quantity;
+    }
+    public List<Item> inventory;
+
     [HideInInspector]
     public bool action = true;
     [HideInInspector]
@@ -158,6 +166,17 @@ public class Pkmn : MonoBehaviour
         SortMoves(lvl1Moves);
         SortMoves(lvl2Moves);
         SortMoves(lvl3Moves);
+
+        int i = 0;
+        while(i < character.itemsName.Count)
+        {
+            Item item = new Item();
+            item.itemName = character.itemsName[i];
+            item.quantity = character.itemsQuantity[i];
+
+            inventory.Add(item);
+            i++;
+        }
 
         SetPkmn();
 
