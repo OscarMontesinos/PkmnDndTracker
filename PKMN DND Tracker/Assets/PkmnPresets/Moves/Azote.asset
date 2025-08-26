@@ -21,7 +21,7 @@ MonoBehaviour:
   dmgDiceType: 4
   range: 1
   area: 0
-  pps: 10
+  pps: 16
   isAction: 1
   isBonusAction: 0
   isReaction: 0

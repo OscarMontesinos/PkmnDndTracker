@@ -90,6 +90,7 @@ public class CharacterManager : MonoBehaviour
             data.level =  PlayerPrefs.GetInt(data.chName + "Level");
 
             data.currentHP = PlayerPrefs.GetInt(data.chName + "HP");
+            data.currentXP = PlayerPrefs.GetInt(data.chName + "XP");
             data.currentPP = PlayerPrefs.GetInt(data.chName + "PP");
 
 
@@ -166,6 +167,7 @@ public class CharacterManager : MonoBehaviour
                 data.level = PlayerPrefs.GetInt(chName + "Level");
 
                 data.currentHP = PlayerPrefs.GetInt(chName + "HP");
+                data.currentXP = PlayerPrefs.GetInt(chName + "XP");
                 data.currentPP = PlayerPrefs.GetInt(chName + "PP");
 
 
@@ -235,6 +237,7 @@ public class CharacterManager : MonoBehaviour
         PlayerPrefs.SetInt(pkmn.pkmnName + "Level", pkmn.lvl);
 
         PlayerPrefs.SetInt(pkmn.pkmnName + "HP", pkmn.stats.hp);
+        PlayerPrefs.SetInt(pkmn.pkmnName + "XP", pkmn.xp);
         PlayerPrefs.SetInt(pkmn.pkmnName + "PP", pkmn.extraStats.pp);
 
         PlayerPrefs.SetInt(pkmn.pkmnName + "Con", pkmn.dndStats.con);

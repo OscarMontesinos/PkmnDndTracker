@@ -136,15 +136,15 @@ public class CreationHandler : MonoBehaviour
     {
         foreach(MoveSO move in pkmn.lvl1LearnableMoves)
         {
-            Instantiate(moveShower, moveChooserContainer1.transform).GetComponent<UnlockableMoveShower>().SetMove(move,pkmnPlaceholder,1);
+            Instantiate(moveShower, moveChooserContainer1.transform).GetComponent<UnlockableMoveShower>().SetMove(UnlockableMoveShower.Mode.creation,move,pkmnPlaceholder,1);
         }
         foreach(MoveSO move in pkmn.lvl2LearnableMoves)
         {
-            Instantiate(moveShower, moveChooserContainer2.transform).GetComponent<UnlockableMoveShower>().SetMove(move,pkmnPlaceholder,2);
+            Instantiate(moveShower, moveChooserContainer2.transform).GetComponent<UnlockableMoveShower>().SetMove(UnlockableMoveShower.Mode.creation, move,pkmnPlaceholder,2);
         }
         foreach(MoveSO move in pkmn.lvl3LearnableMoves)
         {
-            Instantiate(moveShower, moveChooserContainer3.transform).GetComponent<UnlockableMoveShower>().SetMove(move,pkmnPlaceholder,3);
+            Instantiate(moveShower, moveChooserContainer3.transform).GetComponent<UnlockableMoveShower>().SetMove(UnlockableMoveShower.Mode.creation, move,pkmnPlaceholder,3);
         }
         SwipeMenuMoves(0);
     }

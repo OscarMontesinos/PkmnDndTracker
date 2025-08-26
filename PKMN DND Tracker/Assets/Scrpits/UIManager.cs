@@ -1,10 +1,13 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
+using static Pkmn;
 
 public class UIManager : MonoBehaviour
 {
@@ -18,11 +21,13 @@ public class UIManager : MonoBehaviour
     public Image megastoneImage;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI lvlText;
+    public TextMeshProUGUI xpText;
     public TextMeshProUGUI hpText;
     public Slider hpBar;
     public Image hpBarFill;
     public TextMeshProUGUI ppText;
     public Slider ppBar;
+    public Slider xpBar;
 
     public GameObject typeShower;
     [HideInInspector]
@@ -61,6 +66,25 @@ public class UIManager : MonoBehaviour
     public TMP_InputField itemNameField;
     public TMP_InputField itemQuantityField;
 
+    public GameObject xpMenu;
+    public TMP_InputField xpField;
+
+    public GameObject lvlUpMenu;
+    [HideInInspector]
+    public int lvlUpIndex;
+    public List<GameObject> lvlUpScreens;
+    public TextMeshProUGUI statsChangesText;
+    public GameObject lvl1UnlockableMoves;
+    public GameObject lvl2UnlockableMoves;
+    public GameObject lvl3UnlockableMoves;
+    public GameObject lvl1UnlockableMovesContainer;
+    public GameObject lvl2UnlockableMovesContainer;
+    public GameObject lvl3UnlockableMovesContainer;
+    public GameObject moveShower;
+    public int moveLearnerIndex;
+
+    public GameObject utilsMenu;
+
     public GameObject actionGO;
     public GameObject bonusActionGO;
     public GameObject reactionGO;
@@ -77,6 +101,7 @@ public class UIManager : MonoBehaviour
             currentScreen = screens.Count - 1;
         }
 
+        lvlUpMenu.SetActive(false);
         ShowInventory(true);
 
         foreach (GameObject screen in screens)
@@ -90,6 +115,7 @@ public class UIManager : MonoBehaviour
     {
         currentScreen = val;
         SwipeScreen(0);
+        lvlUpMenu.SetActive(false);
     }
 
     private void Awake()
@@ -119,9 +145,9 @@ public class UIManager : MonoBehaviour
 
     public void SetPkmn()
     {
-
         nameText.text = pkmn.pkmnName;
         lvlText.text = pkmn.lvl.ToString();
+        xpText.text = "Exp: " + pkmn.xp + " / " + pkmn.xpToReach;
         pkmnPortrait.sprite = pkmn.pkmnSprite;
         if (pkmn.basePkmn.megastoneSprite)
         {
@@ -186,6 +212,11 @@ public class UIManager : MonoBehaviour
             }
         }
 
+        foreach(Transform move in movesDestination.transform)
+        {
+            Destroy(move.gameObject);
+        }
+
         foreach (int move in pkmn.lvl1Moves)
         {
             Instantiate(moveGO, movesDestination.transform).GetComponent<MovShower>().SetMove(pkmn.basePkmn.lvl1LearnableMoves[move], pkmn);
@@ -201,13 +232,19 @@ public class UIManager : MonoBehaviour
             Instantiate(moveGO, movesDestination.transform).GetComponent<MovShower>().SetMove(pkmn.basePkmn.lvl3LearnableMoves[move], pkmn);
         }
 
-        foreach (Pkmn.Item item in pkmn.inventory)
+        foreach (Transform item in itemsDestination.transform)
+        {
+            Destroy(item.gameObject);
+        }
+
+        foreach (Item item in pkmn.inventory)
         {
             CreateItemShower(item);
         }
 
         UpdateHp();
         UpdatePp();
+        UpdateXp();
         UpdateStats();
         UpdateDND();
         UpdateInfo(0);
@@ -215,11 +252,14 @@ public class UIManager : MonoBehaviour
     }
     private void Update()
     {
-        UpdateActionTokens();
-
-        if (pkmn.extraStats.isMega)
+        if (pkmn)
         {
-            bg.color = MegaBGColorHandler.Instance.megaBGColor;
+            UpdateActionTokens();
+
+            if (pkmn.extraStats.isMega)
+            {
+                bg.color = MegaBGColorHandler.Instance.megaBGColor;
+            }
         }
     }
 
@@ -231,6 +271,17 @@ public class UIManager : MonoBehaviour
     public void ChangePkmnPP(int val)
     {
         Pkmn.Instance.ChangePP(val);
+    }
+
+    public void GainXP(int val)
+    {
+        if (xpField.text != "")
+        {
+            SwitchScreen(0);
+            ShowXPMenu(false);
+            Pkmn.Instance.GainXP(int.Parse(xpField.text));
+            xpField.text = "";
+        }
     }
     public void ResetActionTokens()
     {
@@ -276,6 +327,14 @@ public class UIManager : MonoBehaviour
         ppText.text = "PP: " + pkmn.extraStats.pp.ToString() + " / " + pkmn.extraStats.mPp.ToString();
         ppBar.maxValue = pkmn.extraStats.mPp;
         ppBar.value = pkmn.extraStats.pp;
+    }
+
+    public void UpdateXp()
+    {
+        xpBar.maxValue = pkmn.xpToReach;
+        xpBar.value = pkmn.xp;
+        lvlText.text = pkmn.lvl.ToString();
+        xpText.text = "Exp: " + pkmn.xp + " / " + pkmn.xpToReach;
     }
 
     public void UpdateStats()
@@ -381,9 +440,14 @@ public class UIManager : MonoBehaviour
         itemCreatorMenu.SetActive(!val);
     }
 
+    public void ShowXPMenu(bool val)
+    {
+        utilsMenu.SetActive(!val);
+        xpMenu.SetActive(val);
+    }
+
     public void AddItem()
     {
-
         if (itemQuantityField.text != "" && itemNameField.text != "")
         {
 
@@ -422,6 +486,135 @@ public class UIManager : MonoBehaviour
         Instantiate(itemCreatorGO, itemsDestination.transform);
         itemNameField.text = "";
         itemQuantityField.text = "";
+    }
+
+    public void StartLvlUpSequence()
+    {
+        SetStatChangesText();
+        SwitchScreen(0);
+        screens[0].SetActive(false);
+        lvlUpMenu.SetActive(true);
+        pkmn.lvl++;
+        pkmn.ResetPkmn();
+        CreateLVLUPMoves();
+        LvlUpNext(0);
+    }
+
+    public void LvlUpNext(int val)
+    {
+        if (val > lvlUpScreens.Count-1)
+        {
+            SwitchScreen(0);
+
+            pkmn.ResetPkmn();
+            SetPkmn();
+
+            CharacterManager.Instance.SafeInfo(pkmn);
+        }
+        else
+        {
+            foreach (GameObject screen in lvlUpScreens)
+            {
+                screen.SetActive(false);
+            }
+            lvlUpScreens[val].SetActive(true);
+
+
+            lvl1UnlockableMoves.SetActive(false);
+            lvl2UnlockableMoves.SetActive(false);
+            lvl3UnlockableMoves.SetActive(false);
+
+            if (val == 1)
+            {
+                if (pkmn.CalculateLvl1MoveSlots(pkmn.lvl) > pkmn.lvl1Moves.Count && pkmn.basePkmn.lvl1LearnableMoves.Count >= pkmn.CalculateLvl1MoveSlots(pkmn.lvl))
+                {
+                    lvl1UnlockableMoves.SetActive(true);
+                }
+                else if (pkmn.CalculateLvl2MoveSlots(pkmn.lvl) > pkmn.lvl2Moves.Count && pkmn.basePkmn.lvl2LearnableMoves.Count >= pkmn.CalculateLvl2MoveSlots(pkmn.lvl))
+                {
+                    lvl2UnlockableMoves.SetActive(true);
+                }
+                else if (pkmn.CalculateLvl3MoveSlots(pkmn.lvl) > pkmn.lvl3Moves.Count && pkmn.basePkmn.lvl3LearnableMoves.Count >= pkmn.CalculateLvl3MoveSlots(pkmn.lvl))
+                {
+                    lvl3UnlockableMoves.SetActive(true);
+                }
+                else
+                {
+                    SwitchScreen(0);
+                }
+            }
+        }
+    }
+
+    public void SetStatChangesText()
+    {
+        statsChangesText.text = pkmn.lvl + " > " + (pkmn.lvl +1) + "\n\n" +
+            pkmn.stats.mHp + " > " + pkmn.CalculateStatHP(pkmn.lvl + 1) + "\n" +
+            pkmn.extraStats.mPp + " > " + pkmn.CalculatePP(pkmn.lvl + 1) + "\n" +
+            pkmn.stats.atk + " > " + pkmn.CalculateStatAtk(pkmn.lvl + 1) + "\n" +
+            pkmn.stats.def + " > " + pkmn.CalculateStatDef(pkmn.lvl + 1) + "\n" +
+            pkmn.stats.sAtk + " > " + pkmn.CalculateStatSAtk(pkmn.lvl + 1) + "\n" +
+            pkmn.stats.sDef + " > " + pkmn.CalculateStatSDef(pkmn.lvl + 1) + "\n" +
+            pkmn.stats.spd + " > " + pkmn.CalculateStatSpd(pkmn.lvl + 1) + "\n\n" +
+
+            "+" + pkmn.extraStats.proficiencyBonus + " > +" + pkmn.CalculateProfBonus(pkmn.lvl + 1) + "\n" +
+            pkmn.extraStats.baseDC + " > " + pkmn.CalculateDC(pkmn.lvl + 1) + "\n" +
+            pkmn.extraStats.hitDice + " > " + pkmn.CalculateHitDice(pkmn.lvl + 1) + "\n\n" +
+
+            pkmn.lvl1Moves.Count + " > " + pkmn.CalculateLvl1MoveSlots(pkmn.lvl + 1) + "\n" +
+            pkmn.lvl2Moves.Count + " > " + pkmn.CalculateLvl2MoveSlots(pkmn.lvl + 1) + "\n" +
+            pkmn.lvl3Moves.Count + " > " + pkmn.CalculateLvl3MoveSlots(pkmn.lvl + 1) + "\n";
+    }
+
+    public void CreateLVLUPMoves()
+    {
+        moveLearnerIndex = 0;
+        foreach(Transform move in lvl1UnlockableMovesContainer.transform)
+        {
+            Destroy(move.gameObject);
+        }
+        foreach(Transform move in lvl2UnlockableMovesContainer.transform)
+        {
+            Destroy(move.gameObject);
+        }
+        foreach(Transform move in lvl3UnlockableMovesContainer.transform)
+        {
+            Destroy(move.gameObject);
+        }
+
+        foreach (MoveSO move in pkmn.basePkmn.lvl1LearnableMoves)
+        {
+            if (!pkmn.lvl1Moves.Contains(pkmn.basePkmn.lvl1LearnableMoves.IndexOf(move)))
+            {
+                Instantiate(moveShower, lvl1UnlockableMovesContainer.transform).GetComponent<UnlockableMoveShower>().SetMove(UnlockableMoveShower.Mode.leveling,move, pkmn, 1);
+            }
+            else
+            {
+                Instantiate(new GameObject(), lvl1UnlockableMovesContainer.transform);
+            }
+        }
+        foreach (MoveSO move in pkmn.basePkmn.lvl2LearnableMoves)
+        {
+            if (!pkmn.lvl2Moves.Contains(pkmn.basePkmn.lvl2LearnableMoves.IndexOf(move)))
+            {
+                Instantiate(moveShower, lvl2UnlockableMovesContainer.transform).GetComponent<UnlockableMoveShower>().SetMove(UnlockableMoveShower.Mode.leveling, move, pkmn, 2);
+            }
+            else
+            {
+                Instantiate(new GameObject(), lvl2UnlockableMovesContainer.transform);
+            }
+        }
+        foreach (MoveSO move in pkmn.basePkmn.lvl3LearnableMoves)
+        {
+            if (!pkmn.lvl3Moves.Contains(pkmn.basePkmn.lvl3LearnableMoves.IndexOf(move)))
+            {
+                Instantiate(moveShower, lvl3UnlockableMovesContainer.transform).GetComponent<UnlockableMoveShower>().SetMove(UnlockableMoveShower.Mode.leveling, move, pkmn, 3);
+            }
+            else
+            {
+                Instantiate(new GameObject(), lvl3UnlockableMovesContainer.transform);
+            }
+        }
     }
 
     public void ReturnHub()

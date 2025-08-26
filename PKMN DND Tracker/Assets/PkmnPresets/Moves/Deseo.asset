@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: Deseo
   m_EditorClassIdentifier: 
-  moveName: Cascabel cura
+  moveName: Deseo
   type: 1
   moveClass: 2
   precision: '-'

@@ -11,6 +11,7 @@ public class CharacterData
     public int level;
 
     public int currentHP;
+    public int currentXP;
     public int currentPP;
 
     public Pkmn.DndBaseStats stats;

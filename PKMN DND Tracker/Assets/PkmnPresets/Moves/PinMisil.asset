@@ -18,10 +18,10 @@ MonoBehaviour:
   precision: 1d20
   useHitDice: 0
   dmgDices: 1
-  dmgDiceType: 4
+  dmgDiceType: 6
   range: 6
   area: 0
-  pps: 18
+  pps: 16
   isAction: 1
   isBonusAction: 0
   isReaction: 0

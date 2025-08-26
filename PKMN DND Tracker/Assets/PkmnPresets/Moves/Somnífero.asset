@@ -16,11 +16,12 @@ MonoBehaviour:
   type: 12
   moveClass: 2
   precision: '-'
+  useHitDice: 0
   dmgDices: 0
   dmgDiceType: 0
   range: 6
   area: 0
-  pps: 16
+  pps: 18
   isAction: 1
   isBonusAction: 0
   isReaction: 0

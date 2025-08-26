@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,6 +19,9 @@ public class Pkmn : MonoBehaviour
     [HideInInspector]
     public Sprite pkmnSprite;
     public int lvl;
+    public int xp;
+    [HideInInspector]
+    public int xpToReach = 40;
     [HideInInspector]
     public Type type1;
     [HideInInspector]
@@ -187,6 +191,7 @@ public class Pkmn : MonoBehaviour
 
         stats.hp = character.currentHP;
         extraStats.pp = character.currentPP;
+        xp = character.currentXP;
     }
 
     public void SortMoves(List<int> moves)
@@ -218,9 +223,18 @@ public class Pkmn : MonoBehaviour
         type1 = basePkmn.type1;
         type2 = basePkmn.type2;
     }
-    void ResetPkmn()
+    public void ResetPkmn()
     {
+        SortMoves(lvl1Moves);
+        SortMoves(lvl2Moves);
+        SortMoves(lvl3Moves);
+
         SetPkmn();
+
+        CalculateModifiers();
+        CalculateStats();
+        CalculateExtraStats();
+        CalculateStatsModifiers();
 
         if (UIManager.Instance)
         {
@@ -230,9 +244,14 @@ public class Pkmn : MonoBehaviour
 
     public void CalculateModifiers()
     {
-        if (type1 == Type.Grass || (type2 == Type.Grass && lvl >= 10))
+        if (type1 == Type.Grass)
         {
             dndStats.wis += 2;
+
+            if (type2 == Type.none && lvl >= 10)
+            {
+                dndStats.wis += 2;
+            }
         }
 
         dndMod.con = (dndStats.con - 10) / 2;
@@ -242,6 +261,8 @@ public class Pkmn : MonoBehaviour
         dndMod.wis = (dndStats.wis - 10) / 2;
         dndMod.dex = (dndStats.dex - 10) / 2;
     }
+
+    #region PkmnStats
     public void CalculateStats()
     {
         if(stats.mHp == 0)
@@ -254,21 +275,52 @@ public class Pkmn : MonoBehaviour
         float mHp = stats.mHp;
         float hpPercentage = (hp / mHp) * 100;
 
-        stats.mHp = (int)((baseStats.hp / 4) + ((baseStats.hp / 17.5f) * (lvl - 1)) + dndMod.con * 2);
+        stats.mHp = CalculateStatHP(lvl);
         stats.hp = (int)(stats.mHp * hpPercentage) / 100;
-        stats.atk = (baseStats.atk / 5) + ((baseStats.atk / 200) * (lvl - 1)) + dndMod.str;
-        stats.def = (int)(baseStats.def / 5.5f) + ((baseStats.def / 400) * (lvl - 1)) + dndMod.con;
-        if(dndMod.intel > dndMod.cha)
+        stats.atk = CalculateStatAtk(lvl);
+        stats.def = CalculateStatDef(lvl);
+        stats.sAtk = CalculateStatSAtk(lvl);
+        stats.sDef = CalculateStatSDef(lvl);
+        stats.spd = CalculateStatSpd(lvl);
+    }
+
+    public int CalculateStatHP(int lvl)
+    {
+        return (int)((baseStats.hp / 4) + ((baseStats.hp / 17.5f) * (lvl - 1)) + dndMod.con * 2);
+    }
+
+    public int CalculateStatAtk(int lvl)
+    {
+        return (int)((baseStats.atk / 5) + ((baseStats.atk *0.005f) * (lvl - 1)) + dndMod.str);
+    }
+
+    public int CalculateStatDef(int lvl)
+    {
+        return (int)((baseStats.def / 5.5f) + ((baseStats.def * 0.025f) * (lvl - 1)) + dndMod.con);
+    }
+
+    public int CalculateStatSAtk(int lvl)
+    {
+        if (dndMod.intel > dndMod.cha)
         {
-            stats.sAtk = (baseStats.sAtk / 5) + ((baseStats.sAtk / 200) * (lvl - 1)) + dndMod.intel;
+            return (int)((baseStats.sAtk / 5) + ((baseStats.sAtk * 0.005f) * (lvl - 1)) + dndMod.intel);
         }
         else
         {
-            stats.sAtk = (baseStats.sAtk / 5) + ((baseStats.sAtk / 200) * (lvl - 1)) + dndMod.cha;
+            return (int)((baseStats.sAtk / 5) + ((baseStats.sAtk * 0.005f) * (lvl - 1)) + dndMod.cha);
         }
-        stats.sDef = (int)(baseStats.sDef / 5.5f) + ((baseStats.sDef / 400) * (lvl - 1)) + dndMod.wis;
-        stats.spd = (baseStats.spd / 5) + ((baseStats.spd / 200) * (lvl - 1)) + dndMod.dex; 
     }
+
+    public int CalculateStatSDef(int lvl)
+    {
+        return (int)((baseStats.sDef / 5.5f) + ((baseStats.sDef *0.0025) * (lvl - 1)) + dndMod.wis);
+    }
+
+    public int CalculateStatSpd(int lvl)
+    {
+        return (int)((baseStats.spd / 5) + ((baseStats.spd * 0.005f) * (lvl - 1)) + dndMod.dex);
+    }
+
     public void CalculateStatsModifiers()
     {
         statsMod.atk = (stats.atk-10)/2;
@@ -277,10 +329,45 @@ public class Pkmn : MonoBehaviour
     }
     public void CalculateExtraStats()
     {
-        extraStats.proficiencyBonus = 2 +(lvl / 4);
-        extraStats.baseDC = 8 + extraStats.proficiencyBonus;
-        extraStats.pp = 45 + ((lvl - 1) * 4);
+        extraStats.proficiencyBonus = CalculateProfBonus(lvl);
+        extraStats.baseDC = CalculateDC(lvl);
+        extraStats.pp = CalculatePP(lvl);
         extraStats.mPp = extraStats.pp;
+
+        extraStats.hitDice =CalculateHitDice(lvl);
+
+        if (type1 == Type.Fighting || (type2 == Type.Fighting && lvl >= 10))
+        {
+            extraStats.hitDiceNumber = 1 + (lvl / 4);
+        }
+        else
+        {
+            extraStats.hitDiceNumber = 1;
+        }
+
+        extraStats.lvl1MoveSlots = CalculateLvl1MoveSlots(lvl);
+        extraStats.lvl2MoveSlots = CalculateLvl2MoveSlots(lvl);
+        extraStats.lvl3MoveSlots = CalculateLvl3MoveSlots(lvl);
+    }
+
+    public int CalculateProfBonus(int lvl)
+    {
+        return 2 + (lvl / 4);
+    }
+
+    public int CalculateDC(int lvl)
+    {
+        return 8 + extraStats.proficiencyBonus;
+    }
+
+    public int CalculatePP(int lvl)
+    {
+        return 45 + ((lvl - 1) * 4);
+    }
+
+
+    public int CalculateHitDice(int lvl)
+    {
         switch (lvl)
         {
             case 1:
@@ -288,52 +375,56 @@ public class Pkmn : MonoBehaviour
             case 3:
             case 4:
             case 5:
-                extraStats.hitDice = 4;
-                break;
+                return 4;
             case 6:
             case 7:
             case 8:
             case 9:
             case 10:
-                extraStats.hitDice = 6;
-                break;
+               return 6;
             case 11:
             case 12:
             case 13:
             case 14:
             case 15:
-                extraStats.hitDice = 8;
-                break;
+                return 8;
             case 16:
             case 17:
             case 18:
             case 19:
             case 20:
-                extraStats.hitDice = 10;
-                break;
+                return 10;
             case 21:
             case 22:
             case 23:
             case 24:
             case 25:
-                extraStats.hitDice = 12;
-                break;
+                return 12;
             default:
-                extraStats.hitDice = 20;
-                break;
+                return 20;
         }
-        if(type1 == Type.Fighting || (type2 == Type.Fighting && lvl >= 10))
-        {
-            extraStats.hitDiceNumber = 1 + (lvl/4);
-        }
-        else
-        {
-            extraStats.hitDiceNumber = 1;
-        }
-        extraStats.lvl1MoveSlots = lvl/2;
-        extraStats.lvl2MoveSlots = lvl/6;
-        extraStats.lvl3MoveSlots = lvl/15;
     }
+
+    public int CalculateLvl1MoveSlots(int lvl)
+    {
+        int calc = (int)(lvl * 0.5f);
+        return calc;
+    }
+
+    public int CalculateLvl2MoveSlots(int lvl)
+    {
+        int calc = (int)((float)(lvl / 3)) - 2;
+        if (calc < 0) calc = 0;
+        return calc;
+    }
+
+    public int CalculateLvl3MoveSlots(int lvl)
+    {
+        int calc = (int)(lvl * 0.25f) - 2;
+        if (calc < 0) calc = 0;
+        return calc;
+    }
+    #endregion
 
     public void ChangeHP(int val)
     {
@@ -364,6 +455,28 @@ public class Pkmn : MonoBehaviour
         UIManager.Instance.UpdatePp();
         CharacterManager.Instance.SafeInfo(this);
     }
+
+    #region LEVELUP
+
+    public void GainXP(int val)
+    {
+        xp += val;
+        if (xp >= xpToReach)
+        {
+            LevelUp();
+        }
+        UIManager.Instance.UpdateXp();
+        CharacterManager.Instance.SafeInfo(this);
+
+    }
+
+    public void LevelUp()
+    {
+        xp -= xpToReach;
+        UIManager.Instance.StartLvlUpSequence();
+    }
+
+    #endregion
 
     public void ResetActionTokens()
     {
