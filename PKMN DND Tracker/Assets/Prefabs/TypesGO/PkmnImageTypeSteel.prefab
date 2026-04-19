@@ -94,12 +94,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9097837350455286191, guid: 713ffb1b5c22eca4d9d595c2cfff05bb, type: 3}
       propertyPath: m_Name
-      value: PkmnImageTypeGround
+      value: PkmnImageTypeSteel
       objectReference: {fileID: 0}
     - target: {fileID: 9097837350455286225, guid: 713ffb1b5c22eca4d9d595c2cfff05bb, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -8464347127666179709, guid: 71b9f8309129b954ea75bba0b0f0dca0, type: 3}
+      objectReference: {fileID: 21300000, guid: 5e84629680e3f8647b2306cddc4d1bc1, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

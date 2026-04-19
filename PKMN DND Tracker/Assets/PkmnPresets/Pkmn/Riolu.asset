@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cea2b651d9189d4d85f43fba7ab48e7, type: 3}
   m_Name: Riolu
   m_EditorClassIdentifier: 
+  pkmnNumber: 447
   pkmnSprite: {fileID: 21300000, guid: cef27e1e1bb01874181d3a0450cad7f3, type: 3}
   baseStats:
     mHp: 0
@@ -26,19 +27,14 @@ MonoBehaviour:
   abilities:
   - ability: {fileID: 11400000, guid: 75219be963c639746ad8ea710d2d9a0a, type: 2}
     lvlRequired: 1
-    requireMega: 0
   - ability: {fileID: 11400000, guid: 4e329a3aeaa00c846b5a91b4abb1af32, type: 2}
     lvlRequired: 10
-    requireMega: 0
   - ability: {fileID: 11400000, guid: 5a619ce8e25dea34cb9d7b4e64a81331, type: 2}
     lvlRequired: 5
-    requireMega: 0
   - ability: {fileID: 11400000, guid: fa57b9c0917bdee44b3527cdb3a83091, type: 2}
     lvlRequired: 20
-    requireMega: 0
   - ability: {fileID: 11400000, guid: 8a20dc6164cb5104a8af21596494ae1f, type: 2}
     lvlRequired: 35
-    requireMega: 0
   lvl1LearnableMoves:
   - {fileID: 11400000, guid: 3b9a88be95ec4f7438e5a9ba00bac838, type: 2}
   - {fileID: 11400000, guid: af4adc8f30fd88a46a61f03d17076d8b, type: 2}

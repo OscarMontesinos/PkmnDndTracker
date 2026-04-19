@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cea2b651d9189d4d85f43fba7ab48e7, type: 3}
+  m_Name: Stunky
+  m_EditorClassIdentifier: 
+  pkmnNumber: 434
+  pkmnSprite: {fileID: 21300000, guid: 669fe93be8ad4b649a92d4d5473e5df5, type: 3}
+  baseStats:
+    mHp: 0
+    hp: 63
+    atk: 63
+    def: 47
+    sAtk: 41
+    sDef: 41
+    spd: 74
+  type1: 4
+  type2: 17
+  abilities:
+  - ability: {fileID: 11400000, guid: 18f4c1e79f73c384ca87d1ec9a368b0b, type: 2}
+    lvlRequired: 1
+  - ability: {fileID: 11400000, guid: 33b40a7238acc3f46a407fe46da7e0ef, type: 2}
+    lvlRequired: 10
+  - ability: {fileID: 11400000, guid: d7d6a2bb60f076743948c809280ac5f7, type: 2}
+    lvlRequired: 5
+  - ability: {fileID: 11400000, guid: 64e56c84b0d33b24e843d4cb1b82f29a, type: 2}
+    lvlRequired: 20
+  - ability: {fileID: 11400000, guid: c906bce0d1754fd4db1f4c3eba6631fa, type: 2}
+    lvlRequired: 35
+  lvl1LearnableMoves:
+  - {fileID: 11400000, guid: 9336d0ef0d4db4548ab7e980b3e1589a, type: 2}
+  - {fileID: 11400000, guid: 89391d4d0fd841044b5204c458cc3782, type: 2}
+  - {fileID: 11400000, guid: 70aeea31dc1692b47a239079b9a3b39b, type: 2}
+  - {fileID: 11400000, guid: ee6ba51cdb483904ca2fb65b3b96a019, type: 2}
+  lvl2LearnableMoves:
+  - {fileID: 11400000, guid: 3d12c9f5b197ef84b8a223e56547322a, type: 2}
+  lvl3LearnableMoves: []
+  megaEvo: {fileID: 0}
+  megastoneSprite: {fileID: 0}
+  isMega: 0

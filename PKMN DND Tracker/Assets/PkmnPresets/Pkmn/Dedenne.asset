@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cea2b651d9189d4d85f43fba7ab48e7, type: 3}
+  m_Name: Dedenne
+  m_EditorClassIdentifier: 
+  pkmnNumber: 702
+  pkmnSprite: {fileID: 21300000, guid: 904d496199f320941b3dcf6b81c059bd, type: 3}
+  baseStats:
+    mHp: 0
+    hp: 67
+    atk: 58
+    def: 57
+    sAtk: 81
+    sDef: 67
+    spd: 101
+  type1: 13
+  type2: 18
+  abilities:
+  - ability: {fileID: 11400000, guid: 59d4dc053a5867c41b4934184cf4c99f, type: 2}
+    lvlRequired: 1
+  - ability: {fileID: 11400000, guid: b0e5f012ce643a540a462f1db8035f04, type: 2}
+    lvlRequired: 10
+  - ability: {fileID: 11400000, guid: de72dfcc1b51c964f8fb18486c3e8697, type: 2}
+    lvlRequired: 5
+  - ability: {fileID: 11400000, guid: d8140d7fd58a8c040a72d8f5ecb4c6cc, type: 2}
+    lvlRequired: 20
+  - ability: {fileID: 11400000, guid: 517d09e8aafd7af41a80accb67f095a8, type: 2}
+    lvlRequired: 35
+  lvl1LearnableMoves:
+  - {fileID: 11400000, guid: 5128d9653c1e33a469b845d493628633, type: 2}
+  - {fileID: 11400000, guid: d15d25fd5b3690d4ea2534eba3e7b123, type: 2}
+  - {fileID: 11400000, guid: b35b1baaf03f0d346801984ec58e178f, type: 2}
+  - {fileID: 11400000, guid: e8a85cb8d7970524aad5f0e43b26d46a, type: 2}
+  lvl2LearnableMoves:
+  - {fileID: 11400000, guid: 7cdfe449b8da67b4e9912906f0754403, type: 2}
+  lvl3LearnableMoves: []
+  megaEvo: {fileID: 0}
+  megastoneSprite: {fileID: 0}
+  isMega: 0

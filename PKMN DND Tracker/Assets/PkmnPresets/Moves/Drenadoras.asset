@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
+  m_Name: Drenadoras
+  m_EditorClassIdentifier: 
+  moveName: Drenadoras
+  type: 12
+  moveClass: 2
+  precision: '-'
+  useHitDice: 1
+  dmgDices: 0
+  dmgDiceType: 0
+  range: 6
+  area: 0
+  pps: 16
+  isAction: 1
+  isBonusAction: 1
+  isReaction: 0
+  hasPriority: 0
+  savingThrowType: DEX
+  savingThrowMultiplier: 1
+  duration: 15min
+  description: "Lanza unas semillas  que florecen alrededor de un enemigo y absorben
+    su energ\xEDa vital. Cadaturno de un enemigo inflige su dado de da\xF1o y cura
+    al usuario todo el da\xF1o causado"

@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI lvlText;
     public TextMeshProUGUI xpText;
+    public TMP_InputField resourceVal;
     public TextMeshProUGUI hpText;
     public Slider hpBar;
     public Image hpBarFill;
@@ -265,12 +266,20 @@ public class UIManager : MonoBehaviour
 
     public void ChangePkmnHP(int val)
     {
-        Pkmn.Instance.ChangeHP(val);
+        if (resourceVal.text != "")
+        {
+            Pkmn.Instance.ChangeHP(int.Parse(resourceVal.text) * val);
+        }
+        resourceVal.text = "1";
     }
 
     public void ChangePkmnPP(int val)
     {
-        Pkmn.Instance.ChangePP(val);
+        if (resourceVal.text != "")
+        {
+            Pkmn.Instance.ChangePP(int.Parse(resourceVal.text) * val);
+        }
+        resourceVal.text = "1";
     }
 
     public void GainXP(int val)
@@ -340,16 +349,28 @@ public class UIManager : MonoBehaviour
     public void UpdateStats()
     {
         statsText.text = pkmn.stats.hp + "\n" + pkmn.stats.atk + "\n" + pkmn.stats.def + "\n" + pkmn.stats.sAtk + "\n" + pkmn.stats.sDef + "\n" +pkmn.stats.spd;
-        statsModText.text = "+" + pkmn.statsMod.atk + "\n" + "+" + pkmn.statsMod.sAtk + "\n" + "+" + pkmn.statsMod.spd;
+        statsModText.text = GetStatModText(pkmn.statsMod.atk) + "\n" + GetStatModText(pkmn.statsMod.sAtk) + "\n" + GetStatModText(pkmn.statsMod.spd);
     }
 
     public void UpdateDND()
     {
         dndText.text = pkmn.dndStats.con + "\n" + pkmn.dndStats.str + "\n" + pkmn.dndStats.cha + "\n" + pkmn.dndStats.intel + "\n" + pkmn.dndStats.wis + "\n" +
             pkmn.dndStats.dex;
-        dndModsText.text = "+" + pkmn.dndMod.con + "\n" + "+" + pkmn.dndMod.str + "\n" + "+" + pkmn.dndMod.cha + "\n" + "+" + pkmn.dndMod.intel + "\n" + "+" +
-            pkmn.dndMod.wis + "\n" + "+" + pkmn.dndMod.dex;
+        dndModsText.text = GetStatModText(pkmn.dndMod.con) + "\n" + GetStatModText(pkmn.dndMod.str) + "\n" + GetStatModText(pkmn.dndMod.cha) + "\n" +
+            GetStatModText(pkmn.dndMod.intel) + "\n" + GetStatModText(pkmn.dndMod.wis) + "\n" + GetStatModText(pkmn.dndMod.dex);
         dndOtherText.text = pkmn.extraStats.proficiencyBonus + "\n" + pkmn.extraStats.baseDC + "\n" + pkmn.extraStats.hitDiceNumber + "d" + pkmn.extraStats.hitDice;
+    }
+
+    public string GetStatModText(int val)
+    {
+        if (val <= 0)
+        {
+            return "" + val;
+        }
+        else
+        {
+            return "+" + val;
+        }
     }
     public void UpdateDNDProf()
     {
@@ -557,7 +578,7 @@ public class UIManager : MonoBehaviour
             pkmn.stats.sDef + " > " + pkmn.CalculateStatSDef(pkmn.lvl + 1) + "\n" +
             pkmn.stats.spd + " > " + pkmn.CalculateStatSpd(pkmn.lvl + 1) + "\n\n" +
 
-            "+" + pkmn.extraStats.proficiencyBonus + " > +" + pkmn.CalculateProfBonus(pkmn.lvl + 1) + "\n" +
+            GetStatModText(pkmn.extraStats.proficiencyBonus) + " > " + GetStatModText(pkmn.CalculateProfBonus(pkmn.lvl + 1)) + "\n" +
             pkmn.extraStats.baseDC + " > " + pkmn.CalculateDC(pkmn.lvl + 1) + "\n" +
             pkmn.extraStats.hitDice + " > " + pkmn.CalculateHitDice(pkmn.lvl + 1) + "\n\n" +
 

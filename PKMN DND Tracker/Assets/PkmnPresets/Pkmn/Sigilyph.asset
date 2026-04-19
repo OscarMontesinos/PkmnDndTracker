@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cea2b651d9189d4d85f43fba7ab48e7, type: 3}
+  m_Name: Sigilyph
+  m_EditorClassIdentifier: 
+  pkmnNumber: 561
+  pkmnSprite: {fileID: 21300000, guid: a887746085b893e4db81c30b60ddaff7, type: 3}
+  baseStats:
+    mHp: 0
+    hp: 72
+    atk: 58
+    def: 80
+    sAtk: 103
+    sDef: 80
+    spd: 97
+  type1: 14
+  type2: 3
+  abilities:
+  - ability: {fileID: 11400000, guid: 3860ff4134db3c044b08bf4e7bdf0f83, type: 2}
+    lvlRequired: 1
+  - ability: {fileID: 11400000, guid: 3bfc291b79aa3294f86a227ba93a0eb8, type: 2}
+    lvlRequired: 10
+  - ability: {fileID: 11400000, guid: 2d026d3cd204b714db2bceb71b66537f, type: 2}
+    lvlRequired: 5
+  - ability: {fileID: 11400000, guid: b1b0bbcdfff6a474b87bd7db13fe1827, type: 2}
+    lvlRequired: 20
+  - ability: {fileID: 11400000, guid: 5d1265a0754ba5d4bbf5149f849a0aba, type: 2}
+    lvlRequired: 35
+  lvl1LearnableMoves:
+  - {fileID: 11400000, guid: c003dd422866c0d40b2f7827a69dfc0a, type: 2}
+  - {fileID: 11400000, guid: 4f5023a9c2541b44891fe022f8f0a846, type: 2}
+  - {fileID: 11400000, guid: b19eb39b71f7e6940b3ecd370dbdadf5, type: 2}
+  - {fileID: 11400000, guid: 56d8c6efad5fba747995cb2bb0055469, type: 2}
+  - {fileID: 11400000, guid: 0afbe3d31d9a6e8418e624b47c3faae1, type: 2}
+  - {fileID: 11400000, guid: 3d60219083914bf4e9692a9e8eb6a95e, type: 2}
+  - {fileID: 11400000, guid: 01f1127ee9571844e84682fab23c5230, type: 2}
+  lvl2LearnableMoves:
+  - {fileID: 11400000, guid: 4e4f19e518a8b6249aff6070c6f67049, type: 2}
+  - {fileID: 11400000, guid: 461f9ed451b7e1f4c85a7a37b3d559fb, type: 2}
+  - {fileID: 11400000, guid: c812186bda2c0f849afb42f28a2ec437, type: 2}
+  lvl3LearnableMoves:
+  - {fileID: 11400000, guid: d7b9260852f3bf0479044d832b9966ac, type: 2}
+  megaEvo: {fileID: 0}
+  megastoneSprite: {fileID: 0}
+  isMega: 0

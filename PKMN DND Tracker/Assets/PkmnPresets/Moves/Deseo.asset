@@ -29,5 +29,4 @@ MonoBehaviour:
   savingThrowType: '-'
   savingThrowMultiplier: 0
   duration: '-'
-  description: "Hace sonar una campana que cura a s\xED mismo o un aliado junto a
-    cualquier estado alterado"
+  description: "Pide un deseo y cura a s\xED mismo o a un aliado"

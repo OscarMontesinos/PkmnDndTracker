@@ -5,6 +5,7 @@ using static Pkmn;
 [CreateAssetMenu(fileName = "Pkmn", menuName = "Pkmn", order = 0)]
 public class PkmnSO : ScriptableObject
 {
+    public int pkmnNumber;
     public Sprite pkmnSprite;
     public Pkmn.BaseStats baseStats;
     public GameManager.Type type1;
@@ -20,3 +21,4 @@ public class PkmnSO : ScriptableObject
     public Sprite megastoneSprite;
     public bool isMega;
 }
+

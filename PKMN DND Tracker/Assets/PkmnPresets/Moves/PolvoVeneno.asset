@@ -16,6 +16,7 @@ MonoBehaviour:
   type: 4
   moveClass: 2
   precision: '-'
+  useHitDice: 0
   dmgDices: 0
   dmgDiceType: 0
   range: 6
@@ -27,6 +28,6 @@ MonoBehaviour:
   hasPriority: 0
   savingThrowType: DEX CON
   savingThrowMultiplier: 1
-  duration: 5min
+  duration: 24h
   description: "Lanza al enemigo un polvo venenoso. Si el objetivo falla la salvaci\xF3n
     lo envenena"

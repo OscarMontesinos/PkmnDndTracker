@@ -69,7 +69,7 @@ public class CharacterManager : MonoBehaviour
         {
             foreach (CharacterData data in data)
             {
-                foreach (PkmnSO pkmn in PkmnList.Instance.list)
+                foreach (PkmnSO pkmn in PkmnList.Instance.pkmnList)
                 {
                     if (data.pkmnName == pkmn.name)
                     {
@@ -154,7 +154,7 @@ public class CharacterManager : MonoBehaviour
         {
             if (chName == savedData.chName)
             {
-                foreach (PkmnSO listedPkmn in PkmnList.Instance.list)
+                foreach (PkmnSO listedPkmn in PkmnList.Instance.pkmnList)
                 {
                     if (savedData.pkmnName == listedPkmn.name)
                     {
@@ -240,12 +240,12 @@ public class CharacterManager : MonoBehaviour
         PlayerPrefs.SetInt(pkmn.pkmnName + "XP", pkmn.xp);
         PlayerPrefs.SetInt(pkmn.pkmnName + "PP", pkmn.extraStats.pp);
 
-        PlayerPrefs.SetInt(pkmn.pkmnName + "Con", pkmn.dndStats.con);
-        PlayerPrefs.SetInt(pkmn.pkmnName + "Str", pkmn.dndStats.str);
-        PlayerPrefs.SetInt(pkmn.pkmnName + "Cha", pkmn.dndStats.cha);
-        PlayerPrefs.SetInt(pkmn.pkmnName + "Intel", pkmn.dndStats.intel);
-        PlayerPrefs.SetInt(pkmn.pkmnName + "Wis", pkmn.dndStats.wis);
-        PlayerPrefs.SetInt(pkmn.pkmnName + "Dex", pkmn.dndStats.dex);
+        PlayerPrefs.SetInt(pkmn.pkmnName + "Con", pkmn.baseDndStats.con);
+        PlayerPrefs.SetInt(pkmn.pkmnName + "Str", pkmn.baseDndStats.str);
+        PlayerPrefs.SetInt(pkmn.pkmnName + "Cha", pkmn.baseDndStats.cha);
+        PlayerPrefs.SetInt(pkmn.pkmnName + "Intel", pkmn.baseDndStats.intel);
+        PlayerPrefs.SetInt(pkmn.pkmnName + "Wis", pkmn.baseDndStats.wis);
+        PlayerPrefs.SetInt(pkmn.pkmnName + "Dex", pkmn.baseDndStats.dex);
 
         PlayerPrefs.SetInt(pkmn.pkmnName + "lvl1MoveCount", pkmn.lvl1Moves.Count);
         PlayerPrefs.SetInt(pkmn.pkmnName + "lvl2MoveCount", pkmn.lvl2Moves.Count);

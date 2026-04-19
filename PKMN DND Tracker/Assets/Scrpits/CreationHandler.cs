@@ -45,6 +45,7 @@ public class CreationHandler : MonoBehaviour
     public GameObject moveChooserContainer2;
     public GameObject moveChooserContainer3;
     public GameObject moveShower;
+    bool movesCreated;
 
     public Image finalPortrait;
     public TMP_InputField nameField;
@@ -104,7 +105,7 @@ public class CreationHandler : MonoBehaviour
 
     public void ShowPkmns()
     {
-        foreach(PkmnSO pkmn in PkmnList.Instance.list)
+        foreach(PkmnSO pkmn in PkmnList.Instance.pkmnList)
         {
             Instantiate(pkmnShower,pkmnChooserContainer.transform).GetComponent<PkmnShower>().Set(pkmn);
         }
@@ -130,22 +131,40 @@ public class CreationHandler : MonoBehaviour
 
             SwipeScreen(1);
         }
+        else if(lvlField.text != "" && conField.text == "" && strField.text == "" && chaField.text == "" && intField.text == "" && wisField.text == "" && dexField.text == "")
+        {
+            lvl = int.Parse(lvlField.text);
+            dndStats.con = 10;
+            dndStats.str = 10;
+            dndStats.cha = 10;
+            dndStats.intel = 10;
+            dndStats.wis = 10;
+            dndStats.dex = 10;
+        }
     }
 
     public void ShowMoves()
     {
-        foreach(MoveSO move in pkmn.lvl1LearnableMoves)
+        if (!movesCreated)
         {
-            Instantiate(moveShower, moveChooserContainer1.transform).GetComponent<UnlockableMoveShower>().SetMove(UnlockableMoveShower.Mode.creation,move,pkmnPlaceholder,1);
+            foreach (MoveSO move in pkmn.lvl1LearnableMoves)
+            {
+                Instantiate(moveShower, moveChooserContainer1.transform).GetComponent<UnlockableMoveShower>().SetMove(UnlockableMoveShower.Mode.creation, move, pkmnPlaceholder, 1);
+            }
+
+            foreach (MoveSO move in pkmn.lvl2LearnableMoves)
+            {
+                Instantiate(moveShower, moveChooserContainer2.transform).GetComponent<UnlockableMoveShower>().SetMove(UnlockableMoveShower.Mode.creation, move, pkmnPlaceholder, 2);
+            }
+
+            foreach (MoveSO move in pkmn.lvl3LearnableMoves)
+            {
+                Instantiate(moveShower, moveChooserContainer3.transform).GetComponent<UnlockableMoveShower>().SetMove(UnlockableMoveShower.Mode.creation, move, pkmnPlaceholder, 3);
+            }
+
+            movesCreated = true;
         }
-        foreach(MoveSO move in pkmn.lvl2LearnableMoves)
-        {
-            Instantiate(moveShower, moveChooserContainer2.transform).GetComponent<UnlockableMoveShower>().SetMove(UnlockableMoveShower.Mode.creation, move,pkmnPlaceholder,2);
-        }
-        foreach(MoveSO move in pkmn.lvl3LearnableMoves)
-        {
-            Instantiate(moveShower, moveChooserContainer3.transform).GetComponent<UnlockableMoveShower>().SetMove(UnlockableMoveShower.Mode.creation, move,pkmnPlaceholder,3);
-        }
+
         SwipeMenuMoves(0);
     }
 
@@ -163,12 +182,12 @@ public class CreationHandler : MonoBehaviour
             moveIndex = moveMenus.Count - 1;
         }
 
-        if(moveIndex == 1 && pkmnPlaceholder.lvl < 3)
+        if(moveIndex == 2 && pkmnPlaceholder.lvl < 15)
         {
             moveIndex -= val;
         }
 
-        if(moveIndex == 2 && pkmnPlaceholder.lvl < 20)
+        if(moveIndex == 1 && pkmnPlaceholder.lvl < 9)
         {
             moveIndex -= val;
         }

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
+  m_Name: VientoHielo
+  m_EditorClassIdentifier: 
+  moveName: Viento Hielo
+  type: 15
+  moveClass: 1
+  precision: '-'
+  useHitDice: 0
+  dmgDices: 2
+  dmgDiceType: 6
+  range: 6
+  area: 3
+  pps: 10
+  isAction: 1
+  isBonusAction: 0
+  isReaction: 0
+  hasPriority: 0
+  savingThrowType: DEX
+  savingThrowMultiplier: 1
+  duration: '-'
+  description: "Conjura un viento helado que ralentiza a los objetivos. Si el objetivo
+    consigue superar la salvaci\xF3n evita el ataque"

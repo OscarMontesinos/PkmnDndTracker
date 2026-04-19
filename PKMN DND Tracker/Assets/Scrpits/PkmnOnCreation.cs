@@ -6,6 +6,7 @@ public class PkmnOnCreation : Pkmn
     {
         base.SetPkmn();
 
+        CalculateDndStats();
         CalculateModifiers();
         CalculateStats();
         CalculateExtraStats();

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cea2b651d9189d4d85f43fba7ab48e7, type: 3}
   m_Name: Beedrill
   m_EditorClassIdentifier: 
+  pkmnNumber: 15
   pkmnSprite: {fileID: 21300000, guid: d08751116ed539646a07cab21cbd8bba, type: 3}
   baseStats:
     mHp: 0

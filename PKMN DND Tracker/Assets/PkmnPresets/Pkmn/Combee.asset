@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cea2b651d9189d4d85f43fba7ab48e7, type: 3}
   m_Name: Combee
   m_EditorClassIdentifier: 
-  pkmnSprite: {fileID: 916136100352261367, guid: 7de7f4e79c8d6e0418f76a061505d831, type: 3}
+  pkmnNumber: 415
+  pkmnSprite: {fileID: 21300000, guid: 7de7f4e79c8d6e0418f76a061505d831, type: 3}
   baseStats:
     mHp: 0
     hp: 30

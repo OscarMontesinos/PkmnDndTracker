@@ -89,6 +89,10 @@ public class Pkmn : MonoBehaviour
 
     [HideInInspector]
     public BaseStats baseStats;
+    [HideInInspector]
+    public DndBaseStats baseDndStats;
+    [HideInInspector]
+    public DndBaseStats extraDndStats;
     public DndBaseStats dndStats;
     [HideInInspector]
     public DndBaseStats dndMod;
@@ -140,7 +144,7 @@ public class Pkmn : MonoBehaviour
         basePkmn = creation.pkmn;
         pkmnName = name;
         lvl = creation.lvl;
-        dndStats = creation.dndStats;
+        baseDndStats = creation.dndStats;
         lvl1Moves = creation.lvl1Moves;
         lvl2Moves = creation.lvl2Moves;
         lvl3Moves = creation.lvl3Moves;
@@ -151,6 +155,7 @@ public class Pkmn : MonoBehaviour
 
         SetPkmn();
 
+        CalculateDndStats();
         CalculateModifiers();
         CalculateStats();
         CalculateExtraStats();
@@ -162,7 +167,7 @@ public class Pkmn : MonoBehaviour
         basePkmn = pkmn;
         pkmnName = name;
         lvl = character.level;
-        dndStats = character.stats;
+        baseDndStats = character.stats;
         lvl1Moves = character.lvl1Moves;
         lvl2Moves = character.lvl2Moves;
         lvl3Moves = character.lvl3Moves;
@@ -184,6 +189,7 @@ public class Pkmn : MonoBehaviour
 
         SetPkmn();
 
+        CalculateDndStats();
         CalculateModifiers();
         CalculateStats();
         CalculateExtraStats();
@@ -231,6 +237,7 @@ public class Pkmn : MonoBehaviour
 
         SetPkmn();
 
+        CalculateDndStats();
         CalculateModifiers();
         CalculateStats();
         CalculateExtraStats();
@@ -242,18 +249,38 @@ public class Pkmn : MonoBehaviour
         }
     }
 
-    public void CalculateModifiers()
+    public void CalculateDndStats()
     {
-        if (type1 == Type.Grass)
+        extraDndStats = new DndBaseStats();
+        if (type1 == Type.Grass || (type2 == Type.Grass && lvl >= 10))
         {
-            dndStats.wis += 2;
+            extraDndStats.wis += 2;
 
             if (type2 == Type.none && lvl >= 10)
             {
-                dndStats.wis += 2;
+                extraDndStats.wis += 2;
+            }
+        }
+        if (type1 == Type.Psychic || (type2 == Type.Psychic && lvl >= 10))
+        {
+            extraDndStats.intel += 1;
+
+            if (type2 == Type.none && lvl >= 10)
+            {
+                extraDndStats.intel += 2;
             }
         }
 
+        dndStats.con = baseDndStats.con + extraDndStats.con;
+        dndStats.str = baseDndStats.str + extraDndStats.str;
+        dndStats.cha = baseDndStats.cha + extraDndStats.cha;
+        dndStats.intel = baseDndStats.intel + extraDndStats.intel;
+        dndStats.wis = baseDndStats.wis + extraDndStats.wis;
+        dndStats.dex = baseDndStats.dex + extraDndStats.dex;
+    }
+
+    public void CalculateModifiers()
+    {
         dndMod.con = (dndStats.con - 10) / 2;
         dndMod.str = (dndStats.str - 10) / 2;
         dndMod.cha = (dndStats.cha - 10) / 2;
@@ -291,41 +318,41 @@ public class Pkmn : MonoBehaviour
 
     public int CalculateStatAtk(int lvl)
     {
-        return (int)((baseStats.atk / 5) + ((baseStats.atk *0.005f) * (lvl - 1)) + dndMod.str);
+        return (int)((baseStats.atk / 4) + ((baseStats.atk *0.02f) * (lvl - 1)) + dndMod.str);
     }
 
     public int CalculateStatDef(int lvl)
     {
-        return (int)((baseStats.def / 5.5f) + ((baseStats.def * 0.025f) * (lvl - 1)) + dndMod.con);
+        return (int)((baseStats.def + ((baseStats.def * 0.02f) * (lvl - 1)) + dndMod.con)*0.15);
     }
 
     public int CalculateStatSAtk(int lvl)
     {
         if (dndMod.intel > dndMod.cha)
         {
-            return (int)((baseStats.sAtk / 5) + ((baseStats.sAtk * 0.005f) * (lvl - 1)) + dndMod.intel);
+            return (int)((baseStats.sAtk / 4) + ((baseStats.sAtk * 0.02f) * (lvl - 1)) + dndMod.intel);
         }
         else
         {
-            return (int)((baseStats.sAtk / 5) + ((baseStats.sAtk * 0.005f) * (lvl - 1)) + dndMod.cha);
+            return (int)((baseStats.sAtk / 4) + ((baseStats.sAtk * 0.02f) * (lvl - 1)) + dndMod.cha);
         }
     }
 
     public int CalculateStatSDef(int lvl)
     {
-        return (int)((baseStats.sDef / 5.5f) + ((baseStats.sDef *0.0025) * (lvl - 1)) + dndMod.wis);
+        return (int)((baseStats.sDef + ((baseStats.sDef *0.02) * (lvl - 1)) + dndMod.wis)*0.15);
     }
 
     public int CalculateStatSpd(int lvl)
     {
-        return (int)((baseStats.spd / 5) + ((baseStats.spd * 0.005f) * (lvl - 1)) + dndMod.dex);
+        return (int)((baseStats.spd / 5) + ((baseStats.spd * 0.02f) * (lvl - 1)) + dndMod.dex);
     }
 
     public void CalculateStatsModifiers()
     {
-        statsMod.atk = (stats.atk-10)/2;
-        statsMod.sAtk = (stats.sAtk-10)/2;
-        statsMod.spd = (stats.spd-10)/2;
+        statsMod.atk = (int)Math.Truncate(stats.atk * 0.125f);
+        statsMod.sAtk = (int)Math.Truncate(stats.sAtk * 0.125f);
+        statsMod.spd = (int)Math.Truncate(stats.spd * 0.125f);
     }
     public void CalculateExtraStats()
     {
@@ -420,11 +447,12 @@ public class Pkmn : MonoBehaviour
 
     public int CalculateLvl3MoveSlots(int lvl)
     {
-        int calc = (int)(lvl * 0.25f) - 2;
+        int calc = (int)(lvl * 0.2f) - 2;
         if (calc < 0) calc = 0;
         return calc;
     }
     #endregion
+
 
     public void ChangeHP(int val)
     {
