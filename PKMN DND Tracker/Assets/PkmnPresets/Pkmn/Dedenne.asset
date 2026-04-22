@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Dedenne
   m_EditorClassIdentifier: 
   pkmnNumber: 702
-  pkmnSprite: {fileID: 21300000, guid: 904d496199f320941b3dcf6b81c059bd, type: 3}
+  pkmnPortraits:
+  - {fileID: 21300000, guid: 904d496199f320941b3dcf6b81c059bd, type: 3}
   baseStats:
     mHp: 0
     hp: 67

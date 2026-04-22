@@ -22,12 +22,24 @@ public class MovShower : MonoBehaviour
     public Image moveType;
     public Image moveClass;
 
+    public GameManager.Type normalTypeConversion = GameManager.Type.Normal;
+
+    public void CheckAbilities(Pkmn pkmn)
+    {
+        if (pkmn.CheckAbilityName("Piel Feérica"))
+        {
+            normalTypeConversion = GameManager.Type.Fairy;
+        }
+    }
+    
     public virtual void SetMove(MoveSO move, Pkmn pkmn)
     {
         this.move = move;
 
         movName.text = move.moveName;
         precision.text = move.precision;
+
+        CheckAbilities(pkmn);
 
         if (move.dmgDices == 0 && move.dmgDiceType == 0)
         {
@@ -40,16 +52,15 @@ public class MovShower : MonoBehaviour
         else
         {
             float dices = move.dmgDices;
-            if (move.type == pkmn.type1 || move.type == pkmn.type2)
+            if (move.type == pkmn.type1 || move.type == pkmn.type2 || (move.type == GameManager.Type.Normal && normalTypeConversion != GameManager.Type.Normal))
             {
                 float diceMult = 1.5f;
-                foreach(Pkmn.LearnableAbilities ability in pkmn.basePkmn.abilities)
+
+                if (pkmn.CheckAbilityName("Adaptabilidad"))
                 {
-                    if(ability.ability.abName == "Adaptabilidad" && ability.lvlRequired <= pkmn.lvl)
-                    {
-                        diceMult = 2; break;
-                    }
+                    diceMult = 2;
                 }
+                    
                 dices *= diceMult;
             }
             dmg.text = Mathf.Floor(dices).ToString("F0") + "d" + move.dmgDiceType;
@@ -96,7 +107,7 @@ public class MovShower : MonoBehaviour
 
         foreach(GameManager.TypeVisuals type in GameManager.Instance.typesVisuals)
         {
-            if(type.type == move.type)
+            if((type.type == move.type && move.type != GameManager.Type.Normal) || (move.type == GameManager.Type.Normal && type.type == normalTypeConversion))
             {
                 mainPanel.color = new Color(type.color.r, type.color.g, type.color.b, mainPanel.color.a);
                 titlePanel.color = new Color(type.color.r, type.color.g, type.color.b, mainPanel.color.a);

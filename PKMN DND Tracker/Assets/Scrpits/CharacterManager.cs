@@ -19,6 +19,22 @@ public class CharacterManager : MonoBehaviour
     public GameObject pkmnGameObject;
 
     public bool deleteMode;
+
+    [ContextMenu("Hard Safe")]
+    public void HardSafe()
+    {
+        List<CharacterData> data = new List<CharacterData>();
+        int loadIndex = 0;
+        while (PlayerPrefs.HasKey("CharactersSaved" + loadIndex))
+        {
+            data.Add(new CharacterData());
+            data[loadIndex].chName = PlayerPrefs.GetString("CharactersSaved" + loadIndex);
+            data[loadIndex].portrait = PlayerPrefs.GetInt(data[loadIndex].chName + "Portrait"); ;
+            PlayerPrefs.SetInt(data[loadIndex].chName + "Portrait", data[loadIndex].portrait);
+            loadIndex++;
+        }
+    }
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -37,6 +53,7 @@ public class CharacterManager : MonoBehaviour
         {
             data.Add(new CharacterData());
             data[loadIndex].chName = PlayerPrefs.GetString("CharactersSaved" + loadIndex);
+            data[loadIndex].portrait = PlayerPrefs.GetInt(data[loadIndex].chName + "Portrait"); ;
             loadIndex++;
         }
 
@@ -73,7 +90,7 @@ public class CharacterManager : MonoBehaviour
                 {
                     if (data.pkmnName == pkmn.name)
                     {
-                        Instantiate(pkmnShower, pkmnChooserContainer.transform).GetComponent<PkmnShower>().Set(pkmn, data.chName);
+                        Instantiate(pkmnShower, pkmnChooserContainer.transform).GetComponent<PkmnShower>().Set(pkmn, data.chName, data.portrait);
                     }
                 }
 
@@ -87,6 +104,7 @@ public class CharacterManager : MonoBehaviour
         {
             data.chName =  PlayerPrefs.GetString(data.chName + "ChName");
             data.pkmnName =  PlayerPrefs.GetString(data.chName + "PkmnName");
+            data.portrait =  PlayerPrefs.GetInt(data.chName + "Portrait");
             data.level =  PlayerPrefs.GetInt(data.chName + "Level");
 
             data.currentHP = PlayerPrefs.GetInt(data.chName + "HP");
@@ -164,6 +182,7 @@ public class CharacterManager : MonoBehaviour
 
                 data.chName = PlayerPrefs.GetString(chName + "ChName");
                 data.pkmnName = PlayerPrefs.GetString(chName + "PkmnName");
+                data.portrait = PlayerPrefs.GetInt(chName + "Portrait");
                 data.level = PlayerPrefs.GetInt(chName + "Level");
 
                 data.currentHP = PlayerPrefs.GetInt(chName + "HP");
@@ -231,9 +250,22 @@ public class CharacterManager : MonoBehaviour
             }
             PlayerPrefs.SetString("CharactersSaved" + loadIndex, pkmn.pkmnName);
         }
-        
+
+        if (!pkmn.basePkmn.isAlter && !pkmn.basePkmn.isMega)
+        {
+            PlayerPrefs.SetString(pkmn.pkmnName + "PkmnName", pkmn.basePkmn.name);
+        }
+        else if (pkmn.basePkmn.isAlter)
+        {
+            PlayerPrefs.SetString(pkmn.pkmnName + "PkmnName", pkmn.basePkmn.alternateForms[0].name);
+        }
+        else
+        {
+            PlayerPrefs.SetString(pkmn.pkmnName + "PkmnName", pkmn.basePkmn.megaEvo.name);
+        }
+
         PlayerPrefs.SetString(pkmn.pkmnName + "ChName", pkmn.pkmnName);
-        PlayerPrefs.SetString(pkmn.pkmnName + "PkmnName", pkmn.basePkmn.name);
+        PlayerPrefs.SetInt(pkmn.pkmnName + "Portrait", pkmn.portrait);
         PlayerPrefs.SetInt(pkmn.pkmnName + "Level", pkmn.lvl);
 
         PlayerPrefs.SetInt(pkmn.pkmnName + "HP", pkmn.stats.hp);
@@ -297,6 +329,7 @@ public class CharacterManager : MonoBehaviour
 
         PlayerPrefs.DeleteKey(chName + "ChName");
         PlayerPrefs.DeleteKey(chName + "PkmnName");
+        PlayerPrefs.DeleteKey(chName + "Portrait");
         PlayerPrefs.DeleteKey(chName + "Level");
 
         PlayerPrefs.DeleteKey(chName + "HP");

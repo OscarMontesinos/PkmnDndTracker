@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Budew
   m_EditorClassIdentifier: 
   pkmnNumber: 406
-  pkmnSprite: {fileID: 21300000, guid: 78073d218482a294e9c505323603e10f, type: 3}
+  pkmnPortraits:
+  - {fileID: 21300000, guid: 78073d218482a294e9c505323603e10f, type: 3}
   baseStats:
     mHp: 0
     hp: 40

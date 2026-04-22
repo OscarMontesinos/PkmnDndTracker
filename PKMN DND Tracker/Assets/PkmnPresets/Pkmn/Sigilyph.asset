@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Sigilyph
   m_EditorClassIdentifier: 
   pkmnNumber: 561
-  pkmnSprite: {fileID: 21300000, guid: a887746085b893e4db81c30b60ddaff7, type: 3}
+  pkmnPortraits:
+  - {fileID: 21300000, guid: a887746085b893e4db81c30b60ddaff7, type: 3}
   baseStats:
     mHp: 0
     hp: 72

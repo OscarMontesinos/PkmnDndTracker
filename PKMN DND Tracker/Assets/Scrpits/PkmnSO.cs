@@ -6,7 +6,7 @@ using static Pkmn;
 public class PkmnSO : ScriptableObject
 {
     public int pkmnNumber;
-    public Sprite pkmnSprite;
+    public List<Sprite> pkmnPortraits;
     public Pkmn.BaseStats baseStats;
     public GameManager.Type type1;
     public GameManager.Type type2;
@@ -16,6 +16,9 @@ public class PkmnSO : ScriptableObject
     public List<MoveSO> lvl1LearnableMoves = new List<MoveSO>();
     public List<MoveSO> lvl2LearnableMoves = new List<MoveSO>();
     public List<MoveSO> lvl3LearnableMoves = new List<MoveSO>();
+
+    public bool isAlter;
+    public List<PkmnSO> alternateForms = new List<PkmnSO>();
 
     public PkmnSO megaEvo;
     public Sprite megastoneSprite;

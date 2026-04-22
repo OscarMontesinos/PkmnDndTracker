@@ -8,6 +8,7 @@ public class CharacterData
 {
     public string chName;
     public string pkmnName;
+    public int portrait;
     public int level;
 
     public int currentHP;

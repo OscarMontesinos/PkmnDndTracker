@@ -29,4 +29,5 @@ MonoBehaviour:
   savingThrowType: '-'
   savingThrowMultiplier: 0
   duration: 1h
-  description: Fortalece su cuerpo aumentondo su defensa en +3
+  description: "Fortalece su cuerpo aumentondo su defensa en +3. A\xF1ade dados de
+    stab al usar Desenrollar"

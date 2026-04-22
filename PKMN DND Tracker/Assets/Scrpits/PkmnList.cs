@@ -26,17 +26,23 @@ public class PkmnList : MonoBehaviour
         {
             for (int y = 0; y + 1  < pkmnList.Count; y++)
             {
-                while (pkmnList[y].isMega || pkmnList[y].pkmnNumber == pkmnList[y + 1].pkmnNumber)
-                {
-                    pkmnList.RemoveAt(y);
-                }
-
                 if (pkmnList[y].pkmnNumber > pkmnList[y + 1].pkmnNumber)
                 {
                     PkmnSO pkmn = pkmnList[y];
                     pkmnList[y] = pkmnList[y+1];
                     pkmnList[y+1] = pkmn;
                 }
+
+                while (pkmnList[y].isMega || pkmnList[y].pkmnNumber == pkmnList[y + 1].pkmnNumber || pkmnList[y].isAlter)
+                {
+                    pkmnList.RemoveAt(y);
+
+                    if (y + 1 >= pkmnList.Count)
+                    {
+                        break;
+                    }
+                }
+
             }
         }
     }

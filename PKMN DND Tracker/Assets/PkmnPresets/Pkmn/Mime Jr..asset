@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Mime Jr.
   m_EditorClassIdentifier: 
   pkmnNumber: 439
-  pkmnSprite: {fileID: 21300000, guid: fc226185e2792fb419477daecaee4995, type: 3}
+  pkmnPortraits:
+  - {fileID: 21300000, guid: fc226185e2792fb419477daecaee4995, type: 3}
   baseStats:
     mHp: 0
     hp: 20

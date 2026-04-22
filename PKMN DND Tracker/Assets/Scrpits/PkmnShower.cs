@@ -6,20 +6,22 @@ using UnityEngine.UI;
 public class PkmnShower : MonoBehaviour
 {
     public PkmnSO pkmn;
-    public Image portrait;
+    public Image sprite;
     public TextMeshProUGUI nameText;
 
     public void Set(PkmnSO pkmn)
     {
         this.pkmn = pkmn;
-        portrait.sprite = pkmn.pkmnSprite;
+        sprite.sprite = pkmn.pkmnPortraits[0];
         nameText.text = pkmn.name;
     }
 
-    public void Set(PkmnSO pkmn, string chName)
+    public void Set(PkmnSO pkmn, string chName, int portrait)
     {
+        PlayerPrefs.SetInt(pkmn.name + "Portrait", 0);
         this.pkmn = pkmn;
-        portrait.sprite = pkmn.pkmnSprite;
+
+        sprite.sprite = pkmn.pkmnPortraits[portrait];
         nameText.text = chName;
     }
 
@@ -37,8 +39,8 @@ public class PkmnShower : MonoBehaviour
         }
         else
         {
-            CharacterManager.Instance.DeleteCharacter(nameText.text);
-            Destroy(gameObject);
+            Hub.Instance.DeletePkmnMenu(pkmn, nameText.text, pkmn.pkmnPortraits.IndexOf(sprite.sprite));
+            Hub.Instance.targetShower = gameObject;
         }
     }
 

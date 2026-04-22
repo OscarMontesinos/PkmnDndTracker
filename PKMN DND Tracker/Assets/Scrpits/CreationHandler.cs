@@ -131,7 +131,7 @@ public class CreationHandler : MonoBehaviour
 
             SwipeScreen(1);
         }
-        else if(lvlField.text != "" && conField.text == "" && strField.text == "" && chaField.text == "" && intField.text == "" && wisField.text == "" && dexField.text == "")
+        else if(lvlField.text != "")
         {
             lvl = int.Parse(lvlField.text);
             dndStats.con = 10;
@@ -140,32 +140,63 @@ public class CreationHandler : MonoBehaviour
             dndStats.intel = 10;
             dndStats.wis = 10;
             dndStats.dex = 10;
+
+            pkmnPlaceholder.basePkmn = pkmn;
+            pkmnPlaceholder.lvl = lvl;
+            pkmnPlaceholder.SetPkmn();
+
+            ShowMoves();
+
+            SwipeScreen(1);
         }
     }
 
     public void ShowMoves()
     {
-        if (!movesCreated)
+        bool learned = pkmnPlaceholder.extraStats.lvl1MoveSlots >= pkmn.lvl1LearnableMoves.Count &&
+            pkmnPlaceholder.extraStats.lvl2MoveSlots >= pkmn.lvl2LearnableMoves.Count && 
+            pkmnPlaceholder.extraStats.lvl3MoveSlots >= pkmn.lvl3LearnableMoves.Count;
+            if (!movesCreated)
         {
             foreach (MoveSO move in pkmn.lvl1LearnableMoves)
             {
                 Instantiate(moveShower, moveChooserContainer1.transform).GetComponent<UnlockableMoveShower>().SetMove(UnlockableMoveShower.Mode.creation, move, pkmnPlaceholder, 1);
+                
+                if (learned)
+                {
+                    lvl1Moves.Add(pkmn.lvl1LearnableMoves.IndexOf(move));
+                }
             }
 
             foreach (MoveSO move in pkmn.lvl2LearnableMoves)
             {
                 Instantiate(moveShower, moveChooserContainer2.transform).GetComponent<UnlockableMoveShower>().SetMove(UnlockableMoveShower.Mode.creation, move, pkmnPlaceholder, 2);
+                
+                if (learned)
+                {
+                    lvl2Moves.Add(pkmn.lvl2LearnableMoves.IndexOf(move));
+                }
             }
 
             foreach (MoveSO move in pkmn.lvl3LearnableMoves)
             {
                 Instantiate(moveShower, moveChooserContainer3.transform).GetComponent<UnlockableMoveShower>().SetMove(UnlockableMoveShower.Mode.creation, move, pkmnPlaceholder, 3);
+
+                if (learned)
+                {
+                    lvl3Moves.Add(pkmn.lvl3LearnableMoves.IndexOf(move));
+                }
             }
 
             movesCreated = true;
         }
 
         SwipeMenuMoves(0);
+
+        if (learned)
+        {
+            SetMoves();
+        }
     }
 
     public void SwipeMenuMoves(int val)
@@ -222,9 +253,26 @@ public class CreationHandler : MonoBehaviour
             ((pkmnPlaceholder.extraStats.lvl2MoveSlots - lvl2Moves.Count) == 0 || pkmnPlaceholder.extraStats.lvl2MoveSlots > pkmn.lvl2LearnableMoves.Count) &&
             ((pkmnPlaceholder.extraStats.lvl3MoveSlots - lvl3Moves.Count) == 0 || pkmnPlaceholder.extraStats.lvl3MoveSlots > pkmn.lvl3LearnableMoves.Count))
         {
-            finalPortrait.sprite = pkmn.pkmnSprite;
+            finalPortrait.sprite = pkmn.pkmnPortraits[0];
             SwipeScreen(1);
         }
+    }
+
+    public void ChangePortrait(int val)
+    {
+        val = pkmnPlaceholder.portrait + val;
+
+        if(val >= pkmn.pkmnPortraits.Count)
+        {
+            val = 0;
+        }
+        else if (val<0)
+        {
+            val = pkmn.pkmnPortraits.Count - 1;
+        }
+
+        pkmnPlaceholder.portrait = val;
+        finalPortrait.sprite = pkmn.pkmnPortraits[val];
     }
 
     public void CreatePkmn()

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: MegaBeedrill
   m_EditorClassIdentifier: 
   pkmnNumber: 0
-  pkmnSprite: {fileID: 21300000, guid: c9eb1686fd8327a4788d75553595d7bb, type: 3}
+  pkmnPortraits:
+  - {fileID: 21300000, guid: c9eb1686fd8327a4788d75553595d7bb, type: 3}
   baseStats:
     mHp: 0
     hp: 65
@@ -38,8 +39,8 @@ MonoBehaviour:
   - ability: {fileID: 11400000, guid: f7322d64bdb742845810bab0c0d63227, type: 2}
     lvlRequired: 1
   lvl1LearnableMoves:
-  - {fileID: 11400000, guid: 31e51360501d3be4cb14fff457c523fd, type: 2}
   - {fileID: 11400000, guid: c61a211568f5b254fb3c237840cf61a1, type: 2}
+  - {fileID: 11400000, guid: 31e51360501d3be4cb14fff457c523fd, type: 2}
   - {fileID: 11400000, guid: a89d14f51f15bfb42a7e08eca4966b32, type: 2}
   - {fileID: 11400000, guid: e17129a4e58a41446bdd94616a95ffcf, type: 2}
   - {fileID: 11400000, guid: 385d424ddc3be9b4db35f2b770415912, type: 2}
@@ -49,6 +50,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cc71d00c03367e8459d8133a512cd323, type: 2}
   - {fileID: 11400000, guid: 4a90a30ed7155bd4783e8fdbcd826bbe, type: 2}
   lvl3LearnableMoves: []
+  alternateForms: []
   megaEvo: {fileID: 11400000, guid: 336fbb398ac2b4746884b854205b4012, type: 2}
   megastoneSprite: {fileID: 21300000, guid: a9dabfe83a5bf7e48a88ec2f6280a209, type: 3}
   isMega: 1

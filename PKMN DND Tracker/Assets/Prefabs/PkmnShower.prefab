@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pkmn: {fileID: 0}
-  portrait: {fileID: 3875642809527848096}
+  sprite: {fileID: 3875642809527848096}
   nameText: {fileID: 31707896235414016}
 --- !u!114 &4495686788415476338
 MonoBehaviour:

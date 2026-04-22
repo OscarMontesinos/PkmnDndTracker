@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Munchlax
   m_EditorClassIdentifier: 
   pkmnNumber: 446
-  pkmnSprite: {fileID: 21300000, guid: af5ccf6caaae1fe459da63d56886fff4, type: 3}
+  pkmnPortraits:
+  - {fileID: 21300000, guid: af5ccf6caaae1fe459da63d56886fff4, type: 3}
   baseStats:
     mHp: 0
     hp: 135

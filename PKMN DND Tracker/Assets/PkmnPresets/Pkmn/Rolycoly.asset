@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cea2b651d9189d4d85f43fba7ab48e7, type: 3}
+  m_Name: Rolycoly
+  m_EditorClassIdentifier: 
+  pkmnNumber: 837
+  pkmnPortraits:
+  - {fileID: 21300000, guid: 7c898594752a76542972629b77166a6f, type: 3}
+  baseStats:
+    mHp: 0
+    hp: 30
+    atk: 40
+    def: 50
+    sAtk: 40
+    sDef: 50
+    spd: 30
+  type1: 6
+  type2: 0
+  abilities:
+  - ability: {fileID: 11400000, guid: b3ab8698ddc6c674db4a34d560d46980, type: 2}
+    lvlRequired: 1
+  - ability: {fileID: 11400000, guid: e36a6b4518eb9cf4b9451d3c2916abf1, type: 2}
+    lvlRequired: 10
+  - ability: {fileID: 11400000, guid: 241f880a08129094d9457db240df6dc6, type: 2}
+    lvlRequired: 5
+  - ability: {fileID: 11400000, guid: 867d4f534f985704a82a460d47e68156, type: 2}
+    lvlRequired: 20
+  - ability: {fileID: 11400000, guid: e1b67a84b4cf65242866fb8c43656087, type: 2}
+    lvlRequired: 35
+  lvl1LearnableMoves:
+  - {fileID: 11400000, guid: d15d25fd5b3690d4ea2534eba3e7b123, type: 2}
+  - {fileID: 11400000, guid: 759541cbd596e9b4a9a8bcc824e06e7d, type: 2}
+  - {fileID: 11400000, guid: 4238a0451d4b15144ab4b5e1aa4319db, type: 2}
+  - {fileID: 11400000, guid: 58d5b9e107084814a8e4717067a7f317, type: 2}
+  - {fileID: 11400000, guid: 4ba9463954e65a0418581a7824a711f6, type: 2}
+  - {fileID: 11400000, guid: 8640e96abd43fb14a95ea5fe62864650, type: 2}
+  lvl2LearnableMoves:
+  - {fileID: 11400000, guid: c812186bda2c0f849afb42f28a2ec437, type: 2}
+  - {fileID: 11400000, guid: e07f096ef3396c742bd23347c10a6181, type: 2}
+  lvl3LearnableMoves: []
+  megaEvo: {fileID: 0}
+  megastoneSprite: {fileID: 0}
+  isMega: 0

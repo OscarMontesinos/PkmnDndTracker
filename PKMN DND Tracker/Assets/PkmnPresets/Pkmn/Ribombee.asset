@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Ribombee
   m_EditorClassIdentifier: 
   pkmnNumber: 743
-  pkmnSprite: {fileID: 21300000, guid: 0855e3970ef6cde45a8e252db6630f52, type: 3}
+  pkmnPortraits:
+  - {fileID: 21300000, guid: 0855e3970ef6cde45a8e252db6630f52, type: 3}
   baseStats:
     mHp: 0
     hp: 65
@@ -23,7 +24,7 @@ MonoBehaviour:
     sDef: 70
     spd: 124
   type1: 7
-  type2: 4
+  type2: 18
   abilities:
   - ability: {fileID: 11400000, guid: d33b68c4d33841a44af5cae242d967ae, type: 2}
     lvlRequired: 1
@@ -31,12 +32,10 @@ MonoBehaviour:
     lvlRequired: 10
   - ability: {fileID: 11400000, guid: 6ee17eb2d52306d43bc197bace46d946, type: 2}
     lvlRequired: 5
-  - ability: {fileID: 11400000, guid: 64e56c84b0d33b24e843d4cb1b82f29a, type: 2}
+  - ability: {fileID: 11400000, guid: d8a118509bb5550488438374b4f6a4f4, type: 2}
     lvlRequired: 20
-  - ability: {fileID: 11400000, guid: 9be1f4463a2e5634ea7c3d192801ee59, type: 2}
+  - ability: {fileID: 11400000, guid: 4ceecb7f0a38cba4a9aad7986fd83a9c, type: 2}
     lvlRequired: 35
-  - ability: {fileID: 11400000, guid: f7322d64bdb742845810bab0c0d63227, type: 2}
-    lvlRequired: 1
   lvl1LearnableMoves:
   - {fileID: 11400000, guid: 5b26d52c81b40724f8ccdd6e193cd52c, type: 2}
   - {fileID: 11400000, guid: 10e14589c256aa142b31fea1fac1b870, type: 2}
@@ -45,9 +44,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4f5023a9c2541b44891fe022f8f0a846, type: 2}
   - {fileID: 11400000, guid: d75ba93ba5286604d9e0b6e252e565a0, type: 2}
   - {fileID: 11400000, guid: d192d8ef40409a14d9f65f102c954dd7, type: 2}
+  - {fileID: 11400000, guid: 675db5a9a90fd054dbf241ec1c13df29, type: 2}
+  - {fileID: 11400000, guid: 966f457616e930445a59ff69c8afed4a, type: 2}
+  - {fileID: 11400000, guid: a5fb689163ea8894f9fc13ea2d0bf694, type: 2}
+  - {fileID: 11400000, guid: a0ea025c80628ad4aaf06f851f8b0c2c, type: 2}
   lvl2LearnableMoves:
+  - {fileID: 11400000, guid: 7cdfe449b8da67b4e9912906f0754403, type: 2}
+  - {fileID: 11400000, guid: e654e87dec34e074e9953a8b5262af93, type: 2}
   - {fileID: 11400000, guid: 6f9a4a17f98bf0042a2d4c4ba398892a, type: 2}
+  - {fileID: 11400000, guid: a52965a7d8a97ed429050fbcc04af48b, type: 2}
+  - {fileID: 11400000, guid: 7c74cdce5cc1b404087d414553f83aef, type: 2}
+  - {fileID: 11400000, guid: 634bdb503f4a5824c9c535d4e7a18e77, type: 2}
+  - {fileID: 11400000, guid: e2525e0a0310f054f8f52b0decb56859, type: 2}
   - {fileID: 11400000, guid: 3d60219083914bf4e9692a9e8eb6a95e, type: 2}
+  - {fileID: 11400000, guid: 284b1dbfc1ef2c64494e839654525faa, type: 2}
   lvl3LearnableMoves: []
   megaEvo: {fileID: 0}
   megastoneSprite: {fileID: 0}

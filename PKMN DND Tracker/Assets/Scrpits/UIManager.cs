@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     public Pkmn pkmn;
     public Image bg;
     public Image pkmnPortrait;
+    public GameObject changeFormImage;
     public Image megastoneImage;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI lvlText;
@@ -158,6 +159,16 @@ public class UIManager : MonoBehaviour
         {
             megastoneImage.gameObject.SetActive(false);
         }
+
+        if (pkmn.basePkmn.alternateForms.Count>0)
+        {
+            changeFormImage.SetActive(true);
+        }
+        else
+        {
+            changeFormImage.SetActive(false);
+        }
+
 
         if (type1Obj)
         {
@@ -441,6 +452,10 @@ public class UIManager : MonoBehaviour
     public void MegaEvolve()
     {
         pkmn.MegaEvolve();
+    }
+    public void ChangeForm()
+    {
+        pkmn.ChangeForm();
     }
 
     public void Heal(float value)

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Beedrill
   m_EditorClassIdentifier: 
   pkmnNumber: 15
-  pkmnSprite: {fileID: 21300000, guid: d08751116ed539646a07cab21cbd8bba, type: 3}
+  pkmnPortraits:
+  - {fileID: 21300000, guid: d08751116ed539646a07cab21cbd8bba, type: 3}
   baseStats:
     mHp: 0
     hp: 65

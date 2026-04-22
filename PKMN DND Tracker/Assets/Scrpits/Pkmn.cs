@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.TextCore.Text;
 using static GameManager;
 using static UnityEngine.GraphicsBuffer;
 using Type = GameManager.Type;
@@ -18,6 +19,7 @@ public class Pkmn : MonoBehaviour
 
     [HideInInspector]
     public Sprite pkmnSprite;
+    public int portrait;
     public int lvl;
     public int xp;
     [HideInInspector]
@@ -160,6 +162,9 @@ public class Pkmn : MonoBehaviour
         CalculateStats();
         CalculateExtraStats();
         CalculateStatsModifiers();
+
+
+        extraStats.pp = extraStats.mPp;
     }
 
     public void InitializePkmn(CharacterData character, PkmnSO pkmn, string name)
@@ -224,7 +229,7 @@ public class Pkmn : MonoBehaviour
 
     public virtual void SetPkmn()
     {
-        pkmnSprite = basePkmn.pkmnSprite;
+        pkmnSprite = basePkmn.pkmnPortraits[portrait];
         baseStats = basePkmn.baseStats;
         type1 = basePkmn.type1;
         type2 = basePkmn.type2;
@@ -269,6 +274,11 @@ public class Pkmn : MonoBehaviour
             {
                 extraDndStats.intel += 2;
             }
+        }
+        if (type1 == Type.Rock && type2 == Type.none && lvl >= 10)
+        {
+            extraDndStats.str += 1;
+            extraDndStats.con += 1;
         }
 
         dndStats.con = baseDndStats.con + extraDndStats.con;
@@ -323,7 +333,19 @@ public class Pkmn : MonoBehaviour
 
     public int CalculateStatDef(int lvl)
     {
-        return (int)((baseStats.def + ((baseStats.def * 0.02f) * (lvl - 1)) + dndMod.con)*0.15);
+        int abilityMod = 0;
+
+        if (CheckAbilityName("Armadura Batalla"))
+        {
+            abilityMod += 2;
+        }
+
+        if (CheckAbilityName("Polvo Escudo"))
+        {
+            abilityMod += 2;
+        }
+
+        return (int)((baseStats.def + ((baseStats.def * 0.02f) * (lvl - 1)) + dndMod.con)*0.15)+abilityMod;
     }
 
     public int CalculateStatSAtk(int lvl)
@@ -340,7 +362,18 @@ public class Pkmn : MonoBehaviour
 
     public int CalculateStatSDef(int lvl)
     {
-        return (int)((baseStats.sDef + ((baseStats.sDef *0.02) * (lvl - 1)) + dndMod.wis)*0.15);
+        int abilityMod = 0;
+
+        if (CheckAbilityName("Armadura Batalla"))
+        {
+            abilityMod += 2;
+        }
+
+        if (CheckAbilityName("Polvo Escudo"))
+        {
+            abilityMod += 2;
+        }
+        return (int)((baseStats.sDef + ((baseStats.sDef *0.02) * (lvl - 1)) + dndMod.wis)*0.15)+abilityMod;
     }
 
     public int CalculateStatSpd(int lvl)
@@ -358,8 +391,7 @@ public class Pkmn : MonoBehaviour
     {
         extraStats.proficiencyBonus = CalculateProfBonus(lvl);
         extraStats.baseDC = CalculateDC(lvl);
-        extraStats.pp = CalculatePP(lvl);
-        extraStats.mPp = extraStats.pp;
+        extraStats.mPp = CalculatePP(lvl);
 
         extraStats.hitDice =CalculateHitDice(lvl);
 
@@ -526,9 +558,35 @@ public class Pkmn : MonoBehaviour
         reaction = false;
     }
 
+    bool HasAbility(int index)
+    {
+        return index < basePkmn.abilities.Count && basePkmn.abilities[index].lvlRequired <= lvl;
+    }
+
+    bool CheckAbilityName(int index, string name)
+    {
+        return HasAbility(index) && basePkmn.abilities[index].ability.abName == name;
+    }
+
+    public bool CheckAbilityName(string name)
+    {
+        return CheckAbilityName(0, name) || CheckAbilityName(1, name) || CheckAbilityName(2, name) || CheckAbilityName(3, name) || CheckAbilityName(4, name) || CheckAbilityName(5, name);
+    }
+
     public void MegaEvolve()
     {
         basePkmn = basePkmn.megaEvo;
+        baseStats = basePkmn.baseStats;
+        extraStats.isMega = basePkmn.isMega;
+
+        CalculateStats();
+        CalculateStatsModifiers();
+        ResetPkmn();
+    }
+
+    public void ChangeForm()
+    {
+        basePkmn = basePkmn.alternateForms[0];
         baseStats = basePkmn.baseStats;
         extraStats.isMega = basePkmn.isMega;
 
