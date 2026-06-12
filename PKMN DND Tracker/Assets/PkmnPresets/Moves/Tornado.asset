@@ -15,9 +15,9 @@ MonoBehaviour:
   moveName: Tornado
   type: 3
   moveClass: 1
-  precision: '-'
+  precision: 1d20
   useHitDice: 0
-  dmgDices: 2
+  dmgDices: 3
   dmgDiceType: 4
   range: 6
   area: 3
@@ -26,8 +26,8 @@ MonoBehaviour:
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: DEX
-  savingThrowMultiplier: 1
+  savingThrowType: '-'
+  savingThrowMultiplier: 0
   duration: '-'
   description: "Levanta un fuerte viento en una zona. Los objetivos deber\xE1n pasar
     una salvaci\xF3n de destreza para no recibir da\xF1o"

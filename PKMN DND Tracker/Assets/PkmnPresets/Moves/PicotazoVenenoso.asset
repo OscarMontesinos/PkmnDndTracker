@@ -16,7 +16,8 @@ MonoBehaviour:
   type: 4
   moveClass: 0
   precision: 1d20
-  dmgDices: 2
+  useHitDice: 0
+  dmgDices: 3
   dmgDiceType: 4
   range: 1
   area: 0

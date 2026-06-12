@@ -1,9 +1,11 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class CreationHandler : MonoBehaviour
 {
@@ -52,6 +54,7 @@ public class CreationHandler : MonoBehaviour
 
     [HideInInspector]
     public PkmnSO pkmn;
+    public int portrait;
     public int lvl;
     public Pkmn.DndBaseStats dndStats;
     public List<int> lvl1Moves;
@@ -134,12 +137,12 @@ public class CreationHandler : MonoBehaviour
         else if(lvlField.text != "")
         {
             lvl = int.Parse(lvlField.text);
-            dndStats.con = 10;
-            dndStats.str = 10;
-            dndStats.cha = 10;
-            dndStats.intel = 10;
-            dndStats.wis = 10;
-            dndStats.dex = 10;
+            dndStats.con = RandomStat();
+            dndStats.str = RandomStat();
+            dndStats.cha = RandomStat();
+            dndStats.intel = RandomStat();
+            dndStats.wis = RandomStat();
+            dndStats.dex = RandomStat();
 
             pkmnPlaceholder.basePkmn = pkmn;
             pkmnPlaceholder.lvl = lvl;
@@ -149,6 +152,32 @@ public class CreationHandler : MonoBehaviour
 
             SwipeScreen(1);
         }
+    }
+
+    public int RandomStat()
+    {
+        List<int> rolls = new List<int>();
+        while(rolls.Count < 4)
+        {
+            rolls.Add(Random.Range(1, 7));
+        }
+
+        for (int x = 0; x + 1 < rolls.Count; x++)
+        {
+            for (int y = 0; y + 1 < rolls.Count; y++)
+            {
+                if (rolls[y] < rolls[y + 1])
+                {
+                    int roll = rolls[y];
+                    rolls[y] = rolls[y + 1];
+                    rolls[y + 1] = roll;
+                }
+            }
+        }
+
+        rolls.RemoveAt(3);
+
+        return rolls[0] + rolls[1] + rolls[2];
     }
 
     public void ShowMoves()
@@ -249,12 +278,50 @@ public class CreationHandler : MonoBehaviour
 
     public void SetMoves()
     {
-        if(((pkmnPlaceholder.extraStats.lvl1MoveSlots - lvl1Moves.Count) == 0 || pkmnPlaceholder.extraStats.lvl1MoveSlots > pkmn.lvl1LearnableMoves.Count) &&
+        if (((pkmnPlaceholder.extraStats.lvl1MoveSlots - lvl1Moves.Count) == 0 || pkmnPlaceholder.extraStats.lvl1MoveSlots > pkmn.lvl1LearnableMoves.Count) &&
             ((pkmnPlaceholder.extraStats.lvl2MoveSlots - lvl2Moves.Count) == 0 || pkmnPlaceholder.extraStats.lvl2MoveSlots > pkmn.lvl2LearnableMoves.Count) &&
             ((pkmnPlaceholder.extraStats.lvl3MoveSlots - lvl3Moves.Count) == 0 || pkmnPlaceholder.extraStats.lvl3MoveSlots > pkmn.lvl3LearnableMoves.Count))
         {
             finalPortrait.sprite = pkmn.pkmnPortraits[0];
             SwipeScreen(1);
+        }
+        else if (lvl1Moves.Count == 0 && lvl2Moves.Count == 0 && lvl3Moves.Count == 0)
+        {
+            SetRandomMoves();
+            finalPortrait.sprite = pkmn.pkmnPortraits[0];
+            SwipeScreen(1);
+        }
+    }
+
+    public void SetRandomMoves()
+    {
+        int rMov = 0;
+        while (pkmnPlaceholder.extraStats.lvl1MoveSlots - lvl1Moves.Count != 0 && lvl1Moves.Count < pkmn.lvl1LearnableMoves.Count)
+        {
+            rMov = Random.Range(0, pkmn.lvl1LearnableMoves.Count);
+            while (lvl1Moves.Contains(rMov))
+            {
+                rMov = Random.Range(0, pkmn.lvl1LearnableMoves.Count);
+            }
+            lvl1Moves.Add(rMov);
+        }
+        while (pkmnPlaceholder.extraStats.lvl2MoveSlots - lvl2Moves.Count != 0 && lvl2Moves.Count < pkmn.lvl2LearnableMoves.Count)
+        {
+            rMov = Random.Range(0, pkmn.lvl2LearnableMoves.Count);
+            while (lvl2Moves.Contains(rMov))
+            {
+                rMov = Random.Range(0, pkmn.lvl2LearnableMoves.Count);
+            }
+            lvl2Moves.Add(rMov);
+        }
+        while (pkmnPlaceholder.extraStats.lvl3MoveSlots - lvl3Moves.Count != 0 && lvl3Moves.Count < pkmn.lvl3LearnableMoves.Count)
+        {
+            rMov = Random.Range(0, pkmn.lvl3LearnableMoves.Count);
+            while (lvl3Moves.Contains(rMov))
+            {
+                rMov = Random.Range(0, pkmn.lvl3LearnableMoves.Count);
+            }
+            lvl3Moves.Add(rMov);
         }
     }
 
@@ -273,12 +340,30 @@ public class CreationHandler : MonoBehaviour
 
         pkmnPlaceholder.portrait = val;
         finalPortrait.sprite = pkmn.pkmnPortraits[val];
+        portrait = val;
     }
 
     public void CreatePkmn()
     {
         if(nameField.text != "" && !PlayerPrefs.HasKey(nameField.text + "ChName"))
         {
+            Pkmn pkmn = Instantiate(pkmnGameObject).GetComponent<Pkmn>();
+            pkmn.InitializePkmn(this, nameField.text);
+
+            CharacterManager.Instance.SafeInfo(pkmn);
+
+            SceneManager.LoadScene("CharacterSheet");
+        }
+        else if(nameField.text == "")
+        {
+            int i = 1;
+            while (PlayerPrefs.HasKey(this.pkmn.name + i + "ChName"))
+            {
+                i++;
+            }
+
+            nameField.text = this.pkmn.name + i;
+
             Pkmn pkmn = Instantiate(pkmnGameObject).GetComponent<Pkmn>();
             pkmn.InitializePkmn(this, nameField.text);
 

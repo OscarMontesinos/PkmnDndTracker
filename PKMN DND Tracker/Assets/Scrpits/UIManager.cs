@@ -55,8 +55,16 @@ public class UIManager : MonoBehaviour
     public GameObject abilitiesDestination;
     public GameObject abilitiesGO;
 
+    public enum movesDmgMode
+    {
+        normal,superE,hiperE, resisted, superRes
+    }
+    public movesDmgMode moveMode;
+    public TextMeshProUGUI moveModeText;
     public GameObject movesDestination;
     public GameObject moveGO;
+    [HideInInspector]
+    public List<MovShower> movShowerList = new List<MovShower>();
 
     public GameObject itemsDestination;
     public GameObject itemGO;
@@ -359,7 +367,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateStats()
     {
-        statsText.text = pkmn.stats.hp + "\n" + pkmn.stats.atk + "\n" + pkmn.stats.def + "\n" + pkmn.stats.sAtk + "\n" + pkmn.stats.sDef + "\n" +pkmn.stats.spd;
+        statsText.text = pkmn.stats.mHp + "\n" + pkmn.stats.atk + "\n" + pkmn.stats.def + "\n" + pkmn.stats.sAtk + "\n" + pkmn.stats.sDef + "\n" +pkmn.stats.spd;
         statsModText.text = GetStatModText(pkmn.statsMod.atk) + "\n" + GetStatModText(pkmn.statsMod.sAtk) + "\n" + GetStatModText(pkmn.statsMod.spd);
     }
 
@@ -653,6 +661,69 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void ChangeMovesMode(int val)
+    {
+        if (val > 0)
+        {
+            switch (moveMode)
+            {
+                case movesDmgMode.normal:
+                    moveMode = movesDmgMode.superE;
+                    break;
+                case movesDmgMode.superE:
+                    moveMode = movesDmgMode.hiperE;
+                    break;
+                case movesDmgMode.resisted:
+                    moveMode = movesDmgMode.normal;
+                    break;
+                case movesDmgMode.superRes:
+                    moveMode = movesDmgMode.resisted;
+                    break;
+            }
+        }
+        else
+        {
+            switch (moveMode)
+            {
+                case movesDmgMode.normal:
+                    moveMode = movesDmgMode.resisted;
+                    break;
+                case movesDmgMode.superE:
+                    moveMode = movesDmgMode.normal;
+                    break;
+                case movesDmgMode.hiperE:
+                    moveMode = movesDmgMode.superE;
+                    break;
+                case movesDmgMode.resisted:
+                    moveMode = movesDmgMode.superRes;
+                    break;
+            }
+        }
+
+        switch (moveMode)
+        {
+            case movesDmgMode.normal:
+                moveModeText.text = "Eficaz";
+                break;
+            case movesDmgMode.superE:
+                moveModeText.text = "Muy eficaz";
+                break;
+            case movesDmgMode.hiperE:
+                moveModeText.text = "Hiper eficaz";
+                break;
+            case movesDmgMode.resisted:
+                moveModeText.text = "Poco Eficaz";
+                break;
+            case movesDmgMode.superRes:
+                moveModeText.text = "Muy poco eficaz";
+                break;
+        }
+
+        foreach(MovShower shower in movShowerList)
+        {
+            shower.SetDmgDices();
+        }
+    }
     public void ReturnHub()
     {
         SceneManager.LoadScene("Hub");

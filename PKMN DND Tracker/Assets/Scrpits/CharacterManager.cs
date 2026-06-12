@@ -40,7 +40,7 @@ public class CharacterManager : MonoBehaviour
     {
         if (Instance)
         {
-            Destroy(Instance);
+            Destroy(Instance.gameObject);
         }
 
         Instance = this;
@@ -326,6 +326,14 @@ public class CharacterManager : MonoBehaviour
             i++;
         }
         PlayerPrefs.DeleteKey("CharactersSaved" + i);
+
+        i++;
+        while (PlayerPrefs.HasKey("CharactersSaved" + i))
+        {
+            PlayerPrefs.SetString("CharactersSaved" + (i-1).ToString(), PlayerPrefs.GetString(data[i].chName + "ChName"));
+            i++;
+        }
+        PlayerPrefs.DeleteKey("CharactersSaved" + (i - 1).ToString());
 
         PlayerPrefs.DeleteKey(chName + "ChName");
         PlayerPrefs.DeleteKey(chName + "PkmnName");

@@ -17,7 +17,7 @@ MonoBehaviour:
   moveClass: 2
   precision: '-'
   useHitDice: 0
-  dmgDices: 1
+  dmgDices: 2
   dmgDiceType: 4
   range: 1
   area: 0
@@ -29,5 +29,5 @@ MonoBehaviour:
   savingThrowType: CON
   savingThrowMultiplier: 1
   duration: 3 Rondas
-  description: "Ataca a un enemigo rompi\xE9ndole sus defensas. Tira 1d4 extra a
+  description: "Ataca a un enemigo rompi\xE9ndole sus defensas. Tira 2d4 extra a
     la tirada de cualquier ataque f\xEDsico"

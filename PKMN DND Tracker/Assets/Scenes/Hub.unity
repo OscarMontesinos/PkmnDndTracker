@@ -2105,6 +2105,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: PkmnList
       objectReference: {fileID: 0}
+    - target: {fileID: 3020883223296464770, guid: d581ad9b3ce52454b8f4ab80135a4b5f, type: 3}
+      propertyPath: 'pkmnList.Array.data[56]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ee74cf9cb1b9654abc9913f5f139590, type: 2}
+    - target: {fileID: 3020883223296464770, guid: d581ad9b3ce52454b8f4ab80135a4b5f, type: 3}
+      propertyPath: 'pkmnList.Array.data[57]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 55959cdb630ef5a4584ae54fb28404b4, type: 2}
+    - target: {fileID: 3020883223296464770, guid: d581ad9b3ce52454b8f4ab80135a4b5f, type: 3}
+      propertyPath: 'pkmnList.Array.data[58]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c1919ad7409676f419033a5cd16b90b5, type: 2}
+    - target: {fileID: 3020883223296464770, guid: d581ad9b3ce52454b8f4ab80135a4b5f, type: 3}
+      propertyPath: 'pkmnList.Array.data[59]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a954eb10cfb8f747b20f33c80c8290a, type: 2}
+    - target: {fileID: 3020883223296464770, guid: d581ad9b3ce52454b8f4ab80135a4b5f, type: 3}
+      propertyPath: 'pkmnList.Array.data[60]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9cf874cdef8554e4ca981c7c37c5ad34, type: 2}
+    - target: {fileID: 3020883223296464770, guid: d581ad9b3ce52454b8f4ab80135a4b5f, type: 3}
+      propertyPath: 'pkmnList.Array.data[61]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 575db27decba63649951365a68f6cead, type: 2}
+    - target: {fileID: 3020883223296464770, guid: d581ad9b3ce52454b8f4ab80135a4b5f, type: 3}
+      propertyPath: 'pkmnList.Array.data[62]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7497800944e4b824fa6af1ee55f2e6bb, type: 2}
+    - target: {fileID: 3020883223296464770, guid: d581ad9b3ce52454b8f4ab80135a4b5f, type: 3}
+      propertyPath: 'pkmnList.Array.data[63]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c0f025874df952c4fa2dc0eac4b366ef, type: 2}
+    - target: {fileID: 3020883223296464770, guid: d581ad9b3ce52454b8f4ab80135a4b5f, type: 3}
+      propertyPath: 'pkmnList.Array.data[64]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 0e279ebf4fe3b6b4bb25ad15f87cae3b, type: 2}
+    - target: {fileID: 3020883223296464770, guid: d581ad9b3ce52454b8f4ab80135a4b5f, type: 3}
+      propertyPath: 'pkmnList.Array.data[65]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 98aef11e05a2b1646b7d4594bd8dbc0c, type: 2}
     - target: {fileID: 9006215404812740874, guid: d581ad9b3ce52454b8f4ab80135a4b5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.18677899
@@ -2854,7 +2894,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1632371304
 Canvas:
   m_ObjectHideFlags: 0
@@ -2864,7 +2904,7 @@ Canvas:
   m_GameObject: {fileID: 1632371301}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 2
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -2874,7 +2914,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 0
+  m_UpdateRectTransformForStandalone: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2886,8 +2926,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632371301}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 0.0052083335, y: 0.0052083335, z: 0.0052083335}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1988158574}
@@ -2896,8 +2936,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 1080, y: 1920}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1632371306
 MonoBehaviour:
   m_ObjectHideFlags: 0

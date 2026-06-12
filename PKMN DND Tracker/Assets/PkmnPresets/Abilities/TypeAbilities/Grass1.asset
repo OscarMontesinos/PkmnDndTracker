@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abName: Planta
   description: "Puede alimentarse de luz solar y minerales de la tierra. Puede comunicarse
-    con las plantas. Obtiene +2 en sabidur\xEDa. Inmunidad a esporas y polvos de
+    con las plantas. Obtiene +1 en sabidur\xEDa. Inmunidad a esporas y polvos de
     estado."

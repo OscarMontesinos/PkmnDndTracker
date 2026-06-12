@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cea2b651d9189d4d85f43fba7ab48e7, type: 3}
+  m_Name: Bronzor
+  m_EditorClassIdentifier: 
+  pkmnNumber: 436
+  pkmnPortraits:
+  - {fileID: 21300000, guid: 5de9fdfe7eb6164478e1c29932dc16ce, type: 3}
+  baseStats:
+    mHp: 0
+    hp: 57
+    atk: 24
+    def: 86
+    sAtk: 24
+    sDef: 86
+    spd: 23
+  type1: 9
+  type2: 14
+  abilities:
+  - ability: {fileID: 11400000, guid: b8b2f71d03eb1da4da48a756d973577a, type: 2}
+    lvlRequired: 1
+  - ability: {fileID: 11400000, guid: 3860ff4134db3c044b08bf4e7bdf0f83, type: 2}
+    lvlRequired: 10
+  - ability: {fileID: 11400000, guid: f9e858501e3239043b1c601ec7dabb5c, type: 2}
+    lvlRequired: 5
+  - ability: {fileID: 11400000, guid: 3bc0f223335f03f45b07e814b3d4c8b7, type: 2}
+    lvlRequired: 20
+  - ability: {fileID: 11400000, guid: 7fb3da485ca02b04a9c7ec9a21428dfc, type: 2}
+    lvlRequired: 35
+  lvl1LearnableMoves:
+  - {fileID: 11400000, guid: c003dd422866c0d40b2f7827a69dfc0a, type: 2}
+  - {fileID: 11400000, guid: d15d25fd5b3690d4ea2534eba3e7b123, type: 2}
+  - {fileID: 11400000, guid: 759541cbd596e9b4a9a8bcc824e06e7d, type: 2}
+  - {fileID: 11400000, guid: 385d424ddc3be9b4db35f2b770415912, type: 2}
+  - {fileID: 11400000, guid: a45139420cbc782419af754094bafc22, type: 2}
+  - {fileID: 11400000, guid: 8e6c3b8fe81d95948ad375999f683cea, type: 2}
+  - {fileID: 11400000, guid: 9bed239141c8ee5488922e4999d8c347, type: 2}
+  - {fileID: 11400000, guid: 32a48d9008bf03f42b08ba9f4bc5c987, type: 2}
+  - {fileID: 11400000, guid: bf69187d979471d4fb613373c1708706, type: 2}
+  - {fileID: 11400000, guid: 95357955056f50b4a94850a29ed4d486, type: 2}
+  lvl2LearnableMoves:
+  - {fileID: 11400000, guid: 8bc68cd94094a4d4f880243b3b7631fa, type: 2}
+  - {fileID: 11400000, guid: f2ff2ca90b10d9444aa1db1950cd834f, type: 2}
+  - {fileID: 11400000, guid: b4707893ae75d5a42943905cc6e9125d, type: 2}
+  - {fileID: 11400000, guid: 439c248a906efa546b46cec293e5bae2, type: 2}
+  - {fileID: 11400000, guid: 1cefb57293a552346b32f952828366ff, type: 2}
+  - {fileID: 11400000, guid: e2525e0a0310f054f8f52b0decb56859, type: 2}
+  - {fileID: 11400000, guid: 1b2113c3b6e1bd84eb62e92c6b097fa5, type: 2}
+  - {fileID: 11400000, guid: 01f1127ee9571844e84682fab23c5230, type: 2}
+  - {fileID: 11400000, guid: 4e4f19e518a8b6249aff6070c6f67049, type: 2}
+  - {fileID: 11400000, guid: 461f9ed451b7e1f4c85a7a37b3d559fb, type: 2}
+  - {fileID: 11400000, guid: 284b1dbfc1ef2c64494e839654525faa, type: 2}
+  - {fileID: 11400000, guid: 644517d02cfe8814a8c1d4ee189722ba, type: 2}
+  lvl3LearnableMoves: []
+  isAlter: 0
+  alternateForms: []
+  megaEvo: {fileID: 0}
+  megastoneSprite: {fileID: 0}
+  isMega: 0

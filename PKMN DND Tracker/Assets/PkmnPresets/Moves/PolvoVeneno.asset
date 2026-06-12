@@ -28,6 +28,6 @@ MonoBehaviour:
   hasPriority: 0
   savingThrowType: DEX CON
   savingThrowMultiplier: 1
-  duration: 24h
+  duration: 5min
   description: "Lanza al enemigo un polvo venenoso. Si el objetivo falla la salvaci\xF3n
     lo envenena"

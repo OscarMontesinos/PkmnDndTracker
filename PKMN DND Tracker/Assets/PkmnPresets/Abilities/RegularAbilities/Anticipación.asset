@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: "Anticipaci\xF3n"
   m_EditorClassIdentifier: 
   abName: "Anticipaci\xF3n"
-  description: "Puedes examinar a un objetivo y tiene un escalofr\xEDo si este sabe
-    un movimiento supereficaz contra \xE9l"
+  description: "Puedes examinar a un objetivo gastando la acci\xF3n bonus y saber
+    los tipos de sus ataques ofensivos disponibles"

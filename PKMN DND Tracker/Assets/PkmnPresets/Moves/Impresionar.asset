@@ -17,17 +17,17 @@ MonoBehaviour:
   moveClass: 0
   precision: '-'
   useHitDice: 0
-  dmgDices: 1
+  dmgDices: 2
   dmgDiceType: 6
   range: 3
   area: 0
   pps: 10
   isAction: 1
-  isBonusAction: 0
+  isBonusAction: 1
   isReaction: 0
   hasPriority: 0
   savingThrowType: WIS
-  savingThrowMultiplier: 1
+  savingThrowMultiplier: 0.5
   duration: '-'
   description: "Ataca con un grito alarmante. Si el objetivo no pasa una salvaci\xF3n
     de sabidur\xEDa queda aturdido durante este turno"

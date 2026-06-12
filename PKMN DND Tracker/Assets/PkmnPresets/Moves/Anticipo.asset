@@ -19,9 +19,9 @@ MonoBehaviour:
   useHitDice: 0
   dmgDices: 0
   dmgDiceType: 0
-  range: 6
+  range: 3
   area: 0
-  pps: 12
+  pps: 20
   isAction: 0
   isBonusAction: 0
   isReaction: 1
@@ -29,4 +29,6 @@ MonoBehaviour:
   savingThrowType: '-'
   savingThrowMultiplier: 0
   duration: 0
-  description: Bloquea un ataque de prioridad dirigido hacia ti o hacia un aliado
+  description: "Avanza hasta el objetivo y bloquea una reacci\xF3n, incluso si tuviera
+    prioridad. El objetivo puede ser tanto el usuario de la reacci\xF3n a bloquear
+    o el objetivo de dicha reacci\xF3n."

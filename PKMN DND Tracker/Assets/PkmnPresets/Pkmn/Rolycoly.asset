@@ -40,13 +40,23 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d15d25fd5b3690d4ea2534eba3e7b123, type: 2}
   - {fileID: 11400000, guid: 759541cbd596e9b4a9a8bcc824e06e7d, type: 2}
   - {fileID: 11400000, guid: 4238a0451d4b15144ab4b5e1aa4319db, type: 2}
+  - {fileID: 11400000, guid: 9bed239141c8ee5488922e4999d8c347, type: 2}
+  - {fileID: 11400000, guid: 32a48d9008bf03f42b08ba9f4bc5c987, type: 2}
+  - {fileID: 11400000, guid: 64ffc19695a8bcc409c0208823744185, type: 2}
   - {fileID: 11400000, guid: 58d5b9e107084814a8e4717067a7f317, type: 2}
   - {fileID: 11400000, guid: 4ba9463954e65a0418581a7824a711f6, type: 2}
   - {fileID: 11400000, guid: 8640e96abd43fb14a95ea5fe62864650, type: 2}
   lvl2LearnableMoves:
+  - {fileID: 11400000, guid: 1b66449b7cf28f2498438f8d9ddeb2ca, type: 2}
   - {fileID: 11400000, guid: c812186bda2c0f849afb42f28a2ec437, type: 2}
   - {fileID: 11400000, guid: e07f096ef3396c742bd23347c10a6181, type: 2}
+  - {fileID: 11400000, guid: 439c248a906efa546b46cec293e5bae2, type: 2}
+  - {fileID: 11400000, guid: a075782cd3d219949b295c6a4074ae97, type: 2}
+  - {fileID: 11400000, guid: 284b1dbfc1ef2c64494e839654525faa, type: 2}
+  - {fileID: 11400000, guid: e118d04d77fe80d4f81ae4298e9d8dcc, type: 2}
   lvl3LearnableMoves: []
+  isAlter: 0
+  alternateForms: []
   megaEvo: {fileID: 0}
   megastoneSprite: {fileID: 0}
   isMega: 0

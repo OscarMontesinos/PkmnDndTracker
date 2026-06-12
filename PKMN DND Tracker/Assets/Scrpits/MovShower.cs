@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class MovShower : MonoBehaviour
 {
+    Pkmn pkmn;
     MoveSO move;
     public TextMeshProUGUI movName;
     public TextMeshProUGUI precision;
@@ -30,41 +31,26 @@ public class MovShower : MonoBehaviour
         {
             normalTypeConversion = GameManager.Type.Fairy;
         }
+        else if (pkmn.CheckAbilityName("Piel Eléctrica"))
+        {
+            normalTypeConversion = GameManager.Type.Electric;
+        }
     }
     
     public virtual void SetMove(MoveSO move, Pkmn pkmn)
     {
+        this.pkmn= pkmn;
         this.move = move;
+
+        if (UIManager.Instance)
+        {
+            UIManager.Instance.movShowerList.Add(this);
+        }
 
         movName.text = move.moveName;
         precision.text = move.precision;
 
-        CheckAbilities(pkmn);
-
-        if (move.dmgDices == 0 && move.dmgDiceType == 0)
-        {
-            dmg.text = "";
-        }
-        else if (move.useHitDice)
-        {
-            dmg.text = move.dmgDices + "d" + pkmn.extraStats.hitDice;
-        }
-        else
-        {
-            float dices = move.dmgDices;
-            if (move.type == pkmn.type1 || move.type == pkmn.type2 || (move.type == GameManager.Type.Normal && normalTypeConversion != GameManager.Type.Normal))
-            {
-                float diceMult = 1.5f;
-
-                if (pkmn.CheckAbilityName("Adaptabilidad"))
-                {
-                    diceMult = 2;
-                }
-                    
-                dices *= diceMult;
-            }
-            dmg.text = Mathf.Floor(dices).ToString("F0") + "d" + move.dmgDiceType;
-        }
+        SetDmgDices();
 
         range.text = move.range.ToString();
         area.text = move.area.ToString();
@@ -134,7 +120,71 @@ public class MovShower : MonoBehaviour
 
     }
 
+    public void SetDmgDices()
+    {
+        CheckAbilities(pkmn);
 
+        if (move.dmgDices == 0 && move.dmgDiceType == 0)
+        {
+            dmg.text = "";
+        }
+        else if (move.useHitDice)
+        {
+            dmg.text = move.dmgDices + "d" + pkmn.extraStats.hitDice;
+        }
+        else
+        {
+            float dices = move.dmgDices;
+            float diceMult = 1;
+            if (move.type == pkmn.type1 || move.type == pkmn.type2 ||
+               (move.type == GameManager.Type.Normal && normalTypeConversion != GameManager.Type.Normal) ||
+
+               ((pkmn.type1 == GameManager.Type.Dragon && pkmn.type2 == GameManager.Type.none && pkmn.lvl >= 10
+               && (move.type == GameManager.Type.Water || move.type == GameManager.Type.Electric || move.type == GameManager.Type.Fire
+               || move.type == GameManager.Type.Grass))) ||
+               
+               (pkmn.CheckAbilityName("Cólera") && move.moveClass == GameManager.MoveClass.Special &&  (pkmn.stats.hp / pkmn.stats.mHp) * 100 <= 50))
+            {
+                diceMult += 0.5f;
+
+                if (pkmn.CheckAbilityName("Adaptabilidad"))
+                {
+                    diceMult += 1;
+                }
+            }
+            else if (pkmn.type1 == GameManager.Type.Ground && pkmn.type2 == GameManager.Type.none && pkmn.HasAbility(2))
+            {
+                if (move.type == GameManager.Type.Rock || move.type == GameManager.Type.Steel)
+                {
+                    diceMult += 0.5f;
+                }
+            }
+            if (UIManager.Instance)
+            {
+                switch (UIManager.Instance.moveMode)
+                {
+                    case UIManager.movesDmgMode.superE:
+                        diceMult += 0.5f;
+                        break;
+                    case UIManager.movesDmgMode.hiperE:
+                        diceMult += 1f;
+                        break;
+                    case UIManager.movesDmgMode.resisted:
+                        diceMult -= 0.5f;
+                        break;
+                    case UIManager.movesDmgMode.superRes:
+                        diceMult -= 1f;
+                        break;
+                }
+            }
+            dices *= diceMult;
+            if (dices < 1)
+            {
+                dices = 1;
+            }
+            dmg.text = Mathf.Floor(dices).ToString("F0") + "d" + move.dmgDiceType;
+        }
+    }
 
     public void Activate()
     {

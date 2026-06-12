@@ -5,7 +5,7 @@ using static Pkmn;
 [CreateAssetMenu(fileName = "Pkmn", menuName = "Pkmn", order = 0)]
 public class PkmnSO : ScriptableObject
 {
-    public int pkmnNumber;
+    public float pkmnNumber;
     public List<Sprite> pkmnPortraits;
     public Pkmn.BaseStats baseStats;
     public GameManager.Type type1;

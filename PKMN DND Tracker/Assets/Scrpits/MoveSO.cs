@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Move", menuName = "Move", order = 1)]
+[Serializable]
 public class MoveSO : ScriptableObject
 {
     public string moveName;

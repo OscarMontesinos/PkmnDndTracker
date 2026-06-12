@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cea2b651d9189d4d85f43fba7ab48e7, type: 3}
+  m_Name: Drampa
+  m_EditorClassIdentifier: 
+  pkmnNumber: 780
+  pkmnPortraits:
+  - {fileID: 21300000, guid: 9964fa44a17578a4ba3fbcf1f1610b88, type: 3}
+  baseStats:
+    mHp: 0
+    hp: 78
+    atk: 60
+    def: 85
+    sAtk: 135
+    sDef: 91
+    spd: 36
+  type1: 1
+  type2: 16
+  abilities:
+  - ability: {fileID: 11400000, guid: 0f7d2c8e6197baa42805a9721a6025c6, type: 2}
+    lvlRequired: 1
+  - ability: {fileID: 11400000, guid: 8ef5d2125abcf4c43b722fe9166ed91c, type: 2}
+    lvlRequired: 10
+  - ability: {fileID: 11400000, guid: ead3a475a51f66b4883ad7e3602a695c, type: 2}
+    lvlRequired: 5
+  - ability: {fileID: 11400000, guid: 7ca685153b69ccf4ea65ca2394c30ce3, type: 2}
+    lvlRequired: 20
+  - ability: {fileID: 11400000, guid: 6f1e123554d0b2d428f99f57a03fb40d, type: 2}
+    lvlRequired: 35
+  lvl1LearnableMoves:
+  - {fileID: 11400000, guid: ec4abdb4e935c814d925a7ff67f33a1c, type: 2}
+  - {fileID: 11400000, guid: 264b49f38fa36394aad35edf044a129e, type: 2}
+  - {fileID: 11400000, guid: 4f5023a9c2541b44891fe022f8f0a846, type: 2}
+  - {fileID: 11400000, guid: 5128d9653c1e33a469b845d493628633, type: 2}
+  - {fileID: 11400000, guid: a688c64f600cffe4c8e89f693f6ba797, type: 2}
+  - {fileID: 11400000, guid: 1dbbc8df0b54fa84ebbbf34681c590c8, type: 2}
+  - {fileID: 11400000, guid: 3b362df757a79ab47925336a6dfeacd9, type: 2}
+  lvl2LearnableMoves:
+  - {fileID: 11400000, guid: 675db5a9a90fd054dbf241ec1c13df29, type: 2}
+  - {fileID: 11400000, guid: 9b4f6fa3fc1d23348a4c5ec356f8abb6, type: 2}
+  - {fileID: 11400000, guid: 56d8c6efad5fba747995cb2bb0055469, type: 2}
+  - {fileID: 11400000, guid: 7c74cdce5cc1b404087d414553f83aef, type: 2}
+  - {fileID: 11400000, guid: 461f9ed451b7e1f4c85a7a37b3d559fb, type: 2}
+  - {fileID: 11400000, guid: e2525e0a0310f054f8f52b0decb56859, type: 2}
+  lvl3LearnableMoves: []
+  isAlter: 0
+  alternateForms: []
+  megaEvo: {fileID: 0}
+  megastoneSprite: {fileID: 0}
+  isMega: 0

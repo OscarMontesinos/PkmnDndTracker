@@ -15,6 +15,13 @@ MonoBehaviour:
   pkmnNumber: 774
   pkmnPortraits:
   - {fileID: 21300000, guid: 24dc1e7ca2b71024596bfbd51dd2df69, type: 3}
+  - {fileID: 21300000, guid: 24dc1e7ca2b71024596bfbd51dd2df69, type: 3}
+  - {fileID: 21300000, guid: 24dc1e7ca2b71024596bfbd51dd2df69, type: 3}
+  - {fileID: 21300000, guid: 24dc1e7ca2b71024596bfbd51dd2df69, type: 3}
+  - {fileID: 21300000, guid: 24dc1e7ca2b71024596bfbd51dd2df69, type: 3}
+  - {fileID: 21300000, guid: 24dc1e7ca2b71024596bfbd51dd2df69, type: 3}
+  - {fileID: 21300000, guid: 24dc1e7ca2b71024596bfbd51dd2df69, type: 3}
+  - {fileID: 21300000, guid: 24dc1e7ca2b71024596bfbd51dd2df69, type: 3}
   baseStats:
     mHp: 0
     hp: 60

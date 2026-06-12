@@ -145,6 +145,7 @@ public class Pkmn : MonoBehaviour
     {
         basePkmn = creation.pkmn;
         pkmnName = name;
+        portrait = creation.portrait;
         lvl = creation.lvl;
         baseDndStats = creation.dndStats;
         lvl1Moves = creation.lvl1Moves;
@@ -171,6 +172,8 @@ public class Pkmn : MonoBehaviour
     {
         basePkmn = pkmn;
         pkmnName = name;
+        portrait = character.portrait;
+        pkmnSprite = pkmn.pkmnPortraits[portrait];
         lvl = character.level;
         baseDndStats = character.stats;
         lvl1Moves = character.lvl1Moves;
@@ -257,9 +260,22 @@ public class Pkmn : MonoBehaviour
     public void CalculateDndStats()
     {
         extraDndStats = new DndBaseStats();
+        
+        CalculateDndStatsTypeMod();
+        CalculateDndStatsAbMod();
+
+        dndStats.con = baseDndStats.con + extraDndStats.con;
+        dndStats.str = baseDndStats.str + extraDndStats.str;
+        dndStats.cha = baseDndStats.cha + extraDndStats.cha;
+        dndStats.intel = baseDndStats.intel + extraDndStats.intel;
+        dndStats.wis = baseDndStats.wis + extraDndStats.wis;
+        dndStats.dex = baseDndStats.dex + extraDndStats.dex;
+    }
+    void CalculateDndStatsTypeMod()
+    {
         if (type1 == Type.Grass || (type2 == Type.Grass && lvl >= 10))
         {
-            extraDndStats.wis += 2;
+            extraDndStats.wis += 1;
 
             if (type2 == Type.none && lvl >= 10)
             {
@@ -280,13 +296,22 @@ public class Pkmn : MonoBehaviour
             extraDndStats.str += 1;
             extraDndStats.con += 1;
         }
+        if (type1 == Type.Fighting && type2 == Type.none && lvl >= 10)
+        {
+            extraDndStats.str += 2;
+        }
+        if (type1 == Type.Steel || (type2 == Type.Steel && lvl >= 10))
+        {
+            extraDndStats.con += 2;
+        }
+    }
 
-        dndStats.con = baseDndStats.con + extraDndStats.con;
-        dndStats.str = baseDndStats.str + extraDndStats.str;
-        dndStats.cha = baseDndStats.cha + extraDndStats.cha;
-        dndStats.intel = baseDndStats.intel + extraDndStats.intel;
-        dndStats.wis = baseDndStats.wis + extraDndStats.wis;
-        dndStats.dex = baseDndStats.dex + extraDndStats.dex;
+    void CalculateDndStatsAbMod()
+    {
+        if (CheckAbilityName("Hurto"))
+        {
+            extraDndStats.dex += 1;
+        }
     }
 
     public void CalculateModifiers()
@@ -323,62 +348,65 @@ public class Pkmn : MonoBehaviour
 
     public int CalculateStatHP(int lvl)
     {
-        return (int)((baseStats.hp / 4) + ((baseStats.hp / 17.5f) * (lvl - 1)) + dndMod.con * 2);
+        return (int)((((baseStats.hp * (1 + (dndMod.con * 0.02f))) * 0.65f)*(50f / baseStats.hp)) + (((baseStats.hp * (1 + (dndMod.con * 0.035f))) *0.02f) * (lvl - 1)));
     }
 
     public int CalculateStatAtk(int lvl)
     {
-        return (int)((baseStats.atk / 4) + ((baseStats.atk *0.02f) * (lvl - 1)) + dndMod.str);
+        int atk = baseStats.atk;
+        if (CheckAbilityName("Potencia")) atk *= 2;
+        return (int)(((atk * (1 + (dndMod.str * 0.1f))) / 4) + (((atk * (1 + (dndMod.str * 0.035f))) * 0.02f) * (lvl - 1)));
     }
-
-    public int CalculateStatDef(int lvl)
-    {
-        int abilityMod = 0;
-
-        if (CheckAbilityName("Armadura Batalla"))
-        {
-            abilityMod += 2;
-        }
-
-        if (CheckAbilityName("Polvo Escudo"))
-        {
-            abilityMod += 2;
-        }
-
-        return (int)((baseStats.def + ((baseStats.def * 0.02f) * (lvl - 1)) + dndMod.con)*0.15)+abilityMod;
-    }
-
     public int CalculateStatSAtk(int lvl)
     {
         if (dndMod.intel > dndMod.cha)
         {
-            return (int)((baseStats.sAtk / 4) + ((baseStats.sAtk * 0.02f) * (lvl - 1)) + dndMod.intel);
+            return (int)(((baseStats.sAtk * (1 + (dndMod.intel * 0.1f))) / 4) + (((baseStats.sAtk * (1 + (dndMod.intel * 0.035f))) * 0.02f) * (lvl - 1)));
         }
         else
         {
-            return (int)((baseStats.sAtk / 4) + ((baseStats.sAtk * 0.02f) * (lvl - 1)) + dndMod.cha);
+            return (int)(((baseStats.sAtk * (1 + (dndMod.cha * 0.1f))) / 4) + (((baseStats.sAtk * (1 + (dndMod.cha * 0.035f))) * 0.02f) * (lvl - 1)));
         }
     }
 
+    public int CalculateStatDef(int lvl)
+    {
+        int abilityMod = CalculateAcAbilityMod();
+
+        return (int)(((baseStats.def * (1 + (dndMod.con * 0.1f))) + (((baseStats.def * (1 + (dndMod.con * 0.1f))) * 0.02f) * (lvl - 1)))*0.15)+abilityMod;
+    }
+
+
     public int CalculateStatSDef(int lvl)
     {
-        int abilityMod = 0;
+        int abilityMod = CalculateAcAbilityMod();
 
+        return (int)(((baseStats.sDef * (1 + (dndMod.wis * 0.1f))) + (((baseStats.sDef * (1 + (dndMod.wis * 0.1f))) * 0.02f) * (lvl - 1))) * 0.15) + abilityMod;
+    }
+
+    int CalculateAcAbilityMod()
+    {
+        int mod = 0;
         if (CheckAbilityName("Armadura Batalla"))
         {
-            abilityMod += 2;
+            mod += 2;
         }
 
         if (CheckAbilityName("Polvo Escudo"))
         {
-            abilityMod += 2;
+            mod += 2;
         }
-        return (int)((baseStats.sDef + ((baseStats.sDef *0.02) * (lvl - 1)) + dndMod.wis)*0.15)+abilityMod;
+
+        if (CheckAbilityName("Escudo Magma"))
+        {
+            mod += 1;
+        }
+        return mod;
     }
 
     public int CalculateStatSpd(int lvl)
     {
-        return (int)((baseStats.spd / 5) + ((baseStats.spd * 0.02f) * (lvl - 1)) + dndMod.dex);
+        return (int)(((baseStats.spd * (1 + (dndMod.dex * 0.1f))) / 5) + (((baseStats.spd * (1 + (dndMod.dex * 0.035f))) * 0.02f) * (lvl - 1)));
     }
 
     public void CalculateStatsModifiers()
@@ -411,7 +439,7 @@ public class Pkmn : MonoBehaviour
 
     public int CalculateProfBonus(int lvl)
     {
-        return 2 + (lvl / 4);
+        return 4 + (lvl / 20);
     }
 
     public int CalculateDC(int lvl)
@@ -497,8 +525,14 @@ public class Pkmn : MonoBehaviour
         {
             stats.hp = 0;
         }
+
         UIManager.Instance.UpdateHp();
         CharacterManager.Instance.SafeInfo(this);
+
+        if (CheckAbilityName("Cólera"))
+        {
+            ResetPkmn();
+        }
     }
 
     public void ChangePP(int val)
@@ -558,7 +592,7 @@ public class Pkmn : MonoBehaviour
         reaction = false;
     }
 
-    bool HasAbility(int index)
+    public bool HasAbility(int index)
     {
         return index < basePkmn.abilities.Count && basePkmn.abilities[index].lvlRequired <= lvl;
     }

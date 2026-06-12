@@ -16,8 +16,8 @@ MonoBehaviour:
   type: 1
   moveClass: 2
   precision: '-'
-  useHitDice: 0
-  dmgDices: 0
+  useHitDice: 1
+  dmgDices: 1
   dmgDiceType: 0
   range: 6
   area: 0
@@ -30,4 +30,5 @@ MonoBehaviour:
   savingThrowMultiplier: 0
   duration: '-'
   description: "Empuja a un objetivo con un fuerte viento 4 casillas, si colisiona
-    contra algo ambos reciben 1 dado de golpe de da\xF1o"
+    contra algo ambos reciben la mitad del bono de proeficiencia del usuario como
+    dados de golpe de da\xF1o"
