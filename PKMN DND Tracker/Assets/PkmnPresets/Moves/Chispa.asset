@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: Chispa
   m_EditorClassIdentifier: 
-  moveName: Carga
+  moveName: Chispa
   type: 13
   moveClass: 0
   precision: 1d20

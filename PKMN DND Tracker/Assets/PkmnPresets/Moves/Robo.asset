@@ -30,4 +30,5 @@ MonoBehaviour:
   savingThrowMultiplier: 1
   duration: '-'
   description: "Reacciona a un ataque de estado para robar la bonificaci\xF3n y quedarsela
-    para s\xED"
+    para s\xED. Otorga ventaja al robar si el objetivo est\xE1 distraido haciendo
+    algo"

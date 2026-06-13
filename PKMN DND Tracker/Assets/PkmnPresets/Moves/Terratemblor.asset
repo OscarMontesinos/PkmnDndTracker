@@ -15,7 +15,7 @@ MonoBehaviour:
   moveName: Terratemblor
   type: 5
   moveClass: 0
-  precision: '-'
+  precision: 1d20
   useHitDice: 0
   dmgDices: 4
   dmgDiceType: 6
@@ -26,7 +26,7 @@ MonoBehaviour:
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: DEX
-  savingThrowMultiplier: 1
+  savingThrowType: '-'
+  savingThrowMultiplier: 0
   duration: '-'
   description: Pisa con fuerza el suelo atacando a su alrededor con fuertes temblores

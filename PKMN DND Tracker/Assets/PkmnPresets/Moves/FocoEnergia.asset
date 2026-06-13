@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: FocoEnergia
   m_EditorClassIdentifier: 
-  moveName: "Foco energ\xEDa"
+  moveName: "Foco Energ\xEDa"
   type: 1
   moveClass: 2
   precision: '-'

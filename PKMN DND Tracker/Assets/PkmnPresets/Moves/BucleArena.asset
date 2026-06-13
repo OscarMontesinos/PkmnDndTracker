@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: BucleArena
   m_EditorClassIdentifier: 
-  moveName: Disparo Lodo
+  moveName: Bucle Arena
   type: 5
   moveClass: 0
   precision: 1d20
   useHitDice: 0
   dmgDices: 2
   dmgDiceType: 4
-  range: 6
+  range: 3
   area: 0
   pps: 12
   isAction: 1

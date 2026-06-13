@@ -15,7 +15,7 @@ MonoBehaviour:
   moveName: Voz Cautivadora
   type: 18
   moveClass: 1
-  precision: '-'
+  precision: 1d20
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 4
@@ -26,8 +26,7 @@ MonoBehaviour:
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: WIS
-  savingThrowMultiplier: 1
+  savingThrowType: '-'
+  savingThrowMultiplier: 0
   duration: '-'
-  description: "Grita con una suave voz y da\xF1a a los enemigos a su alrededor.
-    Si supera la salvaci\xF3n no recibe da\xF1o"
+  description: "Grita con una suave voz y da\xF1a a los enemigos a su alrededor."

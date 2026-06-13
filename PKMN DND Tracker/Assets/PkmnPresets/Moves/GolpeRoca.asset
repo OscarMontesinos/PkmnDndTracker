@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: GolpeRoca
   m_EditorClassIdentifier: 
-  moveName: Golpe roca
+  moveName: Golpe Roca
   type: 2
   moveClass: 0
   precision: 1d20

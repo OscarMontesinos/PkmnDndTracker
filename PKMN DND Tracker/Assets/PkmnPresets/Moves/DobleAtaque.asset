@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: DobleAtaque
   m_EditorClassIdentifier: 
-  moveName: Doble ataque
+  moveName: Doble Ataque
   type: 7
   moveClass: 0
   precision: 1d20

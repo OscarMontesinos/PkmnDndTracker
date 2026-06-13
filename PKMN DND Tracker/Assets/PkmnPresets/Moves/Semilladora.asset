@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
-  m_Name: GolpeAereo
+  m_Name: Semilladora
   m_EditorClassIdentifier: 
-  moveName: "Golpe A\xE9reo"
-  type: 3
+  moveName: Semilladora
+  type: 12
   moveClass: 0
-  precision: '-'
+  precision: 1d20
   useHitDice: 0
   dmgDices: 3
-  dmgDiceType: 6
-  range: 3
+  dmgDiceType: 4
+  range: 6
   area: 0
-  pps: 8
+  pps: 16
   isAction: 1
   isBonusAction: 0
   isReaction: 0
@@ -29,4 +29,5 @@ MonoBehaviour:
   savingThrowType: '-'
   savingThrowMultiplier: 0
   duration: '-'
-  description: "Ataque por el aire extremadamente r\xE1pido, no puede fallar"
+  description: Lanza semillas como si fueran balas hacia sus objetivos. Ataca 5 veces
+    y cada ataque puede ser dirigido hacia un objetivo diferente

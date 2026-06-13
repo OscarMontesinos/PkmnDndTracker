@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveName: Nitrocarga
   type: 10
-  moveClass: 1
+  moveClass: 0
   precision: 1d20
   useHitDice: 0
   dmgDices: 3

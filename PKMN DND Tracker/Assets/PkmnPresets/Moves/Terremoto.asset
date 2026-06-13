@@ -15,7 +15,7 @@ MonoBehaviour:
   moveName: Terremoto
   type: 5
   moveClass: 0
-  precision: '-'
+  precision: 1d20
   useHitDice: 0
   dmgDices: 8
   dmgDiceType: 6
@@ -26,8 +26,7 @@ MonoBehaviour:
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: DEX
-  savingThrowMultiplier: 1
+  savingThrowType: '-'
+  savingThrowMultiplier: 0
   duration: '-'
-  description: "Quiebra el suelo atacando a su alrededor con fuertes temblores. Si
-    supera la salvaci\xF3n recibe la mitad del da\xF1o"
+  description: Quiebra el suelo atacando a su alrededor con fuertes temblores.

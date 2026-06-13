@@ -23,8 +23,8 @@ MonoBehaviour:
   area: 0
   pps: 3
   isAction: 1
-  isBonusAction: 0
-  isReaction: 0
+  isBonusAction: 1
+  isReaction: 1
   hasPriority: 0
   savingThrowType: '-'
   savingThrowMultiplier: 0
