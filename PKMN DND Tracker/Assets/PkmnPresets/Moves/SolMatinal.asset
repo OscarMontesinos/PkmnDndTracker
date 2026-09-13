@@ -12,23 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: SolMatinal
   m_EditorClassIdentifier: 
-  moveName: Sol Matinal
+  moveName: Sol matinal
+  description: "Cura con el poder del sol a s\xED mismo o a un aliado, bajo los efectos
+    de sol fuerte duplica sus dados, bajo cualquier otro clima los divide por la
+    mitad"
+  extraEffect: '-'
+  pps: 18
   type: 1
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 1
-  dmgDices: 5
+  dmgDices: 3
   dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 6
   area: 0
-  pps: 18
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Cura con el poder del sol a s\xED mismo o a un aliado, bajo los efectos
-    de sol fuerte duplica sus dados, bajo cualquier otro clima los divide por la
-    mitad"

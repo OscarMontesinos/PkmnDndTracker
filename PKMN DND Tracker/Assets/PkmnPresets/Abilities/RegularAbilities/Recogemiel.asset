@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Recogemiel
   m_EditorClassIdentifier: 
   abName: Recogemiel
-  description: Si tiene acceso a flores puede crear miel. Beber un tarro de miel
-    cura 2 dados de golpe
+  description: Si tiene acceso a flores puede crear un tarro de miel gastando 10pp.

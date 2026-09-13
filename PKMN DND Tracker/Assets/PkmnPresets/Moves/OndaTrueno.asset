@@ -12,21 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: OndaTrueno
   m_EditorClassIdentifier: 
-  moveName: Onda Trueno
+  moveName: Onda trueno
+  description: "Onda electromagn\xE9tica que paraliza al objetivo si falla la salvaci\xF3n"
+  extraEffect: '-'
+  pps: 16
   type: 13
   moveClass: 2
-  precision: 1d20
+  precision: 1
+  savingThrowType: CON / DEX
+  scallingSavingThrowType: 4
+  secondaryScallingSavingThrowType: 5
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 0
   dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 1min
   range: 6
   area: 0
-  pps: 16
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: CON / DEX
-  savingThrowMultiplier: 1
-  duration: 5min
-  description: "Onda electromagn\xE9tica que paraliza al objetivo si falla la salvaci\xF3n"

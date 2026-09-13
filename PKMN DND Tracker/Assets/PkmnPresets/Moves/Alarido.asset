@@ -13,21 +13,26 @@ MonoBehaviour:
   m_Name: Alarido
   m_EditorClassIdentifier: 
   moveName: Alarido
+  description: "Grito desgarrador que da\xF1a a los objetivos si no superan la salvaci\xF3n"
+  extraEffect: Inflige debilidad especial
+  pps: 12
   type: 17
   moveClass: 1
-  precision: '-'
+  precision: 0
+  savingThrowType: WIS
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 1
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 1 Ronda
   range: 6
-  area: 0
-  pps: 16
+  area: -1
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: WIS
-  savingThrowMultiplier: 1
-  duration: 3 Rondas
-  description: "Grito desgarrador que da\xF1a al objetivo. Recibe un bonificador
-    de -4 a cualquier ataque especial. "

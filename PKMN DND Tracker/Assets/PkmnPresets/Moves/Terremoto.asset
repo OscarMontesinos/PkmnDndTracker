@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Terremoto
   m_EditorClassIdentifier: 
   moveName: Terremoto
+  description: Quiebra el suelo atacando a su alrededor con fuertes temblores.
+  extraEffect: '-'
+  pps: 40
   type: 5
   moveClass: 0
-  precision: 1d20
+  precision: 0
+  savingThrowType: DEX
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 8
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 0
   area: 6
-  pps: 55
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: Quiebra el suelo atacando a su alrededor con fuertes temblores.

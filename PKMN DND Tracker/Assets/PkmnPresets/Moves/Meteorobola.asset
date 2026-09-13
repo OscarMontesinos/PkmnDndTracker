@@ -13,22 +13,28 @@ MonoBehaviour:
   m_Name: Meteorobola
   m_EditorClassIdentifier: 
   moveName: Meteorobola
+  description: "Canaliza el poder del clima actual para lanzar una bola de energ\xEDa
+    hacia un enemigo. Cambia el tipo seg\xFAn el clima y duplica sus dados de da\xF1o
+    si se activa este efecto"
+  extraEffect: '-'
+  pps: 12
   type: 1
   moveClass: 1
-  precision: 1d20
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 3
-  dmgDiceType: 6
+  dmgDiceType: 8
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 8
   area: 0
-  pps: 12
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Canaliza el poder del clima actual para lanzar una bola de energ\xEDa
-    hacia un enemigo. Cambia el tipo seg\xFAn el clima y duplica sus dados de da\xF1o
-    si se activa este efecto"

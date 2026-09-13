@@ -12,22 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: VientoAciago
   m_EditorClassIdentifier: 
-  moveName: Viento Aciago
+  moveName: Viento aciago
+  description: "Conjura un viento maldito y tenebroso queda\xF1a a los enemigos en
+    un \xE1rea"
+  extraEffect: '-'
+  pps: 14
   type: 8
   moveClass: 1
-  precision: 1d20
+  precision: 1
+  savingThrowType: CON
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 1
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 4
-  dmgDiceType: 6
-  range: 6
+  dmgDiceType: 8
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
+  range: 4
   area: 3
-  pps: 14
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Conjura un viento maldito y tenebroso queda\xF1a a los enemigos en
-    un \xE1rea"

@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Recuperacion
   m_EditorClassIdentifier: 
   moveName: "Recuperaci\xF3n"
+  description: Regenera su cuerpo y cura sus heridas
+  extraEffect: '-'
+  pps: 15
   type: 1
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 1
-  dmgDices: 7
+  dmgDices: 3
   dmgDiceType: 0
-  range: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
+  range: 0
   area: 0
-  pps: 18
   isAction: 1
-  isBonusAction: 0
+  isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: Regenera su cuerpo y cura sus heridas

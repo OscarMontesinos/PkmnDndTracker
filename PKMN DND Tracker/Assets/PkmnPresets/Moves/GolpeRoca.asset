@@ -13,20 +13,27 @@ MonoBehaviour:
   m_Name: GolpeRoca
   m_EditorClassIdentifier: 
   moveName: Golpe Roca
+  description: Fuerte golpe capaz de destruir rocas
+  extraEffect: Otorga 1D4 de vulnerabilidad al objetivo
+  pps: 4
   type: 2
   moveClass: 0
-  precision: 1d20
+  makesContact: 1
+  precision: 1
+  savingThrowType: CON
+  scallingSavingThrowType: 2
+  secondaryScallingSavingThrowType: 6
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 4
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 1
   area: 0
-  pps: 3
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: Fuerte golpe capaz de destruir rocas

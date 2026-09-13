@@ -55,11 +55,10 @@ public class UIManager : MonoBehaviour
     public GameObject abilitiesDestination;
     public GameObject abilitiesGO;
 
-    public enum movesDmgMode
-    {
-        normal,superE,hiperE, resisted, superRes
-    }
-    public movesDmgMode moveMode;
+    public GameObject remindersDestination;
+    public GameObject reminderGO;
+
+    public int stabDices;
     public TextMeshProUGUI moveModeText;
     public GameObject movesDestination;
     public GameObject moveGO;
@@ -225,6 +224,7 @@ public class UIManager : MonoBehaviour
             if (pkmn.lvl >= ability.lvlRequired)
             {
                 Instantiate(abilitiesGO, abilitiesDestination.transform).GetComponent<AbilityShower>().ActivateAbility(ability.ability);
+                Instantiate(reminderGO, remindersDestination.transform).GetComponent<ReminderShower>().SetAbility(ability.ability);
             }
             else
             {
@@ -240,22 +240,27 @@ public class UIManager : MonoBehaviour
         foreach (int move in pkmn.lvl1Moves)
         {
             Instantiate(moveGO, movesDestination.transform).GetComponent<MovShower>().SetMove(pkmn.basePkmn.lvl1LearnableMoves[move], pkmn);
+            Instantiate(reminderGO, remindersDestination.transform).GetComponent<ReminderShower>().SetMove(pkmn.basePkmn.lvl1LearnableMoves[move]);
         }
 
         foreach (int move in pkmn.lvl2Moves)
         {
             Instantiate(moveGO, movesDestination.transform).GetComponent<MovShower>().SetMove(pkmn.basePkmn.lvl2LearnableMoves[move], pkmn);
+            Instantiate(reminderGO, remindersDestination.transform).GetComponent<ReminderShower>().SetMove(pkmn.basePkmn.lvl2LearnableMoves[move]);
         }
 
         foreach (int move in pkmn.lvl3Moves)
         {
             Instantiate(moveGO, movesDestination.transform).GetComponent<MovShower>().SetMove(pkmn.basePkmn.lvl3LearnableMoves[move], pkmn);
+            Instantiate(reminderGO, remindersDestination.transform).GetComponent<ReminderShower>().SetMove(pkmn.basePkmn.lvl3LearnableMoves[move]);
         }
 
         foreach (Transform item in itemsDestination.transform)
         {
             Destroy(item.gameObject);
         }
+
+        Instantiate(itemCreatorGO, itemsDestination.transform);
 
         foreach (Item item in pkmn.inventory)
         {
@@ -393,25 +398,31 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateDNDProf()
     {
-        dndProf1Text.text = pkmn.dndMod.dex + 
-            "\n" + pkmn.dndMod.wis +
-            "\n" + pkmn.dndMod.intel +
-            "\n" + pkmn.dndMod.str +
-            "\n" + pkmn.dndMod.cha +
-            "\n"+ pkmn.dndMod.cha +
-            "\n" + pkmn.dndMod.intel +
-            "\n" + pkmn.dndMod.wis +
-            "\n" + pkmn.dndMod.intel;
+        int bonus = 0;
+        if(pkmn.type1 == GameManager.Type.Normal && pkmn.HasAbility(1))
+        {
+            bonus = pkmn.extraStats.proficiencyBonus / 2;
+        }
 
-        dndProf2Text.text = pkmn.dndMod.wis +
-            "\n"+ pkmn.dndMod.intel +
-            "\n" + pkmn.dndMod.wis +
-            "\n" + pkmn.dndMod.cha +
-            "\n" + pkmn.dndMod.cha +
-            "\n" + pkmn.dndMod.intel +
-            "\n" + pkmn.dndMod.dex +
-            "\n" + pkmn.dndMod.dex +
-            "\n" + pkmn.dndMod.wis;
+        dndProf1Text.text = (pkmn.dndMod.dex + bonus) + 
+            "\n" + (pkmn.dndMod.wis + bonus) +
+            "\n" + (pkmn.dndMod.intel + bonus) +
+            "\n" + (pkmn.dndMod.str + bonus) +
+            "\n" + (pkmn.dndMod.cha + bonus) +
+            "\n"+ (pkmn.dndMod.cha + bonus) +
+            "\n" + (pkmn.dndMod.intel + bonus) +
+            "\n" + (pkmn.dndMod.wis + bonus) +
+            "\n" + (pkmn.dndMod.intel + bonus);
+
+        dndProf2Text.text = (pkmn.dndMod.wis + bonus) +
+            "\n"+ (pkmn.dndMod.intel + bonus) +
+            "\n" + (pkmn.dndMod.wis + bonus) +
+            "\n" + (pkmn.dndMod.cha + bonus) +
+            "\n" + (pkmn.dndMod.cha + bonus) +
+            "\n" + (pkmn.dndMod.intel + bonus) +
+            "\n" + (pkmn.dndMod.dex + bonus) +
+            "\n" + (pkmn.dndMod.dex + bonus) +
+            "\n" + (pkmn.dndMod.wis + bonus);
             
     }
 
@@ -471,6 +482,7 @@ public class UIManager : MonoBehaviour
         pkmn.ChangeHP((int)(pkmn.stats.mHp * value));
         pkmn.ChangePP((int)(pkmn.extraStats.mPp * value));
         SwitchScreen(0);
+        pkmn.eqManager.RechargeConsumables();
     }
 
     public void ChangeItemMode(int val)
@@ -663,66 +675,20 @@ public class UIManager : MonoBehaviour
 
     public void ChangeMovesMode(int val)
     {
-        if (val > 0)
+        stabDices += val;
+        if (stabDices > 0)
         {
-            switch (moveMode)
-            {
-                case movesDmgMode.normal:
-                    moveMode = movesDmgMode.superE;
-                    break;
-                case movesDmgMode.superE:
-                    moveMode = movesDmgMode.hiperE;
-                    break;
-                case movesDmgMode.resisted:
-                    moveMode = movesDmgMode.normal;
-                    break;
-                case movesDmgMode.superRes:
-                    moveMode = movesDmgMode.resisted;
-                    break;
-            }
+            moveModeText.text = "+" + stabDices.ToString();
         }
-        else
+        else 
         {
-            switch (moveMode)
-            {
-                case movesDmgMode.normal:
-                    moveMode = movesDmgMode.resisted;
-                    break;
-                case movesDmgMode.superE:
-                    moveMode = movesDmgMode.normal;
-                    break;
-                case movesDmgMode.hiperE:
-                    moveMode = movesDmgMode.superE;
-                    break;
-                case movesDmgMode.resisted:
-                    moveMode = movesDmgMode.superRes;
-                    break;
-            }
+            moveModeText.text = stabDices.ToString();
         }
 
-        switch (moveMode)
-        {
-            case movesDmgMode.normal:
-                moveModeText.text = "Eficaz";
-                break;
-            case movesDmgMode.superE:
-                moveModeText.text = "Muy eficaz";
-                break;
-            case movesDmgMode.hiperE:
-                moveModeText.text = "Hiper eficaz";
-                break;
-            case movesDmgMode.resisted:
-                moveModeText.text = "Poco Eficaz";
-                break;
-            case movesDmgMode.superRes:
-                moveModeText.text = "Muy poco eficaz";
-                break;
-        }
-
-        foreach(MovShower shower in movShowerList)
-        {
-            shower.SetDmgDices();
-        }
+            foreach (MovShower shower in movShowerList)
+            {
+                shower.SetDmgDices();
+            }
     }
     public void ReturnHub()
     {

@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Deseo
   m_EditorClassIdentifier: 
   moveName: Deseo
+  description: "Pide un deseo y cura a s\xED mismo o a un aliado"
+  extraEffect: '-'
+  pps: 18
   type: 1
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 1
   dmgDices: 5
   dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 6
   area: 0
-  pps: 18
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Pide un deseo y cura a s\xED mismo o a un aliado"

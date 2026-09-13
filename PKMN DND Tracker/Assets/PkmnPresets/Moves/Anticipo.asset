@@ -13,22 +13,28 @@ MonoBehaviour:
   m_Name: Anticipo
   m_EditorClassIdentifier: 
   moveName: Anticipo
+  description: "Avanza hasta el objetivo y bloquea una reacci\xF3n, incluso si tuviera
+    prioridad. El objetivo puede ser tanto el usuario de la reacci\xF3n a bloquear
+    o el objetivo de dicha reacci\xF3n."
+  extraEffect: '-'
+  pps: 14
   type: 2
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: CON
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 2
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 0
   dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 0
   range: 3
   area: 0
-  pps: 20
   isAction: 0
   isBonusAction: 0
   isReaction: 1
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: 0
-  description: "Avanza hasta el objetivo y bloquea una reacci\xF3n, incluso si tuviera
-    prioridad. El objetivo puede ser tanto el usuario de la reacci\xF3n a bloquear
-    o el objetivo de dicha reacci\xF3n."

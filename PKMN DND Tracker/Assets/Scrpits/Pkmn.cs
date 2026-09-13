@@ -17,6 +17,8 @@ public class Pkmn : MonoBehaviour
     public PkmnSO basePkmn;
     public string pkmnName;
 
+    public EquipmentManager eqManager;
+
     [HideInInspector]
     public Sprite pkmnSprite;
     public int portrait;
@@ -348,7 +350,9 @@ public class Pkmn : MonoBehaviour
 
     public int CalculateStatHP(int lvl)
     {
-        return (int)((((baseStats.hp * (1 + (dndMod.con * 0.02f))) * 0.65f)*(50f / baseStats.hp)) + (((baseStats.hp * (1 + (dndMod.con * 0.035f))) *0.02f) * (lvl - 1)));
+        return 
+            (int)(((15*Mathf.Pow(2.71f,(-0.01f*baseStats.hp))) + (baseStats.hp * (1 + (dndMod.con * 0.02f)) * 0.3f)) + 
+            ((baseStats.hp * (1 + (dndMod.con * 0.035f)) *0.04f) * (lvl - 1)));
     }
 
     public int CalculateStatAtk(int lvl)
@@ -357,6 +361,7 @@ public class Pkmn : MonoBehaviour
         if (CheckAbilityName("Potencia")) atk *= 2;
         return (int)(((atk * (1 + (dndMod.str * 0.1f))) / 4) + (((atk * (1 + (dndMod.str * 0.035f))) * 0.02f) * (lvl - 1)));
     }
+
     public int CalculateStatSAtk(int lvl)
     {
         if (dndMod.intel > dndMod.cha)
@@ -425,7 +430,7 @@ public class Pkmn : MonoBehaviour
 
         if (type1 == Type.Fighting || (type2 == Type.Fighting && lvl >= 10))
         {
-            extraStats.hitDiceNumber = 1 + (lvl / 4);
+            extraStats.hitDiceNumber = 1 + (lvl / 10);
         }
         else
         {
@@ -439,7 +444,7 @@ public class Pkmn : MonoBehaviour
 
     public int CalculateProfBonus(int lvl)
     {
-        return 4 + (lvl / 20);
+        return 2 + (lvl / 10);
     }
 
     public int CalculateDC(int lvl)
@@ -455,40 +460,18 @@ public class Pkmn : MonoBehaviour
 
     public int CalculateHitDice(int lvl)
     {
-        switch (lvl)
+            switch (lvl)
         {
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
+            case int n when n >= 1 && n <= 10:
                 return 4;
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
-               return 6;
-            case 11:
-            case 12:
-            case 13:
-            case 14:
-            case 15:
+            case int n when n >= 11 && n <= 30:
+                return 6;
+            case int n when n >= 31 && n <= 50:
                 return 8;
-            case 16:
-            case 17:
-            case 18:
-            case 19:
-            case 20:
+            case int n when n >= 51 && n <= 70:
                 return 10;
-            case 21:
-            case 22:
-            case 23:
-            case 24:
-            case 25:
-                return 12;
             default:
-                return 20;
+                return 12;
         }
     }
 
@@ -590,6 +573,67 @@ public class Pkmn : MonoBehaviour
     public void UseReaction()
     {
         reaction = false;
+    }
+
+    public int GetDndStatMod(DndStatsType stat)
+    {
+        switch (stat)
+        {
+            case DndStatsType.CON:
+                return dndMod.con;
+
+            case DndStatsType.STR:
+                return dndMod.str;
+
+            case DndStatsType.CHA:
+                return dndMod.cha;
+
+            case DndStatsType.INT:
+                return dndMod.intel;
+
+            case DndStatsType.WIS:
+                return dndMod.wis;
+
+            case DndStatsType.DEX:
+                return dndMod.dex;
+
+            default:
+                return 0;
+        }
+    }
+
+    public int GetCombatStatMod(MoveCategory moveClass)
+    {
+        switch (moveClass)
+        {
+            case MoveCategory.Physical:
+                return statsMod.atk / 2;
+            case MoveCategory.Special:
+                return statsMod.sAtk / 2;
+            default:
+                return 0;
+        }
+    }
+
+    public int GetSpellDC(DndStatsType dCType, DndStatsType secondaryDCType, MoveCategory moveClass, float dcMultiplier)
+    {
+        int value = extraStats.baseDC;
+        int mod = GetDndStatMod(dCType);
+        int mod2 = GetDndStatMod(secondaryDCType);
+        int mod3 = GetCombatStatMod(moveClass);
+
+        if (mod2 > mod)
+        {
+            value += mod2;
+        }
+        else
+        {
+            value += mod;
+        }
+
+        value += mod3;
+
+        return (int)((float)(value * dcMultiplier));
     }
 
     public bool HasAbility(int index)

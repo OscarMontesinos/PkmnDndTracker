@@ -12,23 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: GiroBola
   m_EditorClassIdentifier: 
-  moveName: Giro Bola
+  moveName: Giro bola
+  description: "Arrolla al objetivo girando sobre s\xED mismo como una peonza y hace
+    da\xF1o extra cuanto m\xE1s lento sea en comparaci\xF3n al objetivo. Por cada
+    2 puntos de diferencia en el modificador lanza un dado extra. Maximo 7 dados."
+  extraEffect: '-'
+  pps: 13
   type: 9
   moveClass: 0
-  precision: '-'
+  makesContact: 1
+  precision: 0
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 2
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 3
   area: 0
-  pps: 13
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Arrolla al objetivo girando sobre s\xED mismo como una peonza y hace
-    da\xF1o extra cuanto m\xE1s lento sea en comparaci\xF3n al objetivo. Por cada
-    2 puntos de diferencia en el modificador lanza un dado extra. Maximo 7 dados."

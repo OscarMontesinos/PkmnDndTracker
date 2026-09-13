@@ -13,21 +13,27 @@ MonoBehaviour:
   m_Name: VientoHielo
   m_EditorClassIdentifier: 
   moveName: Viento Hielo
+  description: "Conjura un viento helado que da\xF1a a los objetivos. Si el objetivo
+    consigue superar la salvaci\xF3n evita el ataque"
+  extraEffect: "Ralentiza al objetivo al fallar la salvaci\xF3n"
+  pps: 14
   type: 15
   moveClass: 1
-  precision: '-'
+  precision: 0
+  savingThrowType: DEX
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 1
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 6
-  range: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
+  range: 4
   area: 3
-  pps: 10
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: DEX
-  savingThrowMultiplier: 1
-  duration: '-'
-  description: "Conjura un viento helado que ralentiza a los objetivos. Si el objetivo
-    consigue superar la salvaci\xF3n evita el ataque"

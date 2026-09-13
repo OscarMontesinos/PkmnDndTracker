@@ -13,20 +13,27 @@ MonoBehaviour:
   m_Name: TriplePatada
   m_EditorClassIdentifier: 
   moveName: Triple patada
+  description: Ataca con tres patadas a un objetivo. Ataca tres veces
+  extraEffect: '-'
+  pps: 10
   type: 2
   moveClass: 0
-  precision: 1d20
+  makesContact: 1
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 2
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 1
   area: 0
-  pps: 10
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: Ataca con tres patadas a un objetivo. Ataca tres veces

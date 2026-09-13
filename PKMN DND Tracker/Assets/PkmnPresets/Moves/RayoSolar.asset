@@ -13,22 +13,27 @@ MonoBehaviour:
   m_Name: RayoSolar
   m_EditorClassIdentifier: 
   moveName: Rayo Solar
+  description: "Carga energ\xEDa solar. Si ya ha cargado energ\xEDa lanza un potente
+    rayo a un enemigo."
+  extraEffect: Bajo clima soleado ataca sin necesidad de carga
+  pps: 20
   type: 12
   moveClass: 1
-  precision: 1d20
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 8
   dmgDiceType: 10
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 8
   area: 0
-  pps: 20
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Carga energ\xEDa solar. Si ya ha cargado energ\xEDa lanza un potente
-    rayo a un enemigo. Bajo clima soleado puede usar la acci\xF3n bonus para cargar
-    el ataque."

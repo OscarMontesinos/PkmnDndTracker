@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Mofa
   m_EditorClassIdentifier: 
   moveName: Mofa
+  description: Se burla del objetivo forzandolo a usar un ataque ofensivo
+  extraEffect: '-'
+  pps: 14
   type: 17
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: WIS
+  scallingSavingThrowType: 3
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 0
   dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 3 Rondas
   range: 6
   area: 0
-  pps: 14
-  isAction: 1
+  isAction: 0
   isBonusAction: 1
   isReaction: 1
   hasPriority: 0
-  savingThrowType: WIS
-  savingThrowMultiplier: 1
-  duration: 3 Rondas
-  description: Se burla del objetivo forzandolo a usar un ataque ofensivo

@@ -12,22 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: CargaParabola
   m_EditorClassIdentifier: 
-  moveName: "Carga Par\xE1bola"
+  moveName: "Carga par\xE1bola"
+  description: "Crea una corriente electrica a su alrededor que da\xF1a a todos los
+    objetivos alrededor que fallen la salvaci\xF3n y al volver curan al usuario un
+    cuarto del da\xF1o inflingido"
+  extraEffect: '-'
+  pps: 14
   type: 13
   moveClass: 1
-  precision: 1d20
+  precision: 0
+  savingThrowType: DEX
+  scallingSavingThrowType: 5
+  secondaryScallingSavingThrowType: 4
+  combatScallingStat: 1
+  savingThrowMultiplier: 1
   useHitDice: 0
-  dmgDices: 4
+  dmgDices: 3
   dmgDiceType: 6
-  range: 0
-  area: 4
-  pps: 14
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
+  range: 4
+  area: -1
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Crea una corriente electrica a su alrededor que da\xF1a a todos los
-    objetivos alrededor y al volver curan al usuario un cuarto del da\xF1o inflingido"

@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: GotaVital
   m_EditorClassIdentifier: 
   moveName: Gota Vital
+  description: Esparce a su alrededor gotas de agua curativa
+  extraEffect: "A\xF1ade 1 dado extra al efecto"
+  pps: 14
   type: 11
   moveClass: 2
-  precision: '-'
-  useHitDice: 1
-  dmgDices: 1
-  dmgDiceType: 0
+  precision: 0
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
+  useHitDice: 0
+  dmgDices: 3
+  dmgDiceType: 4
+  dmgBonus: 0
+  dmgStatBonus: 5
+  duration: '-'
   range: 0
   area: 5
-  pps: 14
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: Esparce a su alrededor gotas de agua curativa

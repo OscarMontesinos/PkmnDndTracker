@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
+  m_Name: Avalancha
+  m_EditorClassIdentifier: 
+  moveName: Avalancha
+  description: "Lanza una lluvia de rocas en una zona amplia. Si pasa la salvaci\xF3n
+    los objetivos solo reciben la mitad del da\xF1o"
+  extraEffect: "Aturde a los enemigos que fallen la salvaci\xF3n con un valor menor
+    a la mitad de la DC"
+  pps: 25
+  type: 6
+  moveClass: 0
+  precision: 0
+  savingThrowType: DEX / CON
+  scallingSavingThrowType: 2
+  secondaryScallingSavingThrowType: 1
+  combatScallingStat: 0
+  savingThrowMultiplier: 1
+  useHitDice: 0
+  dmgDices: 6
+  dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
+  range: 6
+  area: 5
+  isAction: 1
+  isBonusAction: 0
+  isReaction: 0
+  hasPriority: 0

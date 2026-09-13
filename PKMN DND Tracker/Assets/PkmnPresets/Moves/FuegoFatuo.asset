@@ -12,21 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: FuegoFatuo
   m_EditorClassIdentifier: 
-  moveName: Fuego Fatuo
+  moveName: Fuego fatuo
+  description: Invoca llamas danzantes que queman al objetivo
+  extraEffect: '-'
+  pps: 16
   type: 10
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: DEX
+  scallingSavingThrowType: 5
+  secondaryScallingSavingThrowType: 6
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 0
   dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 1 min
   range: 6
   area: 0
-  pps: 16
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: CON / DEX
-  savingThrowMultiplier: 1
-  duration: 4h
-  description: Invoca llamas danzantes que queman al objetivo

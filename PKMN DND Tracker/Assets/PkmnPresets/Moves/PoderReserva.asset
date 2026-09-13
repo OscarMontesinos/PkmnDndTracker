@@ -13,21 +13,28 @@ MonoBehaviour:
   m_Name: PoderReserva
   m_EditorClassIdentifier: 
   moveName: Poder Reserva
+  description: "Ataca al objetivo con un poder acumulado. A\xF1ade 2D4 extra por
+    cada punto de vigor, 2D6 si tiene impulso, 1D6 si tiene potenciaci\xF3n y 1D8
+    si est\xE1 reforzado"
+  extraEffect: '-'
+  pps: 10
   type: 14
   moveClass: 1
-  precision: 1d20
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 4
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 6
   area: 0
-  pps: 6
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Ataca al objetivo con un poder acumulado. A\xF1ade 1d4 extra por
-    cada efecto positivo que tenga el usuario "

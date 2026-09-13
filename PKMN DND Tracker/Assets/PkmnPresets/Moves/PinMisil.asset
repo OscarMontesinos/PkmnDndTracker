@@ -13,21 +13,27 @@ MonoBehaviour:
   m_Name: PinMisil
   m_EditorClassIdentifier: 
   moveName: Pin misil
+  description: "Lanza una r\xE1faga de misiles hacia sus objetivos. Ataca 5 veces
+    y cada ataque puede ser dirigido hacia un objetivo"
+  extraEffect: '-'
+  pps: 16
   type: 7
   moveClass: 0
-  precision: 1d20
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 4
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 6
   area: 0
-  pps: 16
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Lanza una r\xE1faga de misiles hacia sus objetivos. Ataca 5 veces
-    y cada ataque puede ser dirigido hacia un objetivo"

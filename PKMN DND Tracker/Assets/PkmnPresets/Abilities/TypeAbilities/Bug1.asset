@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Bug1
   m_EditorClassIdentifier: 
   abName: Bicho
-  description: "Bicho\tPuede escalar por las paredes"
+  description: "Puede escalar por las paredes y pueden moverse sin repercusi\xF3n
+    en terreno dificil"

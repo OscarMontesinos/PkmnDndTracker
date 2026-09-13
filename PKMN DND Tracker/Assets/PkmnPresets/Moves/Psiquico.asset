@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
+  m_Name: Psiquico
+  m_EditorClassIdentifier: 
+  moveName: "Ps\xEDquico"
+  description: "Lanza una potente onda telep\xE1tica al objetivo"
+  extraEffect: "Otorga vulnerabilidad especial de 1d4 + 1 al objetivo si falla la
+    salvaci\xF3n"
+  pps: 20
+  type: 14
+  moveClass: 1
+  precision: 1
+  savingThrowType: CON
+  scallingSavingThrowType: 4
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
+  useHitDice: 0
+  dmgDices: 4
+  dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 1 Ronda
+  range: 8
+  area: 0
+  isAction: 1
+  isBonusAction: 0
+  isReaction: 0
+  hasPriority: 0

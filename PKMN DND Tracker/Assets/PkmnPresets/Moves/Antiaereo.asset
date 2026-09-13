@@ -13,21 +13,28 @@ MonoBehaviour:
   m_Name: Antiaereo
   m_EditorClassIdentifier: 
   moveName: "Antia\xE9reo"
+  description: "Lanza una roca para derribar al objetivo. Al fallar la salvaci\xF3n
+    lo tira al suelo y le hace da\xF1o, si el objetivo estaba volando a\xF1ade dados
+    de STAB."
+  extraEffect: '-'
+  pps: 5
   type: 6
   moveClass: 0
-  precision: 1d20
+  precision: 1
+  savingThrowType: DEX / CON
+  scallingSavingThrowType: 2
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
-  dmgDices: 3
-  dmgDiceType: 6
+  dmgDices: 2
+  dmgDiceType: 4
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 6
   area: 0
-  pps: 7
   isAction: 1
-  isBonusAction: 0
+  isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Lanza una roca. Si el objetivo est\xE1 volando lo derriba y lo tira
-    al suelo."

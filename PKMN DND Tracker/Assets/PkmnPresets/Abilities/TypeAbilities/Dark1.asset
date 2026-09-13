@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abName: Siniestro
   description: "Obtiene visi\xF3n nocturna. Al salvar efectos de control o encantamientos
-    obtiene ventaja"
+    obtiene ventaja. Tan solo necesita dormir 4 horas."

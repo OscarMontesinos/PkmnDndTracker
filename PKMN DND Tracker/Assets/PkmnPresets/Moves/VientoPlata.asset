@@ -13,20 +13,27 @@ MonoBehaviour:
   m_Name: VientoPlata
   m_EditorClassIdentifier: 
   moveName: Viento Plata
+  description: "Lanza una r\xE1faga de viento y afiladas escamas iridiscentes en
+    un \xE1rea"
+  extraEffect: '-'
+  pps: 14
   type: 7
   moveClass: 1
-  precision: 1d20
+  precision: 0
+  savingThrowType: DEX
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 1
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 4
-  dmgDiceType: 6
-  range: 6
-  area: 0
-  pps: 10
+  dmgDiceType: 8
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
+  range: 4
+  area: 3
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Lanza una r\xE1faga de viento a un enemigo"

@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static Pkmn;
 [CreateAssetMenu(fileName = "Pkmn", menuName = "Pkmn", order = 0)]
+[ExecuteInEditMode]
 public class PkmnSO : ScriptableObject
 {
     public float pkmnNumber;
@@ -23,5 +25,6 @@ public class PkmnSO : ScriptableObject
     public PkmnSO megaEvo;
     public Sprite megastoneSprite;
     public bool isMega;
+    
 }
 

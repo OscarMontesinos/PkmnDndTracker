@@ -12,21 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: TumbaRocas
   m_EditorClassIdentifier: 
-  moveName: Tumba Rocas
+  moveName: Tumba rocas
+  description: "Lanza piedras en un \xE1rea. Da\xF1a a los enemigos que fallen la
+    salvaci\xF3n"
+  extraEffect: "Ralentiza a los objetivos que fallen la salvaci\xF3n"
+  pps: 14
   type: 6
   moveClass: 0
-  precision: 1d20
+  precision: 0
+  savingThrowType: DEX
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 0
+  savingThrowMultiplier: 1
   useHitDice: 0
-  dmgDices: 4
+  dmgDices: 3
   dmgDiceType: 6
-  range: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 3 Rondas
+  range: 4
   area: 3
-  pps: 3
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Lanza piedras en un \xE1rea"

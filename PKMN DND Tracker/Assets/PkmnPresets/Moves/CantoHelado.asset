@@ -13,20 +13,27 @@ MonoBehaviour:
   m_Name: CantoHelado
   m_EditorClassIdentifier: 
   moveName: Canto Helado
+  description: "Ataca rodeandose de cristales helados adelant\xE1ndose al objetivo"
+  extraEffect: '-'
+  pps: 8
   type: 1
   moveClass: 0
-  precision: 1d20
+  makesContact: 1
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 4
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 5
   area: 0
-  pps: 8
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 1
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Ataca rodeandose de cristales helados adelant\xE1ndose al objetivo"

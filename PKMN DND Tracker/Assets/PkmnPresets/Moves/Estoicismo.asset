@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Estoicismo
   m_EditorClassIdentifier: 
   moveName: Estoicismo
+  description: Ataca mientras se resiste a los ataques del oponente
+  extraEffect: "Inflige debilitaci\xF3n especial al fallar la salvaci\xF3n"
+  pps: 4
   type: 7
   moveClass: 1
-  precision: 1d20
+  precision: 1
+  savingThrowType: CON
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 4
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 4
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 1
   area: 0
-  pps: 4
   isAction: 1
   isBonusAction: 0
   isReaction: 1
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: Ataca mientras se resiste a los ataques del oponente

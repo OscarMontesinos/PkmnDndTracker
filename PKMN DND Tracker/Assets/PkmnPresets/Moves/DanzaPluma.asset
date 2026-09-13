@@ -13,21 +13,26 @@ MonoBehaviour:
   m_Name: DanzaPluma
   m_EditorClassIdentifier: 
   moveName: Danza pluma
+  description: "Cubre al objetivo con una masa de plumas. Inflige impedimento f\xEDsico."
+  extraEffect: '-'
+  pps: 14
   type: 3
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: DEX
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 3
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 0
   dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 3 Rondas
   range: 6
   area: 0
-  pps: 14
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: DEX
-  savingThrowMultiplier: 1
-  duration: 3 Rondas
-  description: "Cubre al objetivo con una masa de plumas. Obtiene desventaja al atacar
-    por la parte f\xEDsica"

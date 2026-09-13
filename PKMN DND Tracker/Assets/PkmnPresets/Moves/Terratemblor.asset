@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Terratemblor
   m_EditorClassIdentifier: 
   moveName: Terratemblor
+  description: Pisa con fuerza el suelo atacando a su alrededor con fuertes temblores
+  extraEffect: "Ralentiza a los objetivos que fallen la salvaci\xF3n"
+  pps: 20
   type: 5
   moveClass: 0
-  precision: 1d20
+  precision: 0
+  savingThrowType: DEX
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 0
+  savingThrowMultiplier: 1
   useHitDice: 0
-  dmgDices: 4
+  dmgDices: 3
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 0
   area: 6
-  pps: 15
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: Pisa con fuerza el suelo atacando a su alrededor con fuertes temblores

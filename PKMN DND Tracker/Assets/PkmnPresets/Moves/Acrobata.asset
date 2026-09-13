@@ -13,20 +13,28 @@ MonoBehaviour:
   m_Name: Acrobata
   m_EditorClassIdentifier: 
   moveName: "Acr\xF3bata"
+  description: "Se desplaza de forma acrob\xE1tica y ataca a su alrededor. Da\xF1a
+    a los objetivos que fallen la salvaci\xF3n"
+  extraEffect: '-'
+  pps: 12
   type: 3
   moveClass: 0
-  precision: 1d20
+  makesContact: 1
+  precision: 0
+  savingThrowType: DEX
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 0
+  savingThrowMultiplier: 1
   useHitDice: 0
-  dmgDices: 4
-  dmgDiceType: 6
+  dmgDices: 3
+  dmgDiceType: 8
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 4
   area: 3
-  pps: 12
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Se desplaza de forma acrob\xE1tica y ataca a su alrededor."

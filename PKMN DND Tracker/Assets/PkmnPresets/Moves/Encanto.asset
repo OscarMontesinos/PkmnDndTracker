@@ -13,21 +13,27 @@ MonoBehaviour:
   m_Name: Encanto
   m_EditorClassIdentifier: 
   moveName: Encanto
+  description: "Otorga ventaja en una tirada de persuasi\xF3n. En combate inflige
+    debilidad fisica"
+  extraEffect: '-'
+  pps: 9
   type: 18
   moveClass: 2
-  precision: 1d20
+  precision: 1
+  savingThrowType: WIS
+  scallingSavingThrowType: 3
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
-  dmgDices: 0
-  dmgDiceType: 0
+  dmgDices: 1
+  dmgDiceType: 4
+  dmgBonus: 1
+  dmgStatBonus: 0
+  duration: 3 Rondas
   range: 6
-  area: 6
-  pps: 6
+  area: 0
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: WIS
-  savingThrowMultiplier: 1
-  duration: 3 Rondas
-  description: "Otorga ventaja en una tirada de persuasi\xF3n. En combate otorga
-    un bonificador de -4 a cualquier ataque f\xEDsico."

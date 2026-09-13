@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: Justiciero
   m_EditorClassIdentifier: 
   abName: Justiciero
-  description: Puedes tirar con ventaja cualquier tirada contra criminales o malhechores.
+  description: "Una vez por descanso corto se conecta con el plano aural, requiere
+    concentraci\xF3n. En este estado puede ver el aura de cualquier ser vivo a 120
+    pies, puede exponerse a una salvaci\xF3n de constituci\xF3n para examinarlas
+    en uno de estos criterios. Si el individuo cree estar haciendo lo correcto, si
+    ha cometido crimenes o si est\xE1 ocultando su verdadera naturaleza (f\xEDsica
+    o conductual). El color del aura variar\xE1 de azul a rojo. Si falla la salvaci\xF3n
+    recibir\xE1 dos dados de golpe de da\xF1o"

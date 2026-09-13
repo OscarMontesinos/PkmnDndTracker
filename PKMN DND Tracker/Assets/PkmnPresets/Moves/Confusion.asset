@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Confusion
   m_EditorClassIdentifier: 
   moveName: "Confusi\xF3n"
+  description: "Ataca al objetivo con una fuerza telequin\xE9tica"
+  extraEffect: "Confunde al objetivo al fallar la salvaci\xF3n"
+  pps: 5
   type: 14
   moveClass: 1
-  precision: 1d20
+  precision: 1
+  savingThrowType: CON
+  scallingSavingThrowType: 5
+  secondaryScallingSavingThrowType: 4
+  combatScallingStat: 2
+  savingThrowMultiplier: 0.75
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 4
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 6
   area: 0
-  pps: 4
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Ataca al objetivo con una fuerza telekin\xE9tica"

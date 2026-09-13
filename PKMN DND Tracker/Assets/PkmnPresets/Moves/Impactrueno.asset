@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Impactrueno
   m_EditorClassIdentifier: 
   moveName: Impactrueno
+  description: "Lanza una carga el\xE9ctrica al objetivo"
+  extraEffect: "Paraliza al objetivo al fallar la salvaci\xF3n"
+  pps: 4
   type: 13
   moveClass: 1
-  precision: 1d20
+  precision: 1
+  savingThrowType: CON
+  scallingSavingThrowType: 5
+  secondaryScallingSavingThrowType: 4
+  combatScallingStat: 2
+  savingThrowMultiplier: 0.5
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 4
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 1 Ronda
   range: 6
   area: 0
-  pps: 3
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Lanza una carga el\xE9ctrica al objetivo"

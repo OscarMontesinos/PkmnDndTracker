@@ -13,20 +13,27 @@ MonoBehaviour:
   m_Name: Chispa
   m_EditorClassIdentifier: 
   moveName: Chispa
+  description: "Lanza un golpe cargado con energia el\xE9ctrica"
+  extraEffect: "Paraliza al objetivo al fallar la salvaci\xF3n"
+  pps: 12
   type: 13
   moveClass: 0
-  precision: 1d20
+  makesContact: 1
+  precision: 1
+  savingThrowType: CON
+  scallingSavingThrowType: 5
+  secondaryScallingSavingThrowType: 1
+  combatScallingStat: 2
+  savingThrowMultiplier: 0.66
   useHitDice: 0
   dmgDices: 4
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 1 Ronda
   range: 3
   area: 0
-  pps: 12
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Lanza un golpe cargado con energia el\xE9ctrica"

@@ -13,20 +13,27 @@ MonoBehaviour:
   m_Name: LlaveGiro
   m_EditorClassIdentifier: 
   moveName: Llave giro
+  description: "Lanza a un enemigo hacia cualquier direcci\xF3n 4 casillas, puedes
+    colocarte en la ubicaci\xF3n del objetivo"
+  extraEffect: '-'
+  pps: 10
   type: 2
   moveClass: 0
-  precision: 1d20
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
-  dmgDices: 3
+  dmgDices: 2
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 1
   area: 0
-  pps: 10
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Lanza a un enemigo hacia cualquier direcci\xF3n 4 casillas"

@@ -13,20 +13,27 @@ MonoBehaviour:
   m_Name: Mordisco
   m_EditorClassIdentifier: 
   moveName: Mordisco
+  description: Muerde al objetivo
+  extraEffect: "Aturde al objetivo al fallar la salvaci\xF3n"
+  pps: 8
   type: 17
   moveClass: 0
-  precision: 1d20
+  makesContact: 1
+  precision: 1
+  savingThrowType: CON
+  scallingSavingThrowType: 2
+  secondaryScallingSavingThrowType: 1
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 1
   area: 0
-  pps: 8
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: Muerde al objetivo

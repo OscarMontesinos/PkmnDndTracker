@@ -12,22 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: EcoMetalico
   m_EditorClassIdentifier: 
-  moveName: "Eco Met\xE1lico"
+  moveName: "Eco met\xE1lico"
+  description: Emite un desagradable sonido que inflige vulnerabilidad especial al
+    objetivo
+  extraEffect: '-'
+  pps: 15
   type: 9
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: CON
+  scallingSavingThrowType: 1
+  secondaryScallingSavingThrowType: 2
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
-  dmgDices: 0
-  dmgDiceType: 0
+  dmgDices: 1
+  dmgDiceType: 4
+  dmgBonus: 2
+  dmgStatBonus: 0
+  duration: 3 Rondas
   range: 6
   area: 0
-  pps: 15
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: CON
-  savingThrowMultiplier: 1
-  duration: 3 Rondas
-  description: Emite un desagradable sonido que reduce en -6 la defensa especial
-    del objetivo

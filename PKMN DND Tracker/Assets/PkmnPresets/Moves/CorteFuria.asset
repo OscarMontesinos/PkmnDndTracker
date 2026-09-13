@@ -12,22 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: CorteFuria
   m_EditorClassIdentifier: 
-  moveName: Corte Furia
+  moveName: Corte furia
+  description: "Acuchilla al objetivo con sus garras. Cada golpe suma un dado extra
+    a los dados de da\xF1o base del movimiento, al usar la acci\xF3n de otra forma
+    pierde todos los dados extra"
+  extraEffect: "Aplica el dado extra obtenido al da\xF1o del ataque actual"
+  pps: 6
   type: 7
   moveClass: 0
-  precision: 1d20
+  makesContact: 1
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
-  dmgDices: 3
+  dmgDices: 2
   dmgDiceType: 4
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 1
   area: 0
-  pps: 4
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Acuchilla al objetivo con sus garras. Cada golpe consecutivo suma
-    un dado extra a los dados de da\xF1o base del movimiento"

@@ -13,21 +13,28 @@ MonoBehaviour:
   m_Name: Buceo
   m_EditorClassIdentifier: 
   moveName: Buceo
+  description: Se sumerge en el agua y ataca desde ella. Si no la hubiera crea un
+    pasaje submarino temporal.
+  extraEffect: '-'
+  pps: 15
   type: 11
   moveClass: 0
-  precision: 1d20
+  makesContact: 1
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 4
-  dmgDiceType: 6
+  dmgDiceType: 8
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 6
   area: 0
-  pps: 15
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: Se sumerge en el agua y ataca desde ella. Si no la hubiera crea un
-    pasaje submarino temporal.

@@ -12,22 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: RizoDefensa
   m_EditorClassIdentifier: 
-  moveName: Rizo Defensa
+  moveName: Rizo defensa
+  description: "Adopta una posici\xF3n defensiva enrrollandose sobre s\xED mismo
+    para obtener armadura. A\xF1ade potencia a los ataques giratorios"
+  extraEffect: '-'
+  pps: 8
   type: 1
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
-  dmgDices: 0
-  dmgDiceType: 0
+  dmgDices: 1
+  dmgDiceType: 4
+  dmgBonus: -2
+  dmgStatBonus: 0
+  duration: 3 Rondas
   range: 0
   area: 0
-  pps: 8
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: 1h
-  description: "Fortalece su cuerpo aumentondo su defensa en +2. A\xF1ade dados de
-    stab al usar Desenrollar"

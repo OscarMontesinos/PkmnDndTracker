@@ -64,8 +64,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 634bdb503f4a5824c9c535d4e7a18e77, type: 2}
   - {fileID: 11400000, guid: 0afbe3d31d9a6e8418e624b47c3faae1, type: 2}
   lvl3LearnableMoves: []
-  isAlter: 0
-  alternateForms: []
+  isAlter: 1
+  alternateForms:
+  - {fileID: 11400000, guid: 98aef11e05a2b1646b7d4594bd8dbc0c, type: 2}
   megaEvo: {fileID: 0}
   megastoneSprite: {fileID: 0}
   isMega: 0

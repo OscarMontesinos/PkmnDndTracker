@@ -13,20 +13,27 @@ MonoBehaviour:
   m_Name: AireAfilado
   m_EditorClassIdentifier: 
   moveName: Aire afilado
+  description: "Lanza cuchillas de aire en un \xE1rea, da\xF1\xE1ndo a los objetivos
+    que fallen la salvaci\xF3n"
+  extraEffect: "Inflige la mitad del da\xF1o si el objetivo supera la salvaci\xF3n"
+  pps: 12
   type: 3
   moveClass: 1
-  precision: 1d20
+  precision: 0
+  savingThrowType: DEX
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 1
+  savingThrowMultiplier: 1
   useHitDice: 0
-  dmgDices: 4
+  dmgDices: 3
   dmgDiceType: 6
-  range: 8
-  area: 0
-  pps: 12
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
+  range: 4
+  area: 3
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: Lanza cuchillas de aire al objetivo

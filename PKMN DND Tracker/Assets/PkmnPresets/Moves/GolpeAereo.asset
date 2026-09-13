@@ -12,21 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: GolpeAereo
   m_EditorClassIdentifier: 
-  moveName: "Golpe A\xE9reo"
+  moveName: "Golpe a\xE9reo"
+  description: "Ataque por el aire extremadamente r\xE1pido, el enemigo debe superar
+    una salvaci\xF3n para evitar el da\xF1o"
+  extraEffect: "Inflige la mitad del da\xF1o si el objetivo supera la salvaci\xF3n"
+  pps: 8
   type: 3
   moveClass: 0
-  precision: '-'
+  makesContact: 1
+  precision: 0
+  savingThrowType: DEX
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 0
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 3
   area: 0
-  pps: 8
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Ataque por el aire extremadamente r\xE1pido, no puede fallar"

@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Psicorrayo
   m_EditorClassIdentifier: 
   moveName: Psicorrayo
+  description: "Lanza un rayo de energ\xEDa ps\xEDquica."
+  extraEffect: "Confunde al objetivo al fallar la salvaci\xF3n"
+  pps: 10
   type: 14
   moveClass: 1
-  precision: 1d20
+  precision: 1
+  savingThrowType: CON
+  scallingSavingThrowType: 4
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0.75
   useHitDice: 0
   dmgDices: 4
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 1 Ronda
   range: 6
   area: 0
-  pps: 8
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Lanza un rayo de energ\xEDa ps\xEDquica."

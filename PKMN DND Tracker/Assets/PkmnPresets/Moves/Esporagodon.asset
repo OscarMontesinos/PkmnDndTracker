@@ -13,22 +13,28 @@ MonoBehaviour:
   m_Name: Esporagodon
   m_EditorClassIdentifier: 
   moveName: "Esporagod\xF3n"
-  type: 12
-  moveClass: 2
-  precision: '-'
-  useHitDice: 0
-  dmgDices: 0
-  dmgDiceType: 0
-  range: 6
-  area: 0
-  pps: 12
-  isAction: 1
-  isBonusAction: 0
-  isReaction: 0
-  hasPriority: 0
-  savingThrowType: DEX
-  savingThrowMultiplier: 1
-  duration: 15min
   description: "Atrapa al objetivo en unas esporas en forma de algod\xF3n que atacar\xE1
     con desventaja mientras est\xE9 retenido. El enemigo puede usar su acci\xF3n
     para intentar zafarse, consigui\xE9ndolo si acierta una salvaci\xF3n de destreza."
+  extraEffect: '-'
+  pps: 12
+  type: 12
+  moveClass: 2
+  precision: 0
+  savingThrowType: DEX
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 5
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
+  useHitDice: 0
+  dmgDices: 0
+  dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 1 min
+  range: 6
+  area: 0
+  isAction: 1
+  isBonusAction: 1
+  isReaction: 0
+  hasPriority: 0

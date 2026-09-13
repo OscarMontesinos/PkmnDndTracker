@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cea2b651d9189d4d85f43fba7ab48e7, type: 3}
+  m_Name: Glalie
+  m_EditorClassIdentifier: 
+  pkmnNumber: 362
+  pkmnPortraits:
+  - {fileID: 21300000, guid: 01623e289157fe54d9700f79ce6e7664, type: 3}
+  baseStats:
+    mHp: 0
+    hp: 80
+    atk: 80
+    def: 80
+    sAtk: 80
+    sDef: 80
+    spd: 80
+  type1: 15
+  type2: 0
+  abilities:
+  - ability: {fileID: 11400000, guid: e99174a0c55fc024b812fe7dec863faa, type: 2}
+    lvlRequired: 1
+  - ability: {fileID: 11400000, guid: e9b57ac835620c14397f08392e95dfb9, type: 2}
+    lvlRequired: 10
+  - ability: {fileID: 11400000, guid: 845078eb1a398d244904a49eb150dd47, type: 2}
+    lvlRequired: 5
+  - ability: {fileID: 11400000, guid: 25580366b5f880c468a11d928716012f, type: 2}
+    lvlRequired: 20
+  - ability: {fileID: 11400000, guid: cbe9f04b644c6c549acd6d6dfe5f8c74, type: 2}
+    lvlRequired: 35
+  lvl1LearnableMoves:
+  - {fileID: 11400000, guid: d15d25fd5b3690d4ea2534eba3e7b123, type: 2}
+  - {fileID: 11400000, guid: b7decdc68e0b61b429663941092919c7, type: 2}
+  - {fileID: 11400000, guid: 3b161fa9a2d3e2a4facb57d267581811, type: 2}
+  - {fileID: 11400000, guid: 52bde4fb0f0ec704f858ced051027053, type: 2}
+  - {fileID: 11400000, guid: 2df0f826613455a47b5619db8aeb05a5, type: 2}
+  - {fileID: 11400000, guid: 15f838697be4b344eb46b3482b4093eb, type: 2}
+  - {fileID: 11400000, guid: 9bed239141c8ee5488922e4999d8c347, type: 2}
+  - {fileID: 11400000, guid: 32a48d9008bf03f42b08ba9f4bc5c987, type: 2}
+  lvl2LearnableMoves:
+  - {fileID: 11400000, guid: b8306a3c0273f244a9a0fc9ca8798d5c, type: 2}
+  - {fileID: 11400000, guid: 7f2a50d48a1e77048aaa615d2392b113, type: 2}
+  lvl3LearnableMoves: []
+  isAlter: 0
+  alternateForms: []
+  megaEvo: {fileID: 0}
+  megastoneSprite: {fileID: 0}
+  isMega: 0

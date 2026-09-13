@@ -13,21 +13,27 @@ MonoBehaviour:
   m_Name: PolvoVeneno
   m_EditorClassIdentifier: 
   moveName: Polvo veneno
+  description: "Lanza al enemigo un polvo venenoso. Si el objetivo falla la salvaci\xF3n
+    lo envenena"
+  extraEffect: '-'
+  pps: 12
   type: 4
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: DEX / CON
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 0
   dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 1min
   range: 6
   area: 0
-  pps: 12
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: DEX CON
-  savingThrowMultiplier: 1
-  duration: 5min
-  description: "Lanza al enemigo un polvo venenoso. Si el objetivo falla la salvaci\xF3n
-    lo envenena"

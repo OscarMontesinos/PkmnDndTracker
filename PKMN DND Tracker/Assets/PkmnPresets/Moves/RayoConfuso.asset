@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: RayoConfuso
   m_EditorClassIdentifier: 
   moveName: Rayo Confuso
+  description: Lanza un rayo de luces danzantes que confunden al objetivo
+  extraEffect: '-'
+  pps: 15
   type: 8
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: WIS
+  scallingSavingThrowType: 4
+  secondaryScallingSavingThrowType: 5
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 0
   dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 1min
   range: 6
   area: 0
-  pps: 15
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: WIS
-  savingThrowMultiplier: 1
-  duration: 5min
-  description: Lanza un rayo de luces danzantes que confunden al objetivo

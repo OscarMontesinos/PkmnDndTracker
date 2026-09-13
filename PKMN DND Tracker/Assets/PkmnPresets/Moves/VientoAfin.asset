@@ -13,21 +13,27 @@ MonoBehaviour:
   m_Name: VientoAfin
   m_EditorClassIdentifier: 
   moveName: "Viento Af\xEDn"
+  description: 'Invoca un viento a tu favor que te hace tirar con ventaja en todas
+    las tiradas de iniciativa o que impliquen velocidad a ti y y a tus aliados. '
+  extraEffect: '-'
+  pps: 10
   type: 3
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 0
   dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 1h
   range: 0
   area: 0
-  pps: 10
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: 1h
-  description: 'Invoca un viento a tu favor que te hace tirar con ventaja en todas
-    las tiradas de iniciativa o que impliquen velocidad a ti y y a tus aliados. '

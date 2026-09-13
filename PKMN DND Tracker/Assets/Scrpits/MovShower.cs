@@ -48,17 +48,45 @@ public class MovShower : MonoBehaviour
         }
 
         movName.text = move.moveName;
-        precision.text = move.precision;
 
-        SetDmgDices();
+        if (move.precision)
+        {
+            precision.text = "1d20";
+            int mod = 0;
+            if (move.moveClass == GameManager.MoveCategory.Special)
+            {
+                mod += pkmn.statsMod.sAtk;
+            }
+            else if (move.moveClass == GameManager.MoveCategory.Physical)
+            {
+                mod += pkmn.statsMod.atk;
+            }
+
+            mod += pkmn.eqManager.GetAttackMod(move);
+
+            precision.text += " + " + mod;
+        }
+        else
+        {
+            precision.text = "-";
+        }
+
+            SetDmgDices();
 
         range.text = move.range.ToString();
-        area.text = move.area.ToString();
+        if (move.area >= 0)
+        {
+            area.text = move.area.ToString();
+        }
+        else
+        {
+            area.text = "Cono";
+        }
 
         if (move.savingThrowType != "-")
         {
             salvationName.text = move.savingThrowType;
-            salvationValue.text = (pkmn.extraStats.baseDC * move.savingThrowMultiplier).ToString("F0");
+            salvationValue.text = pkmn.GetSpellDC(move.scallingSavingThrowType,move.secondaryScallingSavingThrowType,move.combatScallingStat, move.savingThrowMultiplier).ToString("F0");
         }
         else
         {
@@ -91,6 +119,11 @@ public class MovShower : MonoBehaviour
         ppCost.text = "PP: " + move.pps.ToString();
         description.text = move.description;
 
+        if(move.extraEffect != "-")
+        {
+            description.text += "\nEfecto bonus: " + move.extraEffect.ToString();
+        }
+
         foreach(GameManager.TypeVisuals type in GameManager.Instance.typesVisuals)
         {
             if((type.type == move.type && move.type != GameManager.Type.Normal) || (move.type == GameManager.Type.Normal && type.type == normalTypeConversion))
@@ -102,13 +135,13 @@ public class MovShower : MonoBehaviour
 
                 switch (move.moveClass)
                 {
-                    case GameManager.MoveClass.Physical:
+                    case GameManager.MoveCategory.Physical:
                         moveClass.sprite = GameManager.Instance.fisicalMovSpr;
                         break;
-                    case GameManager.MoveClass.Special:
+                    case GameManager.MoveCategory.Special:
                         moveClass.sprite = GameManager.Instance.specialMovSpr;
                         break;
-                    case GameManager.MoveClass.Status:
+                    case GameManager.MoveCategory.Status:
                         moveClass.sprite = GameManager.Instance.statusMovSpr;
                         break;
 
@@ -143,7 +176,7 @@ public class MovShower : MonoBehaviour
                && (move.type == GameManager.Type.Water || move.type == GameManager.Type.Electric || move.type == GameManager.Type.Fire
                || move.type == GameManager.Type.Grass))) ||
                
-               (pkmn.CheckAbilityName("Cólera") && move.moveClass == GameManager.MoveClass.Special &&  (pkmn.stats.hp / pkmn.stats.mHp) * 100 <= 50))
+               (pkmn.CheckAbilityName("Cólera") && move.moveClass == GameManager.MoveCategory.Special &&  (pkmn.stats.hp / pkmn.stats.mHp) * 100 <= 50))
             {
                 diceMult += 0.5f;
 
@@ -159,23 +192,13 @@ public class MovShower : MonoBehaviour
                     diceMult += 0.5f;
                 }
             }
+            else if(pkmn.CheckAbilityName("Crin de Fuego") && move.type == GameManager.Type.Fire)
+            {
+                diceMult += 0.5f;
+            }
             if (UIManager.Instance)
             {
-                switch (UIManager.Instance.moveMode)
-                {
-                    case UIManager.movesDmgMode.superE:
-                        diceMult += 0.5f;
-                        break;
-                    case UIManager.movesDmgMode.hiperE:
-                        diceMult += 1f;
-                        break;
-                    case UIManager.movesDmgMode.resisted:
-                        diceMult -= 0.5f;
-                        break;
-                    case UIManager.movesDmgMode.superRes:
-                        diceMult -= 1f;
-                        break;
-                }
+                diceMult += (UIManager.Instance.stabDices*0.5f);
             }
             dices *= diceMult;
             if (dices < 1)
@@ -183,6 +206,27 @@ public class MovShower : MonoBehaviour
                 dices = 1;
             }
             dmg.text = Mathf.Floor(dices).ToString("F0") + "d" + move.dmgDiceType;
+        }
+
+        if(move.dmgBonus != 0)
+        {
+            dmg.text += " ";
+            if (move.dmgBonus > 0)
+            {
+                dmg.text += "+";
+            }
+            dmg.text += move.dmgBonus.ToString();
+        }
+
+        if(move.dmgStatBonus != GameManager.DndStatsType.none)
+        {
+            int statBonus = pkmn.GetDndStatMod(move.dmgStatBonus);
+            dmg.text += " ";
+            if (statBonus > 0)
+            {
+                dmg.text += "+";
+            }
+            dmg.text += statBonus.ToString();
         }
     }
 

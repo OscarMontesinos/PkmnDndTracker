@@ -13,20 +13,28 @@ MonoBehaviour:
   m_Name: Persecucion
   m_EditorClassIdentifier: 
   moveName: "Persecuci\xF3n"
+  description: "Ataca al objetivo persiguiendolo. Al usarse como ataque de oportunidad
+    obtiene ventaja y dados de STAB al hacerlo duplica el da\xF1o."
+  extraEffect: '-'
+  pps: 3
   type: 17
   moveClass: 0
-  precision: 1d20
+  makesContact: 1
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 4
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 3
   area: 0
-  pps: 3
   isAction: 1
   isBonusAction: 0
-  isReaction: 0
+  isReaction: 1
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: Ataca al objetivo persiguiendolo

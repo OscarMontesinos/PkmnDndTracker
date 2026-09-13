@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
+  m_Name: TajoAereo
+  m_EditorClassIdentifier: 
+  moveName: "Tajo a\xE9reo"
+  description: Lanza un pulso de viento cortante al objetivo
+  extraEffect: "Aturde al objetivo al fallar la salvaci\xF3n"
+  pps: 15
+  type: 3
+  moveClass: 1
+  precision: 1
+  savingThrowType: CON
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 2
+  combatScallingStat: 2
+  savingThrowMultiplier: 0.5
+  useHitDice: 0
+  dmgDices: 4
+  dmgDiceType: 8
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
+  range: 6
+  area: 0
+  isAction: 1
+  isBonusAction: 0
+  isReaction: 0
+  hasPriority: 0

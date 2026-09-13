@@ -13,22 +13,28 @@ MonoBehaviour:
   m_Name: Robo
   m_EditorClassIdentifier: 
   moveName: Robo
+  description: "Reacciona a un ataque de estado para robar la alteraci\xF3n y quedarsela
+    para s\xED. Otorga ventaja al robarReacciona a un ataque de estado para robar
+    la alteraci\xF3n y quedarsela para s\xED. Otorga ventaja al robar"
+  extraEffect: '-'
+  pps: 16
   type: 17
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: WIS
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 0
   dmgDiceType: 0
-  range: 8
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
+  range: 6
   area: 0
-  pps: 16
   isAction: 0
   isBonusAction: 0
   isReaction: 1
   hasPriority: 0
-  savingThrowType: WIS
-  savingThrowMultiplier: 1
-  duration: '-'
-  description: "Reacciona a un ataque de estado para robar la bonificaci\xF3n y quedarsela
-    para s\xED. Otorga ventaja al robar si el objetivo est\xE1 distraido haciendo
-    algo"

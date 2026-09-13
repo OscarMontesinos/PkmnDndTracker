@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Atiborramiento
   m_EditorClassIdentifier: 
   moveName: Atiborramiento
+  description: "Se come una baya y obtiene armadura reforzando su constituci\xF3n"
+  extraEffect: '-'
+  pps: 14
   type: 1
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
-  dmgDices: 0
-  dmgDiceType: 0
+  dmgDices: 2
+  dmgDiceType: 4
+  dmgBonus: 2
+  dmgStatBonus: 0
+  duration: 3 Rondas
   range: 0
   area: 0
-  pps: 14
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: 1h
-  description: Se come una baya y aumenta su defensa en +6

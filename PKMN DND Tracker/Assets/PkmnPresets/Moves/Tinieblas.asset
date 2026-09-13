@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Tinieblas
   m_EditorClassIdentifier: 
   moveName: Tinieblas
+  description: "Hace ver ilusiones tenebrosas a un objetivo y le inflige da\xF1o."
+  extraEffect: '-'
+  pps: 9
   type: 8
   moveClass: 1
-  precision: '-'
+  precision: 0
+  savingThrowType: WIS
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 1
+  savingThrowMultiplier: 1
   useHitDice: 1
   dmgDices: 3
   dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: C
   range: 6
   area: 0
-  pps: 9
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: WIS
-  savingThrowMultiplier: 1
-  duration: C
-  description: "Hace ver ilusiones tenebrosas a un objetivo y le inflige da\xF1o."

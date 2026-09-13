@@ -13,21 +13,28 @@ MonoBehaviour:
   m_Name: Amago
   m_EditorClassIdentifier: 
   moveName: Amago
+  description: "Ataca al objetivo eliminando sus alteraciones defensivas positivas
+    si falla la salvaci\xF3n. Puede reaccionar a un movimiento defensivo de un enemigo,
+    cancelando ese ataque."
+  extraEffect: '-'
+  pps: 10
   type: 1
   moveClass: 0
-  precision: 1d20
+  precision: 0
+  savingThrowType: CON
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 0
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 2
   dmgDiceType: 4
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 1
   area: 0
-  pps: 10
   isAction: 1
   isBonusAction: 1
-  isReaction: 0
+  isReaction: 1
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Ataca al objetivo enga\xF1andole con una finta. Rompe cualquier efecto
-    que proteja al objetivo y le imp\xECde usar reacciones durante la ronda"

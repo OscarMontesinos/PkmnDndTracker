@@ -12,23 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: LlantoFalso
   m_EditorClassIdentifier: 
-  moveName: Llanto Falso
+  moveName: Llanto falso
+  description: "Finge un llanto para dar pena a un enemigo inflige vulnerabilidad
+    especial. Obtiene ventaja si se usa en una tirada de enga\xF1o que consista en
+    dar pena"
+  extraEffect: '-'
+  pps: 14
   type: 17
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: WIS
+  scallingSavingThrowType: 3
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
-  dmgDices: 0
-  dmgDiceType: 0
+  dmgDices: 1
+  dmgDiceType: 4
+  dmgBonus: 2
+  dmgStatBonus: 0
+  duration: 3 Rondas
   range: 6
   area: 0
-  pps: 10
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: WIS
-  savingThrowMultiplier: 1
-  duration: 3 Rondas
-  description: "Finge un llanto para dar pena a un enemigo y otorga un bonificador
-    de -4 a su defensa especial. Obtiene ventaja si se usa en una tirada de enga\xF1o
-    que consista en dar pena"

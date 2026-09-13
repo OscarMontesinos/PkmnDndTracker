@@ -13,21 +13,27 @@ MonoBehaviour:
   m_Name: Escupir
   m_EditorClassIdentifier: 
   moveName: Escupir
+  description: "Lanza el poder acumulado por reserva y da\xF1a al objetivo, si supera
+    la salvaci\xF3n recibe solo la mitad de da\xF1o"
+  extraEffect: '-'
+  pps: 10
   type: 1
   moveClass: 0
-  precision: '-'
+  precision: 0
+  savingThrowType: DEX
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 1
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 8
-  range: 1
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
+  range: 8
   area: 0
-  pps: 10
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: DEX
-  savingThrowMultiplier: 1
-  duration: '-'
-  description: "Lanza el poder acumulado por reserva y da\xF1a al objetivo, si supera
-    la salvaci\xF3n recibe solo la mitad de da\xF1o"

@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Reversion
   m_EditorClassIdentifier: 
   moveName: "Reversi\xF3n"
+  description: Invierte una o todas las alteraciones de un objetivo
+  extraEffect: '-'
+  pps: 16
   type: 17
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: CON
+  scallingSavingThrowType: 4
+  secondaryScallingSavingThrowType: 5
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 0
   dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 6
   area: 0
-  pps: 16
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: Invierte todos los bonificadores o uno en concreto de un objetivo

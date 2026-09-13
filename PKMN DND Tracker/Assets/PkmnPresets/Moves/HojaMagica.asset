@@ -13,22 +13,28 @@ MonoBehaviour:
   m_Name: HojaMagica
   m_EditorClassIdentifier: 
   moveName: "Hoja m\xE1gica"
+  description: "Conjura hojas encantadas que recorren una trayectoria decidida por
+    el usuario, nunca falla. Si el enemigo supera una salvaci\xF3n recibe la mitad
+    del da\xF1o"
+  extraEffect: "Si el enemigo supera la salvaci\xF3n recibe la mitad del da\xF1o"
+  pps: 14
   type: 12
   moveClass: 1
-  precision: '-'
+  precision: 0
+  savingThrowType: DEX
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 1
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 4
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 6
   area: 0
-  pps: 17
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: DEX
-  savingThrowMultiplier: 1
-  duration: '-'
-  description: "Conjura hojas encantadas que recorren una trayectoria decidida por
-    el usuario, nunca falla. Si el enemigo supera una salvaci\xF3n recibe la mitad
-    del da\xF1o"

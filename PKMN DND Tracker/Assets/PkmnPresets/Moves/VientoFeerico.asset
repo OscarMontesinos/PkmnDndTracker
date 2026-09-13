@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: VientoFeerico
   m_EditorClassIdentifier: 
   moveName: "Viento fe\xE9rico"
+  description: "Lanza un viento m\xE1gico"
+  extraEffect: '-'
+  pps: 4
   type: 18
   moveClass: 1
-  precision: 1d20
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 3
-  dmgDiceType: 4
+  dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 6
   area: 0
-  pps: 3
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Lanza un viento m\xE1gico"

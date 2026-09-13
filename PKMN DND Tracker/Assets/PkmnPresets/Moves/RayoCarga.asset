@@ -13,22 +13,28 @@ MonoBehaviour:
   m_Name: RayoCarga
   m_EditorClassIdentifier: 
   moveName: Rayo Carga
+  description: "Puede usarse la acci\xF3n bonus para cargar este ataque. Lanza un
+    rayo que inflige un dado de da\xF1o extra por cada carga acumulada. Pierde todas
+    las cargas tras su uso"
+  extraEffect: '-'
+  pps: 6
   type: 13
   moveClass: 1
-  precision: 1d20
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
-  dmgDices: 1
+  dmgDices: 2
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 6
   area: 0
-  pps: 6
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Puede usarse la acci\xF3n bonus para cargar este ataque. Lanza un
-    rayo que inflige un dado de da\xF1o extra por cada carga acumulada. Pierde todas
-    las cargas tras su uso"

@@ -12,22 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: BombaAcida
   m_EditorClassIdentifier: 
-  moveName: "Bomba \xC1cida"
+  moveName: "Bomba \xE1cida"
+  description: "Lanza una bomba de acido que inflige exposici\xF3n especial. El objetivo
+    puede gastar su acci\xF3n para limpiarse el \xE1cido y deshacerse de este efecto"
+  extraEffect: '-'
+  pps: 14
   type: 4
   moveClass: 1
-  precision: 1d20
+  precision: 1
+  savingThrowType: CON
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 4
+  combatScallingStat: 1
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 2
   dmgDiceType: 4
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 3 Rondas
   range: 6
   area: 0
-  pps: 8
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: CON
-  savingThrowMultiplier: 1
-  duration: '-'
-  description: Lanza una bomba de acido que otorga ventaja si un enemigo ataca al
-    objetivo por la parte especial

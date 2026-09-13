@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Dracoaliento
   m_EditorClassIdentifier: 
   moveName: Dracoaliento
+  description: "Ataca con una bocanada de energ\xEDa que lanza por su boca"
+  extraEffect: "Paraliza al objetivo al fallar la salvaci\xF3n"
+  pps: 8
   type: 16
   moveClass: 1
-  precision: 1d20
+  precision: 1
+  savingThrowType: CON
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 1
+  combatScallingStat: 2
+  savingThrowMultiplier: 0.66
   useHitDice: 0
   dmgDices: 4
   dmgDiceType: 6
-  range: 8
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
+  range: 6
   area: 0
-  pps: 4
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Ataca con una bocanada de energ\xEDa que lanza por su boca"

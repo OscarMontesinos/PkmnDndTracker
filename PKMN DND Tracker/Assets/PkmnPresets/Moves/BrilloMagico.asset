@@ -13,20 +13,27 @@ MonoBehaviour:
   m_Name: BrilloMagico
   m_EditorClassIdentifier: 
   moveName: "Brillo M\xE1gico"
+  description: "Lanza un brillo encantado que da\xF1a a los enemigos de su alrededor.
+    Los objetivos que fallen la salvaci\xF3n reciben la mitad de da\xF1o"
+  extraEffect: '-'
+  pps: 20
   type: 18
   moveClass: 1
-  precision: 1d20
+  precision: 0
+  savingThrowType: CON
+  scallingSavingThrowType: 5
+  secondaryScallingSavingThrowType: 4
+  combatScallingStat: 1
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 6
   dmgDiceType: 6
-  range: 0
-  area: 8
-  pps: 20
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
+  range: 8
+  area: -1
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Lanza un brillo encantado que da\xF1a a los enemigos de su alrededor"

@@ -13,20 +13,27 @@ MonoBehaviour:
   m_Name: Ida y vuelta
   m_EditorClassIdentifier: 
   moveName: Ida y vuelta
+  description: "Se avalanza al objetivo atac\xE1ndolo y vuelve a saltar para reposicionarse"
+  extraEffect: '-'
+  pps: 14
   type: 7
   moveClass: 0
-  precision: 1d20
+  makesContact: 1
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 4
   dmgDiceType: 8
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 6
   area: 0
-  pps: 14
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Se avalanza al objetivo atac\xE1ndolo y vuelve a saltar para reposicionarse"

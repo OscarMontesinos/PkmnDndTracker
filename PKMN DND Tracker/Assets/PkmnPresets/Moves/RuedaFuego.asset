@@ -12,22 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: RuedaFuego
   m_EditorClassIdentifier: 
-  moveName: Rueda Fuego
+  moveName: Rueda fuego
+  description: Se lanza envolviendose de fuego y girando como una rueda a un objetivo
+    para golpearlo
+  extraEffect: "Quema al objetivo al fallar la salvaci\xF3n"
+  pps: 15
   type: 10
   moveClass: 0
-  precision: '-'
+  makesContact: 1
+  precision: 0
+  savingThrowType: DEX
+  scallingSavingThrowType: 2
+  secondaryScallingSavingThrowType: 1
+  combatScallingStat: 2
+  savingThrowMultiplier: 0.66
   useHitDice: 0
   dmgDices: 4
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 1 Ronda
   range: 4
   area: 0
-  pps: 15
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: Se lanza envolviendose de fuego y girando como una rueda a un objetivo
-    para golpearlo

@@ -13,22 +13,27 @@ MonoBehaviour:
   m_Name: Rugido
   m_EditorClassIdentifier: 
   moveName: Rugido
+  description: "Empuja a un objetivo 4 casillas con un fuerte rugido, si colisiona
+    contra algo da\xF1a a ambos objetivos"
+  extraEffect: '-'
+  pps: 12
   type: 1
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: CON
+  scallingSavingThrowType: 1
+  secondaryScallingSavingThrowType: 3
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 1
-  dmgDices: 1
+  dmgDices: 2
   dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 6
   area: 0
-  pps: 12
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Empuja a un objetivo con un fuerte rugido 4 casillas, si colisiona
-    contra algo ambos reciben la mitad del bono de proeficiencia del usuario como
-    dados de golpe de da\xF1o"

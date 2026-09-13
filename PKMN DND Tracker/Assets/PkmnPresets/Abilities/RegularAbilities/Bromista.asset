@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Bromista
   m_EditorClassIdentifier: 
   abName: Bromista
-  description: "Puede usar como prioridad o acci\xF3n bonus cualquier ataque de estado"
+  description: "Puede usarse la acci\xF3n bonus como reacci\xF3n y la reacci\xF3n
+    como acci\xF3n bonus"

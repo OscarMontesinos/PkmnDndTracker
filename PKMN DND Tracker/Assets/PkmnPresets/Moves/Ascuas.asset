@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Ascuas
   m_EditorClassIdentifier: 
   moveName: Ascuas
+  description: Lanza briznas de fuego
+  extraEffect: "Quema al objetivo al fallar la salvaci\xF3n"
+  pps: 3
   type: 10
   moveClass: 1
-  precision: 1d20
+  precision: 1
+  savingThrowType: DEX
+  scallingSavingThrowType: 5
+  secondaryScallingSavingThrowType: 1
+  combatScallingStat: 2
+  savingThrowMultiplier: 0.75
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 4
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 1 Ronda
   range: 6
   area: 0
-  pps: 3
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: Lanza briznas de fuego

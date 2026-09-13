@@ -12,22 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: NieblaClara
   m_EditorClassIdentifier: 
-  moveName: Niebla Clara
+  moveName: Niebla clara
+  description: "Lanza una bola de gas pura a un enemigo, elimina una alteraci\xF3n
+    a elecci\xF3n o todas a la vez"
+  extraEffect: '-'
+  pps: 13
   type: 4
   moveClass: 1
-  precision: '-'
+  precision: 0
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 6
   area: 0
-  pps: 8
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Lanza una bola de gas pura a un enemigo, elimina una bonificaci\xF3n
-    a elecci\xF3n o todas a la vez"

@@ -13,21 +13,27 @@ MonoBehaviour:
   m_Name: Voltiocambio
   m_EditorClassIdentifier: 
   moveName: Voltiocambio
+  description: "Lanza un ataque electrico que vuelve y confiere la energ\xEDa suficiente
+    para saltar y reposicionarse. Si el objetivo es un aliado intercambia sus casillas."
+  extraEffect: '-'
+  pps: 18
   type: 13
   moveClass: 1
-  precision: 1d20
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 4
   dmgDiceType: 8
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 6
   area: 0
-  pps: 18
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Lanza un ataque electrico que vuelve y confiere la energ\xEDa suficiente
-    para saltar y reposicionarse. Si el objetivo es un aliado intercambia sus casillas."

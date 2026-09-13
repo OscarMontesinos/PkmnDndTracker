@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Fighting1
   m_EditorClassIdentifier: 
   abName: Lucha
-  description: "Al atacar obtiene un dado de golpe extra cada cuatro niveles. Puede
+  description: "Al atacar obtiene un dado de golpe extra cada diez niveles. Puede
     atacar con Forcejeo como acci\xF3n bonus"

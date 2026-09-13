@@ -12,23 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: UltimaPalabra
   m_EditorClassIdentifier: 
-  moveName: "\xDAltima Palabra"
+  moveName: "\xDAltima palabra"
+  description: Insulta al objetivo antes de huir y reposicionarse. El objetivo recibe
+    debilidad. Puede intercambiar sus casillas con un aliado y si lo hace el rango
+    se duplica
+  extraEffect: '-'
+  pps: 18
   type: 17
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: WIS
+  scallingSavingThrowType: 3
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 0
   dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 3 Rondas
   range: 3
   area: 0
-  pps: 18
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: WIS
-  savingThrowMultiplier: 1
-  duration: 1 Ronda
-  description: "Insulta al objetivo antes de huir y reposicionarse. El objetivo tira
-    con desventaja y sus enemigos tiran salvan con ventaja contra \xE9l. Puede intercambiar
-    sus casillas con un aliado y si lo hace el rango se duplica"

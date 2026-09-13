@@ -13,21 +13,27 @@ MonoBehaviour:
   m_Name: Carga
   m_EditorClassIdentifier: 
   moveName: Carga
+  description: "Se carga de enegr\xEDa a\xF1adiendo 2D6 extra a la proxima tirada
+    de un ataque de tipo el\xE9ctrico"
+  extraEffect: '-'
+  pps: 10
   type: 13
   moveClass: 2
-  precision: '-'
-  useHitDice: 0
-  dmgDices: 0
+  precision: 0
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
+  useHitDice: 1
+  dmgDices: 2
   dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 20min
   range: 0
   area: 0
-  pps: 10
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: 2min
-  description: "Se carga de enegr\xEDa a\xF1adiendo 2D6 extra a la proxima tirada
-    de un ataque de tipo el\xE9ctrico"

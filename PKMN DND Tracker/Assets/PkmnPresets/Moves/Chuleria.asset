@@ -13,21 +13,28 @@ MonoBehaviour:
   m_Name: Chuleria
   m_EditorClassIdentifier: 
   moveName: "Chuler\xEDa"
+  description: "Golpea al objetivo en un ataque de bravuconer\xEDa, a\xF1ade 2D4
+    extra por cada punto de vigor, 2D6 si tiene impulso, 1D6 si tiene potenciaci\xF3n
+    y 1D8 si est\xE1 reforzado"
+  extraEffect: '-'
+  pps: 8
   type: 17
   moveClass: 0
-  precision: 1d20
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 2
   dmgDiceType: 4
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 1
   area: 0
-  pps: 8
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Golpea al objetivo, a\xF1ade 1D4 al da\xF1o por cada efecto positivo
-    que tenga el usuario"

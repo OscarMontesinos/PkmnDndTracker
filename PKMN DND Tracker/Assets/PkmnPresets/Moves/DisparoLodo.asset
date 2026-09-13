@@ -12,21 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: DisparoLodo
   m_EditorClassIdentifier: 
-  moveName: Disparo Lodo
+  moveName: Disparo lodo
+  description: Lanza un disparo de lodo al enemigo
+  extraEffect: "Ralentiza al objetivo al fallar la salvaci\xF3n"
+  pps: 4
   type: 5
   moveClass: 1
-  precision: 1d20
+  precision: 1
+  savingThrowType: DEX
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 6
   area: 0
-  pps: 4
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: Lanza un disparo de lodo al enemigo

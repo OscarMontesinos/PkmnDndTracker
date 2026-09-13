@@ -13,20 +13,27 @@ MonoBehaviour:
   m_Name: Calcinacion
   m_EditorClassIdentifier: 
   moveName: "Calcinaci\xF3n"
+  description: "Lanza una bocanada de fuego, hace da\xF1o a los enemigos que fallen
+    la salvaci\xF3n"
+  extraEffect: "Inflige la mitad del da\xF1o si el objetivo supera la salvaci\xF3n"
+  pps: 10
   type: 10
   moveClass: 1
-  precision: 1d20
+  precision: 0
+  savingThrowType: DEX
+  scallingSavingThrowType: 5
+  secondaryScallingSavingThrowType: 1
+  combatScallingStat: 1
+  savingThrowMultiplier: 1
   useHitDice: 0
-  dmgDices: 4
+  dmgDices: 3
   dmgDiceType: 6
-  range: 6
-  area: 0
-  pps: 10
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
+  range: 5
+  area: 3
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: Lanza una bocanada de fuego

@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Lenguetazo
   m_EditorClassIdentifier: 
   moveName: "Leng\xFCetazo"
+  description: "Lame al objetivo haciendole da\xF1o y paraliza al enemigo"
+  extraEffect: "Paraliza al objetivo al fallar la salvaci\xF3n"
+  pps: 5
   type: 8
   moveClass: 0
-  precision: 1d20
+  precision: 1
+  savingThrowType: WIS
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 2
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 1 Ronda
   range: 3
   area: 0
-  pps: 2
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: CON / DEX
-  savingThrowMultiplier: 0.5
-  duration: '-'
-  description: "Lame al objetivo haciendole da\xF1o y paraliza al enemigo"

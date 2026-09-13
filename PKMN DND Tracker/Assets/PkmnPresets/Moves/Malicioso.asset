@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: Malicioso
   m_EditorClassIdentifier: 
   moveName: Malicioso
+  description: "Mira mal al rival asust\xE1ndolo y infligiendo vulnerabilidad f\xEDsica"
+  extraEffect: '-'
+  pps: 10
   type: 1
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: WIS
+  scallingSavingThrowType: 3
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
-  dmgDices: 0
-  dmgDiceType: 0
+  dmgDices: 1
+  dmgDiceType: 4
+  dmgBonus: 1
+  dmgStatBonus: 0
+  duration: 3 Rondas
   range: 6
   area: 0
-  pps: 10
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: WIS
-  savingThrowMultiplier: 1
-  duration: 3 Rondas
-  description: "Mira mal al rival asust\xE1ndolo y restando 4 a sus tiradas de ataque"

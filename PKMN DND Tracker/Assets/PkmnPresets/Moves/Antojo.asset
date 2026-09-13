@@ -13,21 +13,28 @@ MonoBehaviour:
   m_Name: Antojo
   m_EditorClassIdentifier: 
   moveName: Antojo
+  description: "Ataca con picard\xEDa, puede usarse para obtener ventaja a la hora
+    de robar objetos"
+  extraEffect: '-'
+  pps: 10
   type: 1
   moveClass: 0
-  precision: 1d20
+  makesContact: 1
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 4
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 1
   area: 0
-  pps: 10
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Ataca con picard\xEDa que puede usarse para obtener ventaja a la
-    hora de robar objetos"

@@ -12,23 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753fa9987e2df9c4f971cb11c616bbf9, type: 3}
   m_Name: GiroFuego
   m_EditorClassIdentifier: 
-  moveName: Giro Fuego
+  moveName: Giro fuego
+  description: "Atrapa al enemigo en un circulo de fuego, el objetivo puede usar
+    la acci\xF3n para intentar escapar del v\xF3rtice superando una salvaci\xF3n.
+    Causa 1 dado de golpe de da\xF1o cada turno si el enemigo no se libera."
+  extraEffect: "Si el enemigo ya est\xE1 apresado inflige 1 dado de golpe de da\xF1o"
+  pps: 12
   type: 10
   moveClass: 1
-  precision: '-'
-  useHitDice: 0
+  precision: 0
+  savingThrowType: DEX
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 5
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
+  useHitDice: 1
   dmgDices: 2
-  dmgDiceType: 4
+  dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 1min
   range: 6
   area: 0
-  pps: 3
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: CON / DEX
-  savingThrowMultiplier: 1
-  duration: 1min
-  description: "Atrapa al enemigo en un circulo de fuego, si pasa una salvaci\xF3n
-    al inicio de cada turno se libera del vortice de llamas si no no puede moverse
-    y recibe un da\xF1o igual a su dado de golpe"

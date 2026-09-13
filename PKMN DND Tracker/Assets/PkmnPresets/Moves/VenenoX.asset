@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: VenenoX
   m_EditorClassIdentifier: 
   moveName: Veneno X
+  description: 'Lanza un tajo envenenado en forma de X '
+  extraEffect: "A\xF1ade dados de STAB si el objetivo no resiste el tipo veneno"
+  pps: 11
   type: 4
   moveClass: 0
-  precision: 1d20
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 4
   dmgDiceType: 8
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 1
   area: 0
-  pps: 13
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: 'Lanza un  tajo envenenado en forma de X '

@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cea2b651d9189d4d85f43fba7ab48e7, type: 3}
+  m_Name: UrshifuD
+  m_EditorClassIdentifier: 
+  pkmnNumber: 892
+  pkmnPortraits:
+  - {fileID: 21300000, guid: cc480d5511ed6c6478a28cb481b9c764, type: 3}
+  baseStats:
+    mHp: 0
+    hp: 100
+    atk: 130
+    def: 100
+    sAtk: 63
+    sDef: 60
+    spd: 97
+  type1: 2
+  type2: 17
+  abilities:
+  - ability: {fileID: 11400000, guid: 75219be963c639746ad8ea710d2d9a0a, type: 2}
+    lvlRequired: 1
+  - ability: {fileID: 11400000, guid: 33b40a7238acc3f46a407fe46da7e0ef, type: 2}
+    lvlRequired: 10
+  - ability: {fileID: 11400000, guid: 1ea00b31f22af4f4ab167a1bfdffa203, type: 2}
+    lvlRequired: 5
+  - ability: {fileID: 11400000, guid: 845078eb1a398d244904a49eb150dd47, type: 2}
+    lvlRequired: 20
+  - ability: {fileID: 11400000, guid: bfe96de8dae809141b00cda4925e0e3b, type: 2}
+    lvlRequired: 35
+  lvl1LearnableMoves:
+  - {fileID: 11400000, guid: 3b9a88be95ec4f7438e5a9ba00bac838, type: 2}
+  - {fileID: 11400000, guid: 117e4edf217702e41aaf89cc4a3b2137, type: 2}
+  - {fileID: 11400000, guid: 3d12c9f5b197ef84b8a223e56547322a, type: 2}
+  - {fileID: 11400000, guid: 0e160b674e8bb2a4a9eedad11d9e99bc, type: 2}
+  - {fileID: 11400000, guid: a8f70ed69da9f6849a2e0419123c4f61, type: 2}
+  - {fileID: 11400000, guid: 215780a2f62680348a221936930ed745, type: 2}
+  - {fileID: 11400000, guid: a89d14f51f15bfb42a7e08eca4966b32, type: 2}
+  - {fileID: 11400000, guid: aec5f115d99d3ad4fbc1b380ad1aba26, type: 2}
+  - {fileID: 11400000, guid: af4adc8f30fd88a46a61f03d17076d8b, type: 2}
+  - {fileID: 11400000, guid: 2c70591f19516794d9a9374075b574f0, type: 2}
+  - {fileID: 11400000, guid: dc5336ca633cd614eae2d1ec4c117bd1, type: 2}
+  lvl2LearnableMoves:
+  - {fileID: 11400000, guid: b8306a3c0273f244a9a0fc9ca8798d5c, type: 2}
+  - {fileID: 11400000, guid: 51cf367059a37484b95fb7773f568839, type: 2}
+  - {fileID: 11400000, guid: c23fef2d67458a1449a10da67611550d, type: 2}
+  - {fileID: 11400000, guid: 82ec67a4bfe703441bc78b3183f95d5e, type: 2}
+  - {fileID: 11400000, guid: 3c0c48aa8bd7d2245a42858e44c88a08, type: 2}
+  - {fileID: 11400000, guid: 357b50a8e8b01f5498eee4934e3f1e06, type: 2}
+  - {fileID: 11400000, guid: 72cdf86d5ff839941a9c7497d2deb4b1, type: 2}
+  - {fileID: 11400000, guid: 20f05e8aad129e345b6fe7a3517b7494, type: 2}
+  - {fileID: 11400000, guid: 61ef1e80957de8540accc6da316aadc7, type: 2}
+  - {fileID: 11400000, guid: 75a2ac0fa213f644cbb724ce217956fe, type: 2}
+  - {fileID: 11400000, guid: e96c17fcce2574f4885fd14e796e5255, type: 2}
+  - {fileID: 11400000, guid: a054c8c4b8f37c248a3990bc24165465, type: 2}
+  lvl3LearnableMoves:
+  - {fileID: 11400000, guid: 2b78ba043a96436479e9ab2a6e06773a, type: 2}
+  - {fileID: 11400000, guid: c5777010edde5de4eafeaf91344ef35c, type: 2}
+  - {fileID: 11400000, guid: cb89ba46c267b1e459aeb3e9300ac2bf, type: 2}
+  - {fileID: 11400000, guid: b27aad19ef7c89b4ebb1862abd89dfdd, type: 2}
+  isAlter: 0
+  alternateForms: []
+  megaEvo: {fileID: 0}
+  megastoneSprite: {fileID: 0}
+  isMega: 0

@@ -13,20 +13,27 @@ MonoBehaviour:
   m_Name: Palmeo
   m_EditorClassIdentifier: 
   moveName: Palmeo
+  description: Golpea con la palma de la mano a un enemigo provocando una onda electrica
+  extraEffect: "Paraliza al objetivo al fallar la salvaci\xF3n"
+  pps: 12
   type: 2
   moveClass: 0
-  precision: 1d20
+  makesContact: 1
+  precision: 1
+  savingThrowType: CON
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 2
+  combatScallingStat: 2
+  savingThrowMultiplier: 0.66
   useHitDice: 0
   dmgDices: 4
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 1
   area: 0
-  pps: 8
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: Golpea con la palma de la mano a un enemigo provocando una onda electrica

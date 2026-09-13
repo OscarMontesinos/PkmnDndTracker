@@ -13,20 +13,27 @@ MonoBehaviour:
   m_Name: Brinco
   m_EditorClassIdentifier: 
   moveName: Brinco
+  description: "Salta sobre un enemigo y lo da\xF1a"
+  extraEffect: "Ralentiza al objetivo al fallar la salvaci\xF3n"
+  pps: 3
   type: 7
   moveClass: 0
-  precision: 1d20
+  makesContact: 1
+  precision: 1
+  savingThrowType: CON
+  scallingSavingThrowType: 1
+  secondaryScallingSavingThrowType: 2
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 4
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 1 Ronda
   range: 3
   area: 0
-  pps: 3
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Salta sobre un enemigo y lo da\xF1a"

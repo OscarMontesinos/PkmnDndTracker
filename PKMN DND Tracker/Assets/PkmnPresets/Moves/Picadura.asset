@@ -13,20 +13,27 @@ MonoBehaviour:
   m_Name: Picadura
   m_EditorClassIdentifier: 
   moveName: Picadura
+  description: "Pica al objetivo infligiendo da\xF1o"
+  extraEffect: '-'
+  pps: 12
   type: 7
   moveClass: 0
-  precision: 1d20
+  makesContact: 1
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 4
-  dmgDiceType: 6
+  dmgDiceType: 8
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 1
   area: 0
-  pps: 12
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Pica al objetivo infligiendo da\xF1o"

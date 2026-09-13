@@ -13,22 +13,29 @@ MonoBehaviour:
   m_Name: Drenadoras
   m_EditorClassIdentifier: 
   moveName: Drenadoras
+  description: "Lanza unas semillas  que florecen alrededor de un enemigo y absorben
+    su energ\xEDa vital. Inflige dos de sus dados de da\xF1o y cura al usuariola
+    mitad del da\xF1o causado. Puede usar su acci\xF3n para salvar y librarse de
+    este efecto"
+  extraEffect: '-'
+  pps: 16
   type: 12
   moveClass: 2
-  precision: '-'
-  useHitDice: 1
+  precision: 0
+  savingThrowType: DEX
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 5
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
+  useHitDice: 0
   dmgDices: 0
   dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 1min
   range: 6
   area: 0
-  pps: 16
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: DEX
-  savingThrowMultiplier: 1
-  duration: 15min
-  description: "Lanza unas semillas  que florecen alrededor de un enemigo y absorben
-    su energ\xEDa vital. Cadaturno de un enemigo inflige su dado de da\xF1o y cura
-    al usuario todo el da\xF1o causado"

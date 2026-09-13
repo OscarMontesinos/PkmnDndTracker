@@ -13,21 +13,27 @@ MonoBehaviour:
   m_Name: Arraigo
   m_EditorClassIdentifier: 
   moveName: Arraigo
+  description: "Se enra\xEDza al suelo y regenera vida, puedes rescindir de tus casillas
+    de movimiento para a\xF1adir dos dados a la cura"
+  extraEffect: '-'
+  pps: 6
   type: 12
   moveClass: 2
-  precision: '-'
+  precision: 0
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 1
-  dmgDices: 2
+  dmgDices: 1
   dmgDiceType: 0
+  dmgBonus: 0
+  dmgStatBonus: 5
+  duration: '-'
   range: 6
   area: 0
-  pps: 6
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Se enra\xEDza al suelo y regenera vida, puedes rescindir te tus casillas
-    de movimiento para duplicar los dados"

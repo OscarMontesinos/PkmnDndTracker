@@ -13,20 +13,27 @@ MonoBehaviour:
   m_Name: Abrecaminos
   m_EditorClassIdentifier: 
   moveName: Abrecaminos
+  description: Ataque en carrera a un enemigo
+  extraEffect: '-'
+  pps: 12
   type: 12
   moveClass: 0
-  precision: 1d20
+  makesContact: 1
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
-  dmgDices: 4
+  dmgDices: 3
   dmgDiceType: 6
-  range: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
+  range: 4
   area: 0
-  pps: 12
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: Ataque en carrera a un enemigo

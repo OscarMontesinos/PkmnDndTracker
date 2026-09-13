@@ -13,22 +13,29 @@ MonoBehaviour:
   m_Name: Desarme
   m_EditorClassIdentifier: 
   moveName: Desarme
+  description: "Golpea al objetivo, se puede usar como reacci\xF3n si el objetivo
+    va a usar un objeto, si no pasa la salvaci\xF3n se lo quita de las manos y obtiene
+    un dado de da\xF1o adicional."
+  extraEffect: "Tira al objetivo un objeto que puedas ver si falla la salvaci\xF3n"
+  pps: 13
   type: 17
   moveClass: 0
-  precision: 1d20
+  makesContact: 1
+  precision: 1
+  savingThrowType: DEX
+  scallingSavingThrowType: 2
+  secondaryScallingSavingThrowType: 6
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
-  dmgDices: 3
+  dmgDices: 2
   dmgDiceType: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 1
   area: 0
-  pps: 13
   isAction: 1
   isBonusAction: 0
   isReaction: 1
   hasPriority: 0
-  savingThrowType: DEX
-  savingThrowMultiplier: 1
-  duration: '-'
-  description: "Golpea al objetivo, se puede usar como reacci\xF3n si el objetivo
-    va a usar un objeto, si no pasa la salvaci\xF3n se lo quita de las manos y duplica
-    su da\xF1o"

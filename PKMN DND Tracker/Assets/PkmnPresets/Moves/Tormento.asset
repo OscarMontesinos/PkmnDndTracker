@@ -13,22 +13,28 @@ MonoBehaviour:
   m_Name: Tormento
   m_EditorClassIdentifier: 
   moveName: Tormento
+  description: "Lanza al objetivo una serie de burlas e insultos encantados de forma
+    sutil con magia. Si el enemigo no pasa la salvaci\xF3n recibe da\xF1o y desventaja
+    en su siguiente tirada de ataque."
+  extraEffect: '-'
+  pps: 14
   type: 17
   moveClass: 1
-  precision: '-'
+  precision: 0
+  savingThrowType: WIS
+  scallingSavingThrowType: 3
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 1
   useHitDice: 0
   dmgDices: 2
   dmgDiceType: 4
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: 3 Ronda
   range: 6
   area: 0
-  pps: 3
   isAction: 1
   isBonusAction: 1
   isReaction: 0
   hasPriority: 0
-  savingThrowType: WIS
-  savingThrowMultiplier: 1
-  duration: 1 Ronda
-  description: "Lanza al objetivo una serie de burlas e insultos encantados de forma
-    sutil con magia. Si el enemigo no pasa la salvaci\xF3n recibe da\xF1o y desventaja
-    en su siguiente tirada de ataque."

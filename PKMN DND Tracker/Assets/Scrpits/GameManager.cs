@@ -6,14 +6,23 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public enum DndStatsType
+    {
+        none, CON, STR, CHA, INT, WIS, DEX
+    }
     public enum Type
     {
         none, Normal, Fighting, Flying, Poison, Ground, Rock, Bug, Ghost, Steel, Fire, Water, Grass, Electric, Psychic, Ice, Dragon, Dark, Fairy
     }
-    public enum MoveClass
+    public enum MoveCategory
     {
         Physical, Special, Status
     }
+    public enum EquipmentType
+    {
+        Equipment, Consumable
+    }
+
     [Serializable]
    public struct TypeVisuals
     {
@@ -29,8 +38,6 @@ public class GameManager : MonoBehaviour
     public Sprite fisicalMovSpr;
     public Sprite specialMovSpr;
     public Sprite statusMovSpr;
-
-
 
     private void Awake()
     {

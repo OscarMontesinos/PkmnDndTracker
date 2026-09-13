@@ -13,20 +13,26 @@ MonoBehaviour:
   m_Name: DobleRayo
   m_EditorClassIdentifier: 
   moveName: Doble Rayo
+  description: "Lanza dos pulsos de energ\xEDa luminosa a un objetivo"
+  extraEffect: "Confunde al objetivo al fallar la salvaci\xF3n"
+  pps: 14
   type: 7
   moveClass: 1
-  precision: 1d20
+  precision: 1
+  savingThrowType: WIS
+  scallingSavingThrowType: 6
+  secondaryScallingSavingThrowType: 5
+  combatScallingStat: 2
+  savingThrowMultiplier: 0.66
   useHitDice: 0
   dmgDices: 4
   dmgDiceType: 8
-  range: 6
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
+  range: 8
   area: 0
-  pps: 14
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Lanza dos pulsos de energ\xEDa luminosa a un objetivo"

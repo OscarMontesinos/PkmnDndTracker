@@ -13,21 +13,28 @@ MonoBehaviour:
   m_Name: GolpesFuria
   m_EditorClassIdentifier: 
   moveName: Golpes Furia
+  description: "Lanza una r\xE1faga de ara\xF1azos. Ataca 5 veces y cada ataque puede
+    ser dirigido hacia un objetivo diferente"
+  extraEffect: '-'
+  pps: 16
   type: 1
   moveClass: 0
-  precision: 1d20
+  makesContact: 1
+  precision: 1
+  savingThrowType: '-'
+  scallingSavingThrowType: 0
+  secondaryScallingSavingThrowType: 0
+  combatScallingStat: 2
+  savingThrowMultiplier: 0
   useHitDice: 0
   dmgDices: 3
   dmgDiceType: 4
+  dmgBonus: 0
+  dmgStatBonus: 0
+  duration: '-'
   range: 4
   area: 0
-  pps: 16
   isAction: 1
   isBonusAction: 0
   isReaction: 0
   hasPriority: 0
-  savingThrowType: '-'
-  savingThrowMultiplier: 0
-  duration: '-'
-  description: "Lanza una r\xE1faga de ara\xF1azos. Ataca 5 veces y cada ataque puede
-    ser dirigido hacia un objetivo diferente"
